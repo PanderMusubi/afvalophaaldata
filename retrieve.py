@@ -86,6 +86,8 @@ for address in open('addresses.tsv', 'r'):
                     collection_header.strip(), name))
                 date = datetime.strptime(
                     '{}{}{}'.format(year, month, day), '%Y%m%d')
+                calendar.write('DTSTART;VALUE=DATE:{}\n'.format(
+                    date.strftime('%Y%m%d')))
                 date += timedelta(days=1)
                 calendar.write('DTEND;VALUE=DATE:{}\n'.format(
                     date.strftime('%Y%m%d')))

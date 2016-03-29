@@ -55,7 +55,7 @@ for line in event_footer.readlines():
 
 for address in open('addresses.tsv', 'r'):
     address = address[:-1].replace('\t', '/')
-    if address != '':
+    if address != '' and address[0] != '#':
         sleep(uniform(1, 3))
         print(address)
         url = 'http://www.mijnafvalwijzer.nl/nl/{}/'.format(address)
@@ -63,7 +63,8 @@ for address in open('addresses.tsv', 'r'):
         try:
             data = request.urlopen(url).read().decode('utf-8')
         except:
-            print('ERROR')
+            print('WARNING: Could not retrieve url {}'.format(url))
+            continue
 
         data = data.split('\n')
         calendar = open('calendars/{}.ics'.format(address.replace('/', '-')), 'w')

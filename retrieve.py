@@ -6,7 +6,8 @@
 # date: 2016-03-24
 
 from datetime import datetime, timedelta
-from random import uniform
+from os import rename
+from random import uniform, shuffle
 from time import sleep
 from urllib import request
 
@@ -53,47 +54,54 @@ event_footer = open('templates/event-footer.txt', 'r')
 for line in event_footer.readlines():
     collection_footer += line
 
+addresses = []
 for address in open('addresses.tsv', 'r'):
     address = address[:-1].replace('\t', '/')
     if address != '' and address[0] != '#':
-        sleep(uniform(1, 3))
-        print(address)
-        url = 'http://www.mijnafvalwijzer.nl/nl/{}/'.format(address)
+        addresses.append(address)
 
-        try:
-            data = request.urlopen(url).read().decode('utf-8')
-        except:
-            print('WARNING: Could not retrieve url {}'.format(url))
-            continue
+shuffle(addresses)
+for address in addresses:
+    print(address)
+    url = 'http://www.mijnafvalwijzer.nl/nl/{}/'.format(address)
 
-        data = data.split('\n')
-        calendar = open('calendars/{}.ics'.format(address.replace('/', '-')), 'w')
+    try:
+        data = request.urlopen(url).read().decode('utf-8')
+    except:
+        print('WARNING: Could not retrieve url {}'.format(url))
+        continue
 
-        calendar_header = open('templates/calendar-header.txt', 'r')
-        for line in calendar_header.readlines():
-            calendar.write(line)
+    data = data.split('\n')
+    basename = address.replace('/', '-')
+    calendar = open('{}.ics.tmp'.format(basename), 'w')
+    rename('{}.tmp.ics'.format(basename), 'calendars/{}.ics'.format(basename))
 
-        for line in data:
-            if '<a href="#waste-' in line:
-                name = line.split('title="')[1]
-                second = name.split('"><p class="')
-                name = second[0].replace(',', '\,')
-                second = second[1].replace('<br />', '')
-                second = second.split('">')[1]
-                (day_name, day, month) = second.split(' ')
-                month = month_to_number(month)
+    calendar_header = open('templates/calendar-header.txt', 'r')
+    for line in calendar_header.readlines():
+        calendar.write(line)
 
-                calendar.write('{}{}\n'.format(
-                    collection_header.strip(), name))
-                date = datetime.strptime(
-                    '{}{}{}'.format(year, month, day), '%Y%m%d')
-                calendar.write('DTSTART;VALUE=DATE:{}\n'.format(
-                    date.strftime('%Y%m%d')))
-                date += timedelta(days=1)
-                calendar.write('DTEND;VALUE=DATE:{}\n'.format(
-                    date.strftime('%Y%m%d')))
-                calendar.write(collection_footer)
+    for line in data:
+        if '<a href="#waste-' in line:
+            name = line.split('title="')[1]
+            second = name.split('"><p class="')
+            name = second[0].replace(',', '\,')
+            second = second[1].replace('<br />', '')
+            second = second.split('">')[1]
+            (day_name, day, month) = second.split(' ')
+            month = month_to_number(month)
 
-        calendar_footer = open('templates/calendar-footer.txt', 'r')
-        for line in calendar_footer.readlines():
-            calendar.write(line)
+            calendar.write('{}{}\n'.format(
+                collection_header.strip(), name))
+            date = datetime.strptime(
+                '{}{}{}'.format(year, month, day), '%Y%m%d')
+            calendar.write('DTSTART;VALUE=DATE:{}\n'.format(
+                date.strftime('%Y%m%d')))
+            date += timedelta(days=1)
+            calendar.write('DTEND;VALUE=DATE:{}\n'.format(
+                date.strftime('%Y%m%d')))
+            calendar.write(collection_footer)
+
+    calendar_footer = open('templates/calendar-footer.txt', 'r')
+    for line in calendar_footer.readlines():
+        calendar.write(line)
+    sleep(uniform(10, 30))

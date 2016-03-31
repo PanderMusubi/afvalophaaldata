@@ -6,9 +6,9 @@
 # date: 2016-03-24
 
 from datetime import datetime, timedelta
-from os import rename
+from os import path, rename
 from random import uniform, shuffle
-from time import sleep
+from time import sleep, time
 from urllib import request
 
 
@@ -43,6 +43,7 @@ def month_to_number(month):
 utcnow = datetime.utcnow()
 year = utcnow.strftime('%Y')
 dtstamp = utcnow.strftime('%Y%m%dT%H%M%SZ')
+now = time()
 
 collection_header = ''
 event_header = open('templates/event-header.txt', 'r')
@@ -63,8 +64,14 @@ for address in open('addresses.tsv', 'r'):
 shuffle(addresses)
 for address in addresses:
     print(address)
-    url = 'http://www.mijnafvalwijzer.nl/nl/{}/'.format(address)
+    basename = address.replace('/', '-')
+    destination = 'calendars/{}.ics'.format(basename)
+    if path.isfile(destination):
+        tstamp = path.getmtime(destination)
+        if tstamp < now - 2 * 86400:  # older than two days
+            continue
 
+    url = 'http://www.mijnafvalwijzer.nl/nl/{}/'.format(address)
     try:
         data = request.urlopen(url).read().decode('utf-8')
     except:
@@ -72,9 +79,8 @@ for address in addresses:
         continue
 
     data = data.split('\n')
-    basename = address.replace('/', '-')
-    calendar = open('{}.ics.tmp'.format(basename), 'w')
-    rename('{}.tmp.ics'.format(basename), 'calendars/{}.ics'.format(basename))
+    calendar = open('{}.tmp.ics'.format(basename), 'w')
+    rename('{}.tmp.ics'.format(basename), destination)
 
     calendar_header = open('templates/calendar-header.txt', 'r')
     for line in calendar_header.readlines():

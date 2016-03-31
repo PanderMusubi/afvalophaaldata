@@ -62,13 +62,15 @@ for address in open('addresses.tsv', 'r'):
         addresses.append(address)
 
 shuffle(addresses)
+count = 0
 for address in addresses:
-    print(address)
+    count += 1
+    print('{} {}/{}'.format(address, count, len(addresses)))
     basename = address.replace('/', '-')
     destination = 'calendars/{}.ics'.format(basename)
     if path.isfile(destination):
         tstamp = path.getmtime(destination)
-        if tstamp < now - 2 * 86400:  # older than two days
+        if tstamp < now - 3 * 86400:  # older than three days
             continue
 
     url = 'http://www.mijnafvalwijzer.nl/nl/{}/'.format(address)
@@ -110,4 +112,4 @@ for address in addresses:
     calendar_footer = open('templates/calendar-footer.txt', 'r')
     for line in calendar_footer.readlines():
         calendar.write(line)
-    sleep(uniform(10, 30))
+    sleep(uniform(5, 20))

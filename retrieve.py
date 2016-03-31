@@ -65,12 +65,13 @@ shuffle(addresses)
 count = 0
 for address in addresses:
     count += 1
-    print('{} {}/{}'.format(address, count, len(addresses)))
+    print('{}/{} {}'.format(count, len(addresses), address))
     basename = address.replace('/', '-')
     destination = 'calendars/{}.ics'.format(basename)
     if path.isfile(destination):
         tstamp = path.getmtime(destination)
-        if tstamp < now - 3 * 86400:  # older than three days
+        if tstamp > now - 3 * 86400:  # not older than three days
+#            print('INFO: Cache not yet expired')
             continue
 
     url = 'http://www.mijnafvalwijzer.nl/nl/{}/'.format(address)

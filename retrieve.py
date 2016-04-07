@@ -67,9 +67,8 @@ for address in addresses:
     count += 1
     print('{}/{} {}'.format(count, len(addresses), address))
     basename = address.replace('/', '-')
-    destination = 'calendars/{}.ics'.format(basename)
-    if path.isfile(destination):
-        tstamp = path.getmtime(destination)
+    if path.isfile('calendars/{}.ics'.format(basename)):
+        tstamp = path.getmtime('calendars/{}.ics'.format(basename))
         if tstamp > now - 3 * 86400:  # not older than three days
 #            print('INFO: Cache not yet expired')
             continue
@@ -82,35 +81,57 @@ for address in addresses:
         continue
 
     data = data.split('\n')
-    calendar = open('{}.tmp.ics'.format(basename), 'w')
-    rename('{}.tmp.ics'.format(basename), destination)
+    for reminder in ('', 'T30M', 'T1H', 'T9H15M', 'T10H30M'):
+        alarm = ''  # no alarm
+        if reminder == 'T30M':  # half hour before 08:00
+            alarm = '-0730'
+        elif reminder == 'T1H':  # one hour before 08:00
+            alarm = '-0700'
+        elif reminder == 'T9H15M':  # nine hours and a quarter before
+            alarm = '-2215'
+        elif reminder == 'T10H30M':  # maximum, i.e. 21:30 previous day
+            alarm = '-2130'
+        temp = '{}{}.tmp.ics'.format(basename, alarm)
+        calendar = open(temp, 'w')
 
-    calendar_header = open('templates/calendar-header.txt', 'r')
-    for line in calendar_header.readlines():
-        calendar.write(line)
+        calendar_header = open('templates/calendar-header.txt', 'r')
+        for line in calendar_header.readlines():
+            calendar.write(line)
 
-    for line in data:
-        if '<a href="#waste-' in line:
-            name = line.split('title="')[1]
-            second = name.split('"><p class="')
-            name = second[0].replace(',', '\,')
-            second = second[1].replace('<br />', '')
-            second = second.split('">')[1]
-            (day_name, day, month) = second.split(' ')
-            month = month_to_number(month)
+        for line in data:
+            if '<a href="#waste-' in line:
+                name = line.split('title="')[1]
+                second = name.split('"><p class="')
+                name = second[0].replace(',', '\,')
+                second = second[1].replace('<br />', '')
+                second = second.split('">')[1]
+                (day_name, day, month) = second.split(' ')
+                month = month_to_number(month)
+   
+                calendar.write('{}{}\n'.format(
+                    collection_header.strip(), name))
+                date = datetime.strptime(
+                    '{}{}{}'.format(year, month, day), '%Y%m%d')
+                calendar.write('DTSTART;VALUE=DATE-TIME:{}T080000\n'.format(
+                    date.strftime('%Y%m%d')))
+                calendar.write('DTEND;VALUE=DATE-TIME:{}T080000\n'.format(
+                    date.strftime('%Y%m%d')))
+# for whole day event, remove the T080000 and add endtime one dat later
+#                date += timedelta(days=1)
+#                calendar.write('DTEND;VALUE=DATE:{}\n'.format(
+#                    date.strftime('%Y%m%d')))
+                if reminder != '':
+                    calendar.write('BEGIN:VALARM\n')
+                    calendar.write('ACTION:DISPLAY\n')
+                    calendar.write('TRIGGER:-P{}\n'.format(reminder))
+                    calendar.write('DESCRIPTION:{} aan de straat zetten\n'.format(name))
+                    calendar.write('END:VALARM\n')
 
-            calendar.write('{}{}\n'.format(
-                collection_header.strip(), name))
-            date = datetime.strptime(
-                '{}{}{}'.format(year, month, day), '%Y%m%d')
-            calendar.write('DTSTART;VALUE=DATE:{}\n'.format(
-                date.strftime('%Y%m%d')))
-            date += timedelta(days=1)
-            calendar.write('DTEND;VALUE=DATE:{}\n'.format(
-                date.strftime('%Y%m%d')))
-            calendar.write(collection_footer)
+                calendar.write(collection_footer)
 
-    calendar_footer = open('templates/calendar-footer.txt', 'r')
-    for line in calendar_footer.readlines():
-        calendar.write(line)
+        calendar_footer = open('templates/calendar-footer.txt', 'r')
+        for line in calendar_footer.readlines():
+            calendar.write(line)
+        rename(temp, 'calendars/{}'.format(temp.replace('.tmp', '')))
+
     sleep(uniform(5, 20))

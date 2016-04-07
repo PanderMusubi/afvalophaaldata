@@ -59,6 +59,12 @@ addresses = []
 for address in open('addresses.tsv', 'r'):
     address = address[:-1].replace('\t', '/')
     if address != '' and address[0] != '#':
+        basename = address.replace('/', '-')
+        if path.isfile('calendars/{}.ics'.format(basename)):
+            tstamp = path.getmtime('calendars/{}.ics'.format(basename))
+            if tstamp > now - 4 * 86400:  # not older than four days
+#                print('INFO: Cache not yet expired')
+                continue
         addresses.append(address)
 
 shuffle(addresses)
@@ -67,11 +73,6 @@ for address in addresses:
     count += 1
     print('{}/{} {}'.format(count, len(addresses), address))
     basename = address.replace('/', '-')
-    if path.isfile('calendars/{}.ics'.format(basename)):
-        tstamp = path.getmtime('calendars/{}.ics'.format(basename))
-        if tstamp > now - 3 * 86400:  # not older than three days
-#            print('INFO: Cache not yet expired')
-            continue
 
     url = 'http://www.mijnafvalwijzer.nl/nl/{}/'.format(address)
     try:
@@ -84,13 +85,13 @@ for address in addresses:
     for reminder in ('', 'T30M', 'T1H', 'T9H15M', 'T10H30M'):
         alarm = ''  # no alarm
         if reminder == 'T30M':  # half hour before 08:00
-            alarm = '-0730'
+            alarm = '_0730'
         elif reminder == 'T1H':  # one hour before 08:00
-            alarm = '-0700'
+            alarm = '_0700'
         elif reminder == 'T9H15M':  # nine hours and a quarter before
-            alarm = '-2215'
+            alarm = '_2215'
         elif reminder == 'T10H30M':  # maximum, i.e. 21:30 previous day
-            alarm = '-2130'
+            alarm = '_2130'
         temp = '{}{}.tmp.ics'.format(basename, alarm)
         calendar = open(temp, 'w')
 
@@ -134,4 +135,4 @@ for address in addresses:
             calendar.write(line)
         rename(temp, 'calendars/{}'.format(temp.replace('.tmp', '')))
 
-    sleep(uniform(5, 20))
+    sleep(uniform(5, 10))

@@ -124,7 +124,7 @@ for address in addresses:
                 if reminder != '':
                     calendar.write('BEGIN:VALARM\n')
                     calendar.write('ACTION:DISPLAY\n')
-                    calendar.write('TRIGGER:-P{}\n'.format(reminder))
+                    calendar.write('TRIGGER;VALUE=DURATION:-P{}\n'.format(reminder))
                     calendar.write('DESCRIPTION:{} aan de straat zetten\n'.format(name))
                     calendar.write('END:VALARM\n')
 

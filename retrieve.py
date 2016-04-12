@@ -47,12 +47,12 @@ now = time()
 
 collection_header = ''
 event_header = open('templates/event-header.txt', 'r')
-for line in event_header.readlines():
+for line in event_header:
     collection_header += line.replace('DTSTAMP:', 'DTSTAMP:{}'.format(dtstamp))
 
 collection_footer = ''
 event_footer = open('templates/event-footer.txt', 'r')
-for line in event_footer.readlines():
+for line in event_footer:
     collection_footer += line
 
 addresses = []
@@ -96,7 +96,7 @@ for address in addresses:
         calendar = open(temp, 'w')
 
         calendar_header = open('templates/calendar-header.txt', 'r')
-        for line in calendar_header.readlines():
+        for line in calendar_header:
             calendar.write(line)
 
         for line in data:
@@ -131,7 +131,7 @@ for address in addresses:
                 calendar.write(collection_footer)
 
         calendar_footer = open('templates/calendar-footer.txt', 'r')
-        for line in calendar_footer.readlines():
+        for line in calendar_footer:
             calendar.write(line)
         rename(temp, 'calendars/{}'.format(temp.replace('.tmp', '')))
 

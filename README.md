@@ -1,5 +1,5 @@
 # afvalophaaldata
-Kalender met afvalophaaldata in Nederland voor postcode en huisnummer
+Kalender met herinnering voor afvalophaaldata in Nederland
 
 
 Usage

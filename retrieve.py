@@ -6,7 +6,7 @@
 # date: 2016-03-24
 
 from datetime import datetime, timedelta
-from os import path, rename
+from os import mkdir, path, rename
 from random import uniform, shuffle
 from time import sleep, time
 from urllib import request
@@ -55,13 +55,28 @@ event_footer = open('templates/event-footer.txt', 'r')
 for line in event_footer:
     collection_footer += line
 
+if not path.exists('ics'):
+    mkdir('ics')
+
 addresses = []
 for address in open('addresses.tsv', 'r'):
     address = address[:-1].replace('\t', '/')
     if address != '' and address[0] != '#':
         basename = address.replace('/', '-')
-        if path.isfile('calendars/{}.ics'.format(basename)):
-            tstamp = path.getmtime('calendars/{}.ics'.format(basename))
+        print(basename)
+        letters = basename[:4]
+        decimals = basename[4:6]
+        number = basename[7:]
+        print(letters)
+        print(decimals)
+        print(number)
+        if not path.exists('ics/{}'.format(letters)):
+            mkdir('ics/{}'.format(letters))
+        if not path.exists('ics/{}/{}'.format(letters, decimals)):
+            mkdir('ics/{}/{}'.format(letters, decimals))
+        exit(0)
+        if path.isfile('ics/{}.ics'.format(basename)):
+            tstamp = path.getmtime('ics/{}.ics'.format(basename))
             if tstamp > now - 4 * 86400:  # not older than four days
 #                print('INFO: Cache not yet expired')
                 continue
@@ -133,6 +148,6 @@ for address in addresses:
         calendar_footer = open('templates/calendar-footer.txt', 'r')
         for line in calendar_footer:
             calendar.write(line)
-        rename(temp, 'calendars/{}'.format(temp.replace('.tmp', '')))
+        rename(temp, 'ics/{}'.format(temp.replace('.tmp', '')))
 
     sleep(uniform(5, 10))

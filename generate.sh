@@ -1,3 +1,5 @@
 ./retrieve.py
-flip -m calendars/*.ics
-grep -h SUMMARY calendars/*.ics|sed -e 's/SUMMARY://'|sort|uniq>names-used-dutch.txt
+find ics -name '*.tmp.ics' -exec rm -f {} \;
+flip -m ics/*/*/*.ics
+grep -h SUMMARY ics/*/*/*.ics|sed -e 's/SUMMARY://'|sort|uniq>names-used-dutch.txt
+cat names-used-dutch.txt

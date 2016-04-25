@@ -1,4 +1,6 @@
-# afvalophaaldata
+afvalophaaldata
+===============
+
 Kalender met herinnering voor afvalophaaldata in Nederland
 
 
@@ -25,10 +27,10 @@ Maintenance
 -----------
 
 Calendars that have been generated can be validated by:
-* [postcode and number](http://severinghaus.org/projects/icv/?url=https%3A%2F%2Fraw.githubusercontent.com%2FPanderMusubi%2Fafvalophaaldata%2Fmaster%2Fcalendars%2F3524DZ-172.ics)
-* [postcode, number and extension](http://severinghaus.org/projects/icv/?url=https%3A%2F%2Fraw.githubusercontent.com%2FPanderMusubi%2Fafvalophaaldata%2Fmaster%2Fcalendars%2F3521VX-90-BS.ics)
-* [postcode, number and reminder in the morning](http://severinghaus.org/projects/icv/?url=https%3A%2F%2Fraw.githubusercontent.com%2FPanderMusubi%2Fafvalophaaldata%2Fmaster%2Fcalendars%2F3521EC-17_0700.ics)
-* [postcode, number and reminder in the evening before](http://severinghaus.org/projects/icv/?url=https%3A%2F%2Fraw.githubusercontent.com%2FPanderMusubi%2Fafvalophaaldata%2Fmaster%2Fcalendars%2F3521EC-17_2215.ics)
+* [postcode and number](http://severinghaus.org/projects/icv/?url=https%3A%2F%2Fraw.githubusercontent.com%2FPanderMusubi%2Fafvalophaaldata%2Fmaster%2Fics%2F3524%2FDZ%2F172.ics)
+* [postcode, number and extension](http://severinghaus.org/projects/icv/?url=https%3A%2F%2Fraw.githubusercontent.com%2FPanderMusubi%2Fafvalophaaldata%2Fmaster%2Fics%2F3521%2FVX%2F90-BS.ics)
+* [postcode, number and reminder in the morning](http://severinghaus.org/projects/icv/?url=https%3A%2F%2Fraw.githubusercontent.com%2FPanderMusubi%2Fafvalophaaldata%2Fmaster%2Fics%2F3521%2FEC%2F17_0700.ics)
+* [postcode, number and reminder in the evening before](http://severinghaus.org/projects/icv/?url=https%3A%2F%2Fraw.githubusercontent.com%2FPanderMusubi%2Fafvalophaaldata%2Fmaster%2Fics%2F3521%2FEC%2F17_2215.ics)
 
 Add all house numbers for a postcode via https://www.postcode.nl/POSTCODE where POSTCODE is a Dutch postcode without a space.
 

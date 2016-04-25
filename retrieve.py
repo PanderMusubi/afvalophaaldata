@@ -63,20 +63,11 @@ for address in open('addresses.tsv', 'r'):
     address = address[:-1].replace('\t', '/')
     if address != '' and address[0] != '#':
         basename = address.replace('/', '-')
-        print(basename)
-        letters = basename[:4]
-        decimals = basename[4:6]
+        decimals = basename[:4]
+        letters = basename[4:6]
         number = basename[7:]
-        print(letters)
-        print(decimals)
-        print(number)
-        if not path.exists('ics/{}'.format(letters)):
-            mkdir('ics/{}'.format(letters))
-        if not path.exists('ics/{}/{}'.format(letters, decimals)):
-            mkdir('ics/{}/{}'.format(letters, decimals))
-        exit(0)
-        if path.isfile('ics/{}.ics'.format(basename)):
-            tstamp = path.getmtime('ics/{}.ics'.format(basename))
+        if path.isfile('ics/{}/{}/{}.ics'.format(decimals, letters, number)):
+            tstamp = path.getmtime('ics/{}/{}/{}.ics'.format(decimals, letters, number))
             if tstamp > now - 4 * 86400:  # not older than four days
 #                print('INFO: Cache not yet expired')
                 continue
@@ -88,6 +79,13 @@ for address in addresses:
     count += 1
     print('{}/{} {}'.format(count, len(addresses), address))
     basename = address.replace('/', '-')
+    decimals = basename[:4]
+    letters = basename[4:6]
+    number = basename[7:]
+    if not path.exists('ics/{}'.format(decimals)):
+        mkdir('ics/{}'.format(decimals))
+    if not path.exists('ics/{}/{}'.format(decimals, letters)):
+        mkdir('ics/{}/{}'.format(decimals, letters))
 
     url = 'http://www.mijnafvalwijzer.nl/nl/{}/'.format(address)
     try:
@@ -107,7 +105,7 @@ for address in addresses:
             alarm = '_2215'
         elif reminder == 'T10H30M':  # maximum, i.e. 21:30 previous day
             alarm = '_2130'
-        temp = '{}{}.tmp.ics'.format(basename, alarm)
+        temp = 'ics/{}/{}/{}{}.tmp.ics'.format(decimals, letters, number, alarm)
         calendar = open(temp, 'w')
 
         calendar_header = open('templates/calendar-header.txt', 'r')
@@ -148,6 +146,6 @@ for address in addresses:
         calendar_footer = open('templates/calendar-footer.txt', 'r')
         for line in calendar_footer:
             calendar.write(line)
-        rename(temp, 'ics/{}'.format(temp.replace('.tmp', '')))
+        rename(temp, '{}'.format(temp.replace('.tmp.ics', '.ics')))
 
     sleep(uniform(5, 10))

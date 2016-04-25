@@ -1,7 +1,10 @@
 afvalophaaldata
 ===============
 
-Kalender met herinnering voor afvalophaaldata in Nederland
+Calendar with reminders for garbage collection in the Netherlands
+
+_Kalender met herinnering voor afvalophaaldata in Nederland_
+
 
 
 Usage
@@ -18,9 +21,35 @@ The calendars provided here are in iCalendar or ICS format. Calendar software th
 
 [![example](example.png?raw=true)](https://raw.githubusercontent.com/PanderMusubi/afvalophaaldata/master/example.png)
 
-Most calendar software can show these garbage collection days to a color of your choice. Also in some software, a distinction in colour can be configured according to the calendar categories `Afvalophaal`.
+Most calendar software can show these garbage collection days to a color of your choice. Also in some software, a distinction in color can be configured according to the calendar categories `Afvalophaal`.
 
 Warning: Please, do **not** import these ICS files into your calendar as they will be added only once and never get updated. Add these calendars as a shared (read-only) network calendar. These calendars do not need frequent updates, however, sometimes bugs are fixed, functionality is added or garbage collection change due to holidays or local events. Most software offer a daily update frequency, which is fine for these calendars. Syncing should also configured to take place only from server to client, computer or phone.
+
+
+Calendars
+---------
+
+The urls to the calendars have the following structure:
+1. `https://raw.githubusercontent.com/PanderMusubi/afvalophaaldata/master/ics/`
+2. `DDDD` (decimals from postcode, e.g. `3531`)
+3. `/`
+4. `LL` (letters from postcode, e.g. `EB`)
+5. `/`
+6. `N` (house number, e.g. `2`)
+7. `-EEE` (optional extension to house number, e.g. `BSA` or `BS`)
+8. `_HHMM` (optional reminder, `2130` or `2215` evening before or `0700` or `0730` for morning)
+9. `.ics` 
+
+Note that only four reminders are available. Additional reminders can be requested via an issue.
+
+The above results in the following examples:
+* https://raw.githubusercontent.com/PanderMusubi/afvalophaaldata/master/ics/3531/EB/2.ics for postcode 3531 EB at house number 2 without a reminder
+* https://raw.githubusercontent.com/PanderMusubi/afvalophaaldata/master/ics/3531/EB/2_0700.ics for postcode 3531 EB at house number 2 with a reminder in the morning at 07:00
+* https://raw.githubusercontent.com/PanderMusubi/afvalophaaldata/master/ics/3531/EB/2_2215.ics for postcode 3531 EB at house number 2 with a reminder evening before at 22:15
+* https://raw.githubusercontent.com/PanderMusubi/afvalophaaldata/master/ics/3531/EB/2-BS_2215.ics for postcode 3531 EB at house number 2 extension BS with a reminder evening before at 22:15
+* https://raw.githubusercontent.com/PanderMusubi/afvalophaaldata/master/ics/3531/EB/2-BSA_2215.ics for postcode 3531 EB at house number 2 extension BSA with a reminder evening before at 22:15
+
+See the directory [ics](ics) for available calendars. If your postcode is missing, please request it via an issue but for privacy reasons list **only** your postcode and not any house numbers. Calendars will be generated for all house numbers of a requested postcode.
 
 
 Maintenance

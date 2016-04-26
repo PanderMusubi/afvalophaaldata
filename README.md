@@ -20,9 +20,9 @@ The calendars provided here are in iCalendar or ICS format. Calendar software th
 * for Windows only: [Microsoft Outlook](https://products.office.com/outlook)
 * web-based: [Microsoft Outlook.com](https://outlook.com)
 
-[![example](example.png?raw=true)](https://raw.githubusercontent.com/PanderMusubi/afvalophaaldata/master/example.png)
+[<img alt="example mobile" src="example-mobile.png?raw=true" width="50%" />](https://raw.githubusercontent.com/PanderMusubi/afvalophaaldata/master/example-mobile.png)
 
-[![example-mobile](example-mobile.png?raw=true)](https://raw.githubusercontent.com/PanderMusubi/afvalophaaldata/master/example-mobile.png)
+[![example](example.png?raw=true)](https://raw.githubusercontent.com/PanderMusubi/afvalophaaldata/master/example.png)
 
 Most calendar software can show these garbage collection days to a color of your choice. Also in some software, a distinction in color can be configured according to the calendar categories `Afvalophaal`.
 

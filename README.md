@@ -14,6 +14,7 @@ The calendars provided here are in iCalendar or ICS format. Calendar software th
 * for OS-X, Windows and Linux: [Mozilla Thunderbird](https://www.mozilla.org/thunderbird/)
 * web-based and indirectly on Android too: [Google Calendar](https://google.com/calendar)
 * for Android only: ICSdroid from [Google Play](https://play.google.com/store/apps/details?id=at.bitfire.icsdroid) or [F-Droid](https://f-droid.org/repository/browse/?fdfilter=calendar&fdid=at.bitfire.icsdroid)
+* for Android only: CalDAV-Sync from [Google Play](https://play.google.com/store/apps/details?id=org.dmfs.caldav.lib) and soon on F-Droid too
 * for OS-X only: [Calendar](https://www.apple.com/osx/apps/#calendar)
 * for iOS only: [iCloud Calendar](https://www.apple.com/icloud/#ccm)
 * for Windows only: [Microsoft Outlook](https://products.office.com/outlook)
@@ -62,6 +63,22 @@ Calendars that have been generated can be validated by:
 * [postcode, number and reminder in the evening before](http://severinghaus.org/projects/icv/?url=https%3A%2F%2Fraw.githubusercontent.com%2FPanderMusubi%2Fafvalophaaldata%2Fmaster%2Fics%2F3521%2FEC%2F17_2215.ics)
 
 Add all house numbers for a postcode via https://www.postcode.nl/POSTCODE where POSTCODE is a Dutch postcode without a space.
+
+
+Reminders Thunderbird
+---------------------
+
+For Thunderbird calender, Lightning, there is a bug with reminders for read-only calendars. Please vote, add a useful comment, fix or pledge a bounty via [Bounty Source](https://www.bountysource.com/teams/thunderbird/issues) for the following related bugs:
+* https://bugzilla.mozilla.org/show_bug.cgi?id=375209
+* https://bugzilla.mozilla.org/show_bug.cgi?id=496889
+* https://bugzilla.mozilla.org/show_bug.cgi?id=702206
+* https://bugzilla.mozilla.org/show_bug.cgi?id=769118
+* https://bugzilla.mozilla.org/show_bug.cgi?id=804009
+* https://bugzilla.mozilla.org/show_bug.cgi?id=861594
+* https://bugzilla.mozilla.org/show_bug.cgi?id=948507
+* https://bugzilla.mozilla.org/show_bug.cgi?id=1067134
+
+The workaround for Thunderbird is to go to Preferences / Calendar / Reminders and disable "Show missed reminders".
 
 
 See also

@@ -22,9 +22,9 @@ The calendars provided here are in iCalendar or ICS format. Calendar software th
 
 [<img alt="example mobile" src="example-mobile.png?raw=true" width="50%" />](https://raw.githubusercontent.com/PanderMusubi/afvalophaaldata/master/example-mobile.png)
 
-[![example](example.png?raw=true)](https://raw.githubusercontent.com/PanderMusubi/afvalophaaldata/master/example.png)
-
 Most calendar software can show these garbage collection days to a color of your choice. Also in some software, a distinction in color can be configured according to the calendar categories `Afvalophaal`.
+
+[![example](example.png?raw=true)](https://raw.githubusercontent.com/PanderMusubi/afvalophaaldata/master/example.png)
 
 Warning: Please, do **not** import these ICS files into your calendar as they will be added only once and never get updated. Add these calendars as a shared (read-only) network calendar. These calendars do not need frequent updates, however, sometimes bugs are fixed, functionality is added or garbage collection change due to holidays or local events. Most software offer a daily update frequency, which is fine for these calendars. Syncing should also configured to take place only from server to client, computer or phone.
 

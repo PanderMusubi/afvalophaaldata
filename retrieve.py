@@ -95,16 +95,17 @@ for address in addresses:
         continue
 
     data = data.split('\n')
-    for reminder in ('', 'T30M', 'T1H', 'T9H15M', 'T10H30M'):
+#    for reminder in ('T10H30M', 'T9H15M', 'T30M', 'T1H', ''):
+    for reminder in ('', 'T10H30M', 'T1H'):
         alarm = ''  # no alarm
-        if reminder == 'T30M':  # half hour before 08:00
-            alarm = '_0730'
+        if reminder == 'T10H30M':  # maximum, i.e. 21:30 previous day
+            alarm = '_2130'
+#        elif reminder == 'T9H15M':  # nine hours and a quarter before
+#            alarm = '_2215'
         elif reminder == 'T1H':  # one hour before 08:00
             alarm = '_0700'
-        elif reminder == 'T9H15M':  # nine hours and a quarter before
-            alarm = '_2215'
-        elif reminder == 'T10H30M':  # maximum, i.e. 21:30 previous day
-            alarm = '_2130'
+#        elif reminder == 'T30M':  # half hour before 08:00
+#            alarm = '_0730'
         temp = 'ics/{}/{}/{}{}.tmp.ics'.format(decimals, letters, number, alarm)
         calendar = open(temp, 'w')
 

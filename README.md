@@ -77,8 +77,6 @@ For Thunderbird calender, Lightning, there is a bug with reminders for read-only
 * https://bugzilla.mozilla.org/show_bug.cgi?id=769118
 * https://bugzilla.mozilla.org/show_bug.cgi?id=804009
 * https://bugzilla.mozilla.org/show_bug.cgi?id=861594
-* https://bugzilla.mozilla.org/show_bug.cgi?id=948507
-* https://bugzilla.mozilla.org/show_bug.cgi?id=1067134
 
 The workaround for Thunderbird is to go to Preferences / Calendar / Reminders and disable "Show missed reminders".
 

@@ -1,4 +1,4 @@
-# QR-codes postcodes 3522 AB #
+# QR-codes postcode 3522 AB #
 
 ## Huisnummer 21 met alarm om 0700 ##
 

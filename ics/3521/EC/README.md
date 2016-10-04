@@ -1,4 +1,4 @@
-# QR-codes postcodes 3521 EC #
+# QR-codes postcode 3521 EC #
 
 ## Huisnummer 17 met alarm om 0700 ##
 

@@ -1,4 +1,4 @@
-# QR-codes postcodes 3531 EB #
+# QR-codes postcode 3531 EB #
 
 ## Huisnummer 10 met alarm om 0700 ##
 

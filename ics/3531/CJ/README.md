@@ -1,4 +1,4 @@
-# QR-codes postcodes 3531 CJ #
+# QR-codes postcode 3531 CJ #
 
 ## Huisnummer 225-BS met alarm om 0700 ##
 

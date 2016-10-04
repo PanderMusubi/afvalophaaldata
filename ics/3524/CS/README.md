@@ -1,4 +1,4 @@
-# QR-codes postcodes 3524 CS #
+# QR-codes postcode 3524 CS #
 
 ## Huisnummer 245 met alarm om 0700 ##
 

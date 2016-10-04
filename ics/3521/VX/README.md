@@ -1,4 +1,4 @@
-# QR-codes postcodes 3521 VX #
+# QR-codes postcode 3521 VX #
 
 ## Huisnummer 100 met alarm om 0700 ##
 

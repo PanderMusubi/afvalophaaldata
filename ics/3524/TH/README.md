@@ -1,4 +1,4 @@
-# QR-codes postcodes 3524 TH #
+# QR-codes postcode 3524 TH #
 
 ## Huisnummer 54 met alarm om 0700 ##
 

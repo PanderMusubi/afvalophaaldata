@@ -1,4 +1,4 @@
-# QR-codes postcodes 5046 TK #
+# QR-codes postcode 5046 TK #
 
 ## Huisnummer 10 met alarm om 0700 ##
 

@@ -1,4 +1,4 @@
-# QR-codes postcodes 3524 DZ #
+# QR-codes postcode 3524 DZ #
 
 ## Huisnummer 102 met alarm om 0700 ##
 

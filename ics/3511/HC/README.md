@@ -1,4 +1,4 @@
-# QR-codes postcodes 3511 HC #
+# QR-codes postcode 3511 HC #
 
 ## Huisnummer 26 met alarm om 0700 ##
 

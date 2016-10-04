@@ -1,4 +1,4 @@
-# QR-codes postcodes 5247 KV #
+# QR-codes postcode 5247 KV #
 
 ## Huisnummer 10 met alarm om 0700 ##
 

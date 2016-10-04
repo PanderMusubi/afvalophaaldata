@@ -13,7 +13,7 @@ do
     do
         cd $j
         rm -f README.md
-        echo -e "# QR-codes postcodes $i $j #\n" >> README.md
+        echo -e "# QR-codes postcode $i $j #\n" >> README.md
         for k in *.ics
         do
             if [ `echo $k|grep '_'|wc -l` == '0' ]

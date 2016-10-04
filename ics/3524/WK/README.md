@@ -1,4 +1,4 @@
-# QR-codes postcodes 3524 WK #
+# QR-codes postcode 3524 WK #
 
 ## Huisnummer 10 met alarm om 0700 ##
 

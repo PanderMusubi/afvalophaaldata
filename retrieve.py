@@ -6,8 +6,9 @@
 # date: 2016-03-24
 
 from datetime import datetime, timedelta
-from os import mkdir, path, rename
+from os import getpid, mkdir, path, rename
 from random import uniform, shuffle
+from socket import getfqdn
 from time import sleep, time
 from urllib import request
 
@@ -40,21 +41,34 @@ def month_to_number(month):
     else:
         return ''
 
+# date and time
 utcnow = datetime.utcnow()
 year = utcnow.strftime('%Y')
 dtstamp = utcnow.strftime('%Y%m%dT%H%M%SZ')
 now = time()
 
+# event UID
+uid_format='UID:%(date)s-%(pid)d-%(seq)04d-%(lang)s@%(domain)s\n'
+uid_replace_values = {
+    'date': dtstamp,
+    'pid':  getpid(),
+    'domain': getfqdn()
+}
+event_seq = 1
+
+# create ICS header
 collection_header = ''
 event_header = open('templates/event-header.txt', 'r')
 for line in event_header:
     collection_header += line.replace('DTSTAMP:', 'DTSTAMP:{}'.format(dtstamp))
 
+# create ICS footer
 collection_footer = ''
 event_footer = open('templates/event-footer.txt', 'r')
 for line in event_footer:
     collection_footer += line
 
+# create ICS directory
 if not path.exists('ics'):
     mkdir('ics')
 
@@ -125,6 +139,11 @@ for address in addresses:
    
                 calendar.write('{}{}\n'.format(
                     collection_header.strip(), name))
+
+                # write UID and autoincrement
+                calendar.write(uid_format % (dict(list(uid_replace_values.items()) + list({ 'lang': 'en', 'seq': event_seq }.items()))))
+                event_seq += 1
+
                 date = datetime.strptime(
                     '{}{}{}'.format(year, month, day), '%Y%m%d')
                 calendar.write('DTSTART;VALUE=DATE-TIME:{}T080000\n'.format(

@@ -121,7 +121,7 @@ for address in addresses:
 #        elif reminder == 'T30M':  # half hour before 08:00
 #            alarm = '_0730'
         temp = 'ics/{}/{}/{}{}.tmp.ics'.format(decimals, letters, number, alarm)
-        calendar = open(temp, 'w')
+        calendar = open(temp, 'w', newline='\r\n')
 
         calendar_header = open('templates/calendar-header.txt', 'r')
         for line in calendar_header:

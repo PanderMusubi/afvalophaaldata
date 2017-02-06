@@ -82,9 +82,9 @@ for address in open('addresses.tsv', 'r'):
         number = basename[7:]
         if path.isfile('ics/{}/{}/{}.ics'.format(decimals, letters, number)):
             tstamp = path.getmtime('ics/{}/{}/{}.ics'.format(decimals, letters, number))
-###            if tstamp > now - 4 * 86400:  # not older than four days
+            if tstamp > now - 4 * 86400:  # not older than four days
 #                print('INFO: Cache not yet expired')
-###                continue
+                continue
         addresses.append(address)
 
 shuffle(addresses)

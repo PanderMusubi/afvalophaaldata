@@ -44,7 +44,7 @@ De URL's van de kalenders hebben de volgende opbouw:
 5. `/`
 6. `N` (decimalen van het huisnummer, e.g. `2`)
 7. `-EEE` (optionele toevoeging van het huisnummer, bijvoorbeeld `BSA` of `BS`)
-8. `_HHMM` (optionele herinnering, `2130` of `2215` avond ervoor of `0700` of `0730` in de ochtend)
+8. `_HHMM` (optionele herinnering, `2130` avond ervoor of `0700` in de ochtend)
 9. `.ics`
 
 Aleen bovenstaande vier herinneringen zijn beschikbaar. Additionele herinneringen kunnen op verzoek via een issue worden toegevoegd.
@@ -52,9 +52,9 @@ Aleen bovenstaande vier herinneringen zijn beschikbaar. Additionele herinneringe
 The above results in the following examples:
 * https://raw.githubusercontent.com/PanderMusubi/afvalophaaldata/master/ics/3531/EB/2.ics for postcode 3531 EB at house number 2 without a reminder
 * https://raw.githubusercontent.com/PanderMusubi/afvalophaaldata/master/ics/3531/EB/2_0700.ics for postcode 3531 EB at house number 2 with a reminder in the morning at 07:00
-* https://raw.githubusercontent.com/PanderMusubi/afvalophaaldata/master/ics/3531/EB/2_2215.ics for postcode 3531 EB at house number 2 with a reminder evening before at 22:15
-* https://raw.githubusercontent.com/PanderMusubi/afvalophaaldata/master/ics/3531/EB/2-BS_2215.ics for postcode 3531 EB at house number 2 extension BS with a reminder evening before at 22:15
-* https://raw.githubusercontent.com/PanderMusubi/afvalophaaldata/master/ics/3531/EB/2-BSA_2215.ics for postcode 3531 EB at house number 2 extension BSA with a reminder evening before at 22:15
+* https://raw.githubusercontent.com/PanderMusubi/afvalophaaldata/master/ics/3531/EB/2_2130.ics for postcode 3531 EB at house number 2 with a reminder evening before at 21:30
+* https://raw.githubusercontent.com/PanderMusubi/afvalophaaldata/master/ics/3531/EB/2-BS_2130.ics for postcode 3531 EB at house number 2 extension BS with a reminder evening before at 21:30
+* https://raw.githubusercontent.com/PanderMusubi/afvalophaaldata/master/ics/3531/EB/2-BSA_2130.ics for postcode 3531 EB at house number 2 extension BSA with a reminder evening before at 21:30
 
 See the directory [ics](ics) for available calendars. If your postcode is missing, please request it via an issue but for privacy reasons list **only** your postcode and not any house numbers. Calendars will be generated for all house numbers of a requested postcode.
 
@@ -66,7 +66,7 @@ Kalender die zijn aangemaakt kunnen gevalideerd worden met:
 * [postcode en huisnummer](http://severinghaus.org/projects/icv/?url=https%3A%2F%2Fraw.githubusercontent.com%2FPanderMusubi%2Fafvalophaaldata%2Fmaster%2Fics%2F3524%2FDZ%2F172.ics)
 * [postcode, huisnummer en toevoeging](http://severinghaus.org/projects/icv/?url=https%3A%2F%2Fraw.githubusercontent.com%2FPanderMusubi%2Fafvalophaaldata%2Fmaster%2Fics%2F3521%2FVX%2F90-BS.ics)
 * [postcode, huisnummer en herinnering](http://severinghaus.org/projects/icv/?url=https%3A%2F%2Fraw.githubusercontent.com%2FPanderMusubi%2Fafvalophaaldata%2Fmaster%2Fics%2F3521%2FEC%2F17_0700.ics)
-* [postcode, huisnummer en herinnering de avond ervoor](http://severinghaus.org/projects/icv/?url=https%3A%2F%2Fraw.githubusercontent.com%2FPanderMusubi%2Fafvalophaaldata%2Fmaster%2Fics%2F3521%2FEC%2F17_2215.ics)
+* [postcode, huisnummer en herinnering de avond ervoor](http://severinghaus.org/projects/icv/?url=https%3A%2F%2Fraw.githubusercontent.com%2FPanderMusubi%2Fafvalophaaldata%2Fmaster%2Fics%2F3521%2FEC%2F17_2130.ics)
 
 Om huisnummers voor een postcode toe voegen, ga naar https://www.postcode.nl/POSTCODE waar POSTCODE een Nederlandse postcode is zonder een spatie.
 
@@ -128,7 +128,7 @@ The urls to the calendars have the following structure:
 5. `/`
 6. `N` (decimals from house number, e.g. `2`)
 7. `-EEE` (optional extension to house number, e.g. `BSA` or `BS`)
-8. `_HHMM` (optional reminder, `2130` or `2215` evening before or `0700` or `0730` for morning)
+8. `_HHMM` (optional reminder, `2130` evening before or `0700` for morning)
 9. `.ics`
 
 Note that only four reminders are available. Additional reminders can be requested via an issue.
@@ -136,9 +136,9 @@ Note that only four reminders are available. Additional reminders can be request
 The above results in the following examples:
 * https://raw.githubusercontent.com/PanderMusubi/afvalophaaldata/master/ics/3531/EB/2.ics for postcode 3531 EB at house number 2 without a reminder
 * https://raw.githubusercontent.com/PanderMusubi/afvalophaaldata/master/ics/3531/EB/2_0700.ics for postcode 3531 EB at house number 2 with a reminder in the morning at 07:00
-* https://raw.githubusercontent.com/PanderMusubi/afvalophaaldata/master/ics/3531/EB/2_2215.ics for postcode 3531 EB at house number 2 with a reminder evening before at 22:15
-* https://raw.githubusercontent.com/PanderMusubi/afvalophaaldata/master/ics/3531/EB/2-BS_2215.ics for postcode 3531 EB at house number 2 extension BS with a reminder evening before at 22:15
-* https://raw.githubusercontent.com/PanderMusubi/afvalophaaldata/master/ics/3531/EB/2-BSA_2215.ics for postcode 3531 EB at house number 2 extension BSA with a reminder evening before at 22:15
+* https://raw.githubusercontent.com/PanderMusubi/afvalophaaldata/master/ics/3531/EB/2_2130.ics for postcode 3531 EB at house number 2 with a reminder evening before at 21:30
+* https://raw.githubusercontent.com/PanderMusubi/afvalophaaldata/master/ics/3531/EB/2-BS_2130.ics for postcode 3531 EB at house number 2 extension BS with a reminder evening before at 21:30
+* https://raw.githubusercontent.com/PanderMusubi/afvalophaaldata/master/ics/3531/EB/2-BSA_2130.ics for postcode 3531 EB at house number 2 extension BSA with a reminder evening before at 21:30
 
 See the directory [ics](ics) for available calendars. If your postcode is missing, please request it via an issue but for privacy reasons list **only** your postcode and not any house numbers. Calendars will be generated for all house numbers of a requested postcode.
 
@@ -150,7 +150,7 @@ Calendars that have been generated can be validated by:
 * [postcode and number](http://severinghaus.org/projects/icv/?url=https%3A%2F%2Fraw.githubusercontent.com%2FPanderMusubi%2Fafvalophaaldata%2Fmaster%2Fics%2F3524%2FDZ%2F172.ics)
 * [postcode, number and extension](http://severinghaus.org/projects/icv/?url=https%3A%2F%2Fraw.githubusercontent.com%2FPanderMusubi%2Fafvalophaaldata%2Fmaster%2Fics%2F3521%2FVX%2F90-BS.ics)
 * [postcode, number and reminder in the morning](http://severinghaus.org/projects/icv/?url=https%3A%2F%2Fraw.githubusercontent.com%2FPanderMusubi%2Fafvalophaaldata%2Fmaster%2Fics%2F3521%2FEC%2F17_0700.ics)
-* [postcode, number and reminder in the evening before](http://severinghaus.org/projects/icv/?url=https%3A%2F%2Fraw.githubusercontent.com%2FPanderMusubi%2Fafvalophaaldata%2Fmaster%2Fics%2F3521%2FEC%2F17_2215.ics)
+* [postcode, number and reminder in the evening before](http://severinghaus.org/projects/icv/?url=https%3A%2F%2Fraw.githubusercontent.com%2FPanderMusubi%2Fafvalophaaldata%2Fmaster%2Fics%2F3521%2FEC%2F17_2130.ics)
 
 Add all house numbers for a postcode via https://www.postcode.nl/POSTCODE where POSTCODE is a Dutch postcode without a space.
 

@@ -6,23 +6,11 @@ https://raw.githubusercontent.com/PanderMusubi/afvalophaaldata/master/ics/3522/A
 
 ![QR-code https://raw.githubusercontent.com/PanderMusubi/afvalophaaldata/master/ics/3522/AB/21_0700.ics](https://api.qrserver.com/v1/create-qr-code/?data=https%3A%2F%2Fraw.githubusercontent.com%2FPanderMusubi%2Fafvalophaaldata%2Fmaster%2Fics%2F3522%2FAB%2F21_0700.ics)
 
-## Huisnummer 21 met alarm om 0730 ##
-
-https://raw.githubusercontent.com/PanderMusubi/afvalophaaldata/master/ics/3522/AB/21_0730.ics
-
-![QR-code https://raw.githubusercontent.com/PanderMusubi/afvalophaaldata/master/ics/3522/AB/21_0730.ics](https://api.qrserver.com/v1/create-qr-code/?data=https%3A%2F%2Fraw.githubusercontent.com%2FPanderMusubi%2Fafvalophaaldata%2Fmaster%2Fics%2F3522%2FAB%2F21_0730.ics)
-
 ## Huisnummer 21 met alarm om 2130 ##
 
 https://raw.githubusercontent.com/PanderMusubi/afvalophaaldata/master/ics/3522/AB/21_2130.ics
 
 ![QR-code https://raw.githubusercontent.com/PanderMusubi/afvalophaaldata/master/ics/3522/AB/21_2130.ics](https://api.qrserver.com/v1/create-qr-code/?data=https%3A%2F%2Fraw.githubusercontent.com%2FPanderMusubi%2Fafvalophaaldata%2Fmaster%2Fics%2F3522%2FAB%2F21_2130.ics)
-
-## Huisnummer 21 met alarm om 2215 ##
-
-https://raw.githubusercontent.com/PanderMusubi/afvalophaaldata/master/ics/3522/AB/21_2215.ics
-
-![QR-code https://raw.githubusercontent.com/PanderMusubi/afvalophaaldata/master/ics/3522/AB/21_2215.ics](https://api.qrserver.com/v1/create-qr-code/?data=https%3A%2F%2Fraw.githubusercontent.com%2FPanderMusubi%2Fafvalophaaldata%2Fmaster%2Fics%2F3522%2FAB%2F21_2215.ics)
 
 ## Huisnummer 21 zonder alarm ##
 
@@ -36,23 +24,11 @@ https://raw.githubusercontent.com/PanderMusubi/afvalophaaldata/master/ics/3522/A
 
 ![QR-code https://raw.githubusercontent.com/PanderMusubi/afvalophaaldata/master/ics/3522/AB/23_0700.ics](https://api.qrserver.com/v1/create-qr-code/?data=https%3A%2F%2Fraw.githubusercontent.com%2FPanderMusubi%2Fafvalophaaldata%2Fmaster%2Fics%2F3522%2FAB%2F23_0700.ics)
 
-## Huisnummer 23 met alarm om 0730 ##
-
-https://raw.githubusercontent.com/PanderMusubi/afvalophaaldata/master/ics/3522/AB/23_0730.ics
-
-![QR-code https://raw.githubusercontent.com/PanderMusubi/afvalophaaldata/master/ics/3522/AB/23_0730.ics](https://api.qrserver.com/v1/create-qr-code/?data=https%3A%2F%2Fraw.githubusercontent.com%2FPanderMusubi%2Fafvalophaaldata%2Fmaster%2Fics%2F3522%2FAB%2F23_0730.ics)
-
 ## Huisnummer 23 met alarm om 2130 ##
 
 https://raw.githubusercontent.com/PanderMusubi/afvalophaaldata/master/ics/3522/AB/23_2130.ics
 
 ![QR-code https://raw.githubusercontent.com/PanderMusubi/afvalophaaldata/master/ics/3522/AB/23_2130.ics](https://api.qrserver.com/v1/create-qr-code/?data=https%3A%2F%2Fraw.githubusercontent.com%2FPanderMusubi%2Fafvalophaaldata%2Fmaster%2Fics%2F3522%2FAB%2F23_2130.ics)
-
-## Huisnummer 23 met alarm om 2215 ##
-
-https://raw.githubusercontent.com/PanderMusubi/afvalophaaldata/master/ics/3522/AB/23_2215.ics
-
-![QR-code https://raw.githubusercontent.com/PanderMusubi/afvalophaaldata/master/ics/3522/AB/23_2215.ics](https://api.qrserver.com/v1/create-qr-code/?data=https%3A%2F%2Fraw.githubusercontent.com%2FPanderMusubi%2Fafvalophaaldata%2Fmaster%2Fics%2F3522%2FAB%2F23_2215.ics)
 
 ## Huisnummer 23 zonder alarm ##
 
@@ -66,23 +42,11 @@ https://raw.githubusercontent.com/PanderMusubi/afvalophaaldata/master/ics/3522/A
 
 ![QR-code https://raw.githubusercontent.com/PanderMusubi/afvalophaaldata/master/ics/3522/AB/25_0700.ics](https://api.qrserver.com/v1/create-qr-code/?data=https%3A%2F%2Fraw.githubusercontent.com%2FPanderMusubi%2Fafvalophaaldata%2Fmaster%2Fics%2F3522%2FAB%2F25_0700.ics)
 
-## Huisnummer 25 met alarm om 0730 ##
-
-https://raw.githubusercontent.com/PanderMusubi/afvalophaaldata/master/ics/3522/AB/25_0730.ics
-
-![QR-code https://raw.githubusercontent.com/PanderMusubi/afvalophaaldata/master/ics/3522/AB/25_0730.ics](https://api.qrserver.com/v1/create-qr-code/?data=https%3A%2F%2Fraw.githubusercontent.com%2FPanderMusubi%2Fafvalophaaldata%2Fmaster%2Fics%2F3522%2FAB%2F25_0730.ics)
-
 ## Huisnummer 25 met alarm om 2130 ##
 
 https://raw.githubusercontent.com/PanderMusubi/afvalophaaldata/master/ics/3522/AB/25_2130.ics
 
 ![QR-code https://raw.githubusercontent.com/PanderMusubi/afvalophaaldata/master/ics/3522/AB/25_2130.ics](https://api.qrserver.com/v1/create-qr-code/?data=https%3A%2F%2Fraw.githubusercontent.com%2FPanderMusubi%2Fafvalophaaldata%2Fmaster%2Fics%2F3522%2FAB%2F25_2130.ics)
-
-## Huisnummer 25 met alarm om 2215 ##
-
-https://raw.githubusercontent.com/PanderMusubi/afvalophaaldata/master/ics/3522/AB/25_2215.ics
-
-![QR-code https://raw.githubusercontent.com/PanderMusubi/afvalophaaldata/master/ics/3522/AB/25_2215.ics](https://api.qrserver.com/v1/create-qr-code/?data=https%3A%2F%2Fraw.githubusercontent.com%2FPanderMusubi%2Fafvalophaaldata%2Fmaster%2Fics%2F3522%2FAB%2F25_2215.ics)
 
 ## Huisnummer 25 zonder alarm ##
 
@@ -96,23 +60,11 @@ https://raw.githubusercontent.com/PanderMusubi/afvalophaaldata/master/ics/3522/A
 
 ![QR-code https://raw.githubusercontent.com/PanderMusubi/afvalophaaldata/master/ics/3522/AB/27_0700.ics](https://api.qrserver.com/v1/create-qr-code/?data=https%3A%2F%2Fraw.githubusercontent.com%2FPanderMusubi%2Fafvalophaaldata%2Fmaster%2Fics%2F3522%2FAB%2F27_0700.ics)
 
-## Huisnummer 27 met alarm om 0730 ##
-
-https://raw.githubusercontent.com/PanderMusubi/afvalophaaldata/master/ics/3522/AB/27_0730.ics
-
-![QR-code https://raw.githubusercontent.com/PanderMusubi/afvalophaaldata/master/ics/3522/AB/27_0730.ics](https://api.qrserver.com/v1/create-qr-code/?data=https%3A%2F%2Fraw.githubusercontent.com%2FPanderMusubi%2Fafvalophaaldata%2Fmaster%2Fics%2F3522%2FAB%2F27_0730.ics)
-
 ## Huisnummer 27 met alarm om 2130 ##
 
 https://raw.githubusercontent.com/PanderMusubi/afvalophaaldata/master/ics/3522/AB/27_2130.ics
 
 ![QR-code https://raw.githubusercontent.com/PanderMusubi/afvalophaaldata/master/ics/3522/AB/27_2130.ics](https://api.qrserver.com/v1/create-qr-code/?data=https%3A%2F%2Fraw.githubusercontent.com%2FPanderMusubi%2Fafvalophaaldata%2Fmaster%2Fics%2F3522%2FAB%2F27_2130.ics)
-
-## Huisnummer 27 met alarm om 2215 ##
-
-https://raw.githubusercontent.com/PanderMusubi/afvalophaaldata/master/ics/3522/AB/27_2215.ics
-
-![QR-code https://raw.githubusercontent.com/PanderMusubi/afvalophaaldata/master/ics/3522/AB/27_2215.ics](https://api.qrserver.com/v1/create-qr-code/?data=https%3A%2F%2Fraw.githubusercontent.com%2FPanderMusubi%2Fafvalophaaldata%2Fmaster%2Fics%2F3522%2FAB%2F27_2215.ics)
 
 ## Huisnummer 27 zonder alarm ##
 
@@ -126,23 +78,11 @@ https://raw.githubusercontent.com/PanderMusubi/afvalophaaldata/master/ics/3522/A
 
 ![QR-code https://raw.githubusercontent.com/PanderMusubi/afvalophaaldata/master/ics/3522/AB/29_0700.ics](https://api.qrserver.com/v1/create-qr-code/?data=https%3A%2F%2Fraw.githubusercontent.com%2FPanderMusubi%2Fafvalophaaldata%2Fmaster%2Fics%2F3522%2FAB%2F29_0700.ics)
 
-## Huisnummer 29 met alarm om 0730 ##
-
-https://raw.githubusercontent.com/PanderMusubi/afvalophaaldata/master/ics/3522/AB/29_0730.ics
-
-![QR-code https://raw.githubusercontent.com/PanderMusubi/afvalophaaldata/master/ics/3522/AB/29_0730.ics](https://api.qrserver.com/v1/create-qr-code/?data=https%3A%2F%2Fraw.githubusercontent.com%2FPanderMusubi%2Fafvalophaaldata%2Fmaster%2Fics%2F3522%2FAB%2F29_0730.ics)
-
 ## Huisnummer 29 met alarm om 2130 ##
 
 https://raw.githubusercontent.com/PanderMusubi/afvalophaaldata/master/ics/3522/AB/29_2130.ics
 
 ![QR-code https://raw.githubusercontent.com/PanderMusubi/afvalophaaldata/master/ics/3522/AB/29_2130.ics](https://api.qrserver.com/v1/create-qr-code/?data=https%3A%2F%2Fraw.githubusercontent.com%2FPanderMusubi%2Fafvalophaaldata%2Fmaster%2Fics%2F3522%2FAB%2F29_2130.ics)
-
-## Huisnummer 29 met alarm om 2215 ##
-
-https://raw.githubusercontent.com/PanderMusubi/afvalophaaldata/master/ics/3522/AB/29_2215.ics
-
-![QR-code https://raw.githubusercontent.com/PanderMusubi/afvalophaaldata/master/ics/3522/AB/29_2215.ics](https://api.qrserver.com/v1/create-qr-code/?data=https%3A%2F%2Fraw.githubusercontent.com%2FPanderMusubi%2Fafvalophaaldata%2Fmaster%2Fics%2F3522%2FAB%2F29_2215.ics)
 
 ## Huisnummer 29 zonder alarm ##
 
@@ -156,23 +96,11 @@ https://raw.githubusercontent.com/PanderMusubi/afvalophaaldata/master/ics/3522/A
 
 ![QR-code https://raw.githubusercontent.com/PanderMusubi/afvalophaaldata/master/ics/3522/AB/31_0700.ics](https://api.qrserver.com/v1/create-qr-code/?data=https%3A%2F%2Fraw.githubusercontent.com%2FPanderMusubi%2Fafvalophaaldata%2Fmaster%2Fics%2F3522%2FAB%2F31_0700.ics)
 
-## Huisnummer 31 met alarm om 0730 ##
-
-https://raw.githubusercontent.com/PanderMusubi/afvalophaaldata/master/ics/3522/AB/31_0730.ics
-
-![QR-code https://raw.githubusercontent.com/PanderMusubi/afvalophaaldata/master/ics/3522/AB/31_0730.ics](https://api.qrserver.com/v1/create-qr-code/?data=https%3A%2F%2Fraw.githubusercontent.com%2FPanderMusubi%2Fafvalophaaldata%2Fmaster%2Fics%2F3522%2FAB%2F31_0730.ics)
-
 ## Huisnummer 31 met alarm om 2130 ##
 
 https://raw.githubusercontent.com/PanderMusubi/afvalophaaldata/master/ics/3522/AB/31_2130.ics
 
 ![QR-code https://raw.githubusercontent.com/PanderMusubi/afvalophaaldata/master/ics/3522/AB/31_2130.ics](https://api.qrserver.com/v1/create-qr-code/?data=https%3A%2F%2Fraw.githubusercontent.com%2FPanderMusubi%2Fafvalophaaldata%2Fmaster%2Fics%2F3522%2FAB%2F31_2130.ics)
-
-## Huisnummer 31 met alarm om 2215 ##
-
-https://raw.githubusercontent.com/PanderMusubi/afvalophaaldata/master/ics/3522/AB/31_2215.ics
-
-![QR-code https://raw.githubusercontent.com/PanderMusubi/afvalophaaldata/master/ics/3522/AB/31_2215.ics](https://api.qrserver.com/v1/create-qr-code/?data=https%3A%2F%2Fraw.githubusercontent.com%2FPanderMusubi%2Fafvalophaaldata%2Fmaster%2Fics%2F3522%2FAB%2F31_2215.ics)
 
 ## Huisnummer 31 zonder alarm ##
 
@@ -186,23 +114,11 @@ https://raw.githubusercontent.com/PanderMusubi/afvalophaaldata/master/ics/3522/A
 
 ![QR-code https://raw.githubusercontent.com/PanderMusubi/afvalophaaldata/master/ics/3522/AB/33_0700.ics](https://api.qrserver.com/v1/create-qr-code/?data=https%3A%2F%2Fraw.githubusercontent.com%2FPanderMusubi%2Fafvalophaaldata%2Fmaster%2Fics%2F3522%2FAB%2F33_0700.ics)
 
-## Huisnummer 33 met alarm om 0730 ##
-
-https://raw.githubusercontent.com/PanderMusubi/afvalophaaldata/master/ics/3522/AB/33_0730.ics
-
-![QR-code https://raw.githubusercontent.com/PanderMusubi/afvalophaaldata/master/ics/3522/AB/33_0730.ics](https://api.qrserver.com/v1/create-qr-code/?data=https%3A%2F%2Fraw.githubusercontent.com%2FPanderMusubi%2Fafvalophaaldata%2Fmaster%2Fics%2F3522%2FAB%2F33_0730.ics)
-
 ## Huisnummer 33 met alarm om 2130 ##
 
 https://raw.githubusercontent.com/PanderMusubi/afvalophaaldata/master/ics/3522/AB/33_2130.ics
 
 ![QR-code https://raw.githubusercontent.com/PanderMusubi/afvalophaaldata/master/ics/3522/AB/33_2130.ics](https://api.qrserver.com/v1/create-qr-code/?data=https%3A%2F%2Fraw.githubusercontent.com%2FPanderMusubi%2Fafvalophaaldata%2Fmaster%2Fics%2F3522%2FAB%2F33_2130.ics)
-
-## Huisnummer 33 met alarm om 2215 ##
-
-https://raw.githubusercontent.com/PanderMusubi/afvalophaaldata/master/ics/3522/AB/33_2215.ics
-
-![QR-code https://raw.githubusercontent.com/PanderMusubi/afvalophaaldata/master/ics/3522/AB/33_2215.ics](https://api.qrserver.com/v1/create-qr-code/?data=https%3A%2F%2Fraw.githubusercontent.com%2FPanderMusubi%2Fafvalophaaldata%2Fmaster%2Fics%2F3522%2FAB%2F33_2215.ics)
 
 ## Huisnummer 33 zonder alarm ##
 
@@ -216,23 +132,11 @@ https://raw.githubusercontent.com/PanderMusubi/afvalophaaldata/master/ics/3522/A
 
 ![QR-code https://raw.githubusercontent.com/PanderMusubi/afvalophaaldata/master/ics/3522/AB/35_0700.ics](https://api.qrserver.com/v1/create-qr-code/?data=https%3A%2F%2Fraw.githubusercontent.com%2FPanderMusubi%2Fafvalophaaldata%2Fmaster%2Fics%2F3522%2FAB%2F35_0700.ics)
 
-## Huisnummer 35 met alarm om 0730 ##
-
-https://raw.githubusercontent.com/PanderMusubi/afvalophaaldata/master/ics/3522/AB/35_0730.ics
-
-![QR-code https://raw.githubusercontent.com/PanderMusubi/afvalophaaldata/master/ics/3522/AB/35_0730.ics](https://api.qrserver.com/v1/create-qr-code/?data=https%3A%2F%2Fraw.githubusercontent.com%2FPanderMusubi%2Fafvalophaaldata%2Fmaster%2Fics%2F3522%2FAB%2F35_0730.ics)
-
 ## Huisnummer 35 met alarm om 2130 ##
 
 https://raw.githubusercontent.com/PanderMusubi/afvalophaaldata/master/ics/3522/AB/35_2130.ics
 
 ![QR-code https://raw.githubusercontent.com/PanderMusubi/afvalophaaldata/master/ics/3522/AB/35_2130.ics](https://api.qrserver.com/v1/create-qr-code/?data=https%3A%2F%2Fraw.githubusercontent.com%2FPanderMusubi%2Fafvalophaaldata%2Fmaster%2Fics%2F3522%2FAB%2F35_2130.ics)
-
-## Huisnummer 35 met alarm om 2215 ##
-
-https://raw.githubusercontent.com/PanderMusubi/afvalophaaldata/master/ics/3522/AB/35_2215.ics
-
-![QR-code https://raw.githubusercontent.com/PanderMusubi/afvalophaaldata/master/ics/3522/AB/35_2215.ics](https://api.qrserver.com/v1/create-qr-code/?data=https%3A%2F%2Fraw.githubusercontent.com%2FPanderMusubi%2Fafvalophaaldata%2Fmaster%2Fics%2F3522%2FAB%2F35_2215.ics)
 
 ## Huisnummer 35 zonder alarm ##
 
@@ -246,23 +150,11 @@ https://raw.githubusercontent.com/PanderMusubi/afvalophaaldata/master/ics/3522/A
 
 ![QR-code https://raw.githubusercontent.com/PanderMusubi/afvalophaaldata/master/ics/3522/AB/37_0700.ics](https://api.qrserver.com/v1/create-qr-code/?data=https%3A%2F%2Fraw.githubusercontent.com%2FPanderMusubi%2Fafvalophaaldata%2Fmaster%2Fics%2F3522%2FAB%2F37_0700.ics)
 
-## Huisnummer 37 met alarm om 0730 ##
-
-https://raw.githubusercontent.com/PanderMusubi/afvalophaaldata/master/ics/3522/AB/37_0730.ics
-
-![QR-code https://raw.githubusercontent.com/PanderMusubi/afvalophaaldata/master/ics/3522/AB/37_0730.ics](https://api.qrserver.com/v1/create-qr-code/?data=https%3A%2F%2Fraw.githubusercontent.com%2FPanderMusubi%2Fafvalophaaldata%2Fmaster%2Fics%2F3522%2FAB%2F37_0730.ics)
-
 ## Huisnummer 37 met alarm om 2130 ##
 
 https://raw.githubusercontent.com/PanderMusubi/afvalophaaldata/master/ics/3522/AB/37_2130.ics
 
 ![QR-code https://raw.githubusercontent.com/PanderMusubi/afvalophaaldata/master/ics/3522/AB/37_2130.ics](https://api.qrserver.com/v1/create-qr-code/?data=https%3A%2F%2Fraw.githubusercontent.com%2FPanderMusubi%2Fafvalophaaldata%2Fmaster%2Fics%2F3522%2FAB%2F37_2130.ics)
-
-## Huisnummer 37 met alarm om 2215 ##
-
-https://raw.githubusercontent.com/PanderMusubi/afvalophaaldata/master/ics/3522/AB/37_2215.ics
-
-![QR-code https://raw.githubusercontent.com/PanderMusubi/afvalophaaldata/master/ics/3522/AB/37_2215.ics](https://api.qrserver.com/v1/create-qr-code/?data=https%3A%2F%2Fraw.githubusercontent.com%2FPanderMusubi%2Fafvalophaaldata%2Fmaster%2Fics%2F3522%2FAB%2F37_2215.ics)
 
 ## Huisnummer 37 zonder alarm ##
 
@@ -276,23 +168,11 @@ https://raw.githubusercontent.com/PanderMusubi/afvalophaaldata/master/ics/3522/A
 
 ![QR-code https://raw.githubusercontent.com/PanderMusubi/afvalophaaldata/master/ics/3522/AB/39_0700.ics](https://api.qrserver.com/v1/create-qr-code/?data=https%3A%2F%2Fraw.githubusercontent.com%2FPanderMusubi%2Fafvalophaaldata%2Fmaster%2Fics%2F3522%2FAB%2F39_0700.ics)
 
-## Huisnummer 39 met alarm om 0730 ##
-
-https://raw.githubusercontent.com/PanderMusubi/afvalophaaldata/master/ics/3522/AB/39_0730.ics
-
-![QR-code https://raw.githubusercontent.com/PanderMusubi/afvalophaaldata/master/ics/3522/AB/39_0730.ics](https://api.qrserver.com/v1/create-qr-code/?data=https%3A%2F%2Fraw.githubusercontent.com%2FPanderMusubi%2Fafvalophaaldata%2Fmaster%2Fics%2F3522%2FAB%2F39_0730.ics)
-
 ## Huisnummer 39 met alarm om 2130 ##
 
 https://raw.githubusercontent.com/PanderMusubi/afvalophaaldata/master/ics/3522/AB/39_2130.ics
 
 ![QR-code https://raw.githubusercontent.com/PanderMusubi/afvalophaaldata/master/ics/3522/AB/39_2130.ics](https://api.qrserver.com/v1/create-qr-code/?data=https%3A%2F%2Fraw.githubusercontent.com%2FPanderMusubi%2Fafvalophaaldata%2Fmaster%2Fics%2F3522%2FAB%2F39_2130.ics)
-
-## Huisnummer 39 met alarm om 2215 ##
-
-https://raw.githubusercontent.com/PanderMusubi/afvalophaaldata/master/ics/3522/AB/39_2215.ics
-
-![QR-code https://raw.githubusercontent.com/PanderMusubi/afvalophaaldata/master/ics/3522/AB/39_2215.ics](https://api.qrserver.com/v1/create-qr-code/?data=https%3A%2F%2Fraw.githubusercontent.com%2FPanderMusubi%2Fafvalophaaldata%2Fmaster%2Fics%2F3522%2FAB%2F39_2215.ics)
 
 ## Huisnummer 39 zonder alarm ##
 
@@ -306,23 +186,11 @@ https://raw.githubusercontent.com/PanderMusubi/afvalophaaldata/master/ics/3522/A
 
 ![QR-code https://raw.githubusercontent.com/PanderMusubi/afvalophaaldata/master/ics/3522/AB/41_0700.ics](https://api.qrserver.com/v1/create-qr-code/?data=https%3A%2F%2Fraw.githubusercontent.com%2FPanderMusubi%2Fafvalophaaldata%2Fmaster%2Fics%2F3522%2FAB%2F41_0700.ics)
 
-## Huisnummer 41 met alarm om 0730 ##
-
-https://raw.githubusercontent.com/PanderMusubi/afvalophaaldata/master/ics/3522/AB/41_0730.ics
-
-![QR-code https://raw.githubusercontent.com/PanderMusubi/afvalophaaldata/master/ics/3522/AB/41_0730.ics](https://api.qrserver.com/v1/create-qr-code/?data=https%3A%2F%2Fraw.githubusercontent.com%2FPanderMusubi%2Fafvalophaaldata%2Fmaster%2Fics%2F3522%2FAB%2F41_0730.ics)
-
 ## Huisnummer 41 met alarm om 2130 ##
 
 https://raw.githubusercontent.com/PanderMusubi/afvalophaaldata/master/ics/3522/AB/41_2130.ics
 
 ![QR-code https://raw.githubusercontent.com/PanderMusubi/afvalophaaldata/master/ics/3522/AB/41_2130.ics](https://api.qrserver.com/v1/create-qr-code/?data=https%3A%2F%2Fraw.githubusercontent.com%2FPanderMusubi%2Fafvalophaaldata%2Fmaster%2Fics%2F3522%2FAB%2F41_2130.ics)
-
-## Huisnummer 41 met alarm om 2215 ##
-
-https://raw.githubusercontent.com/PanderMusubi/afvalophaaldata/master/ics/3522/AB/41_2215.ics
-
-![QR-code https://raw.githubusercontent.com/PanderMusubi/afvalophaaldata/master/ics/3522/AB/41_2215.ics](https://api.qrserver.com/v1/create-qr-code/?data=https%3A%2F%2Fraw.githubusercontent.com%2FPanderMusubi%2Fafvalophaaldata%2Fmaster%2Fics%2F3522%2FAB%2F41_2215.ics)
 
 ## Huisnummer 41-A met alarm om 0700 ##
 
@@ -330,23 +198,11 @@ https://raw.githubusercontent.com/PanderMusubi/afvalophaaldata/master/ics/3522/A
 
 ![QR-code https://raw.githubusercontent.com/PanderMusubi/afvalophaaldata/master/ics/3522/AB/41-A_0700.ics](https://api.qrserver.com/v1/create-qr-code/?data=https%3A%2F%2Fraw.githubusercontent.com%2FPanderMusubi%2Fafvalophaaldata%2Fmaster%2Fics%2F3522%2FAB%2F41-A_0700.ics)
 
-## Huisnummer 41-A met alarm om 0730 ##
-
-https://raw.githubusercontent.com/PanderMusubi/afvalophaaldata/master/ics/3522/AB/41-A_0730.ics
-
-![QR-code https://raw.githubusercontent.com/PanderMusubi/afvalophaaldata/master/ics/3522/AB/41-A_0730.ics](https://api.qrserver.com/v1/create-qr-code/?data=https%3A%2F%2Fraw.githubusercontent.com%2FPanderMusubi%2Fafvalophaaldata%2Fmaster%2Fics%2F3522%2FAB%2F41-A_0730.ics)
-
 ## Huisnummer 41-A met alarm om 2130 ##
 
 https://raw.githubusercontent.com/PanderMusubi/afvalophaaldata/master/ics/3522/AB/41-A_2130.ics
 
 ![QR-code https://raw.githubusercontent.com/PanderMusubi/afvalophaaldata/master/ics/3522/AB/41-A_2130.ics](https://api.qrserver.com/v1/create-qr-code/?data=https%3A%2F%2Fraw.githubusercontent.com%2FPanderMusubi%2Fafvalophaaldata%2Fmaster%2Fics%2F3522%2FAB%2F41-A_2130.ics)
-
-## Huisnummer 41-A met alarm om 2215 ##
-
-https://raw.githubusercontent.com/PanderMusubi/afvalophaaldata/master/ics/3522/AB/41-A_2215.ics
-
-![QR-code https://raw.githubusercontent.com/PanderMusubi/afvalophaaldata/master/ics/3522/AB/41-A_2215.ics](https://api.qrserver.com/v1/create-qr-code/?data=https%3A%2F%2Fraw.githubusercontent.com%2FPanderMusubi%2Fafvalophaaldata%2Fmaster%2Fics%2F3522%2FAB%2F41-A_2215.ics)
 
 ## Huisnummer 41-A zonder alarm ##
 
@@ -360,23 +216,11 @@ https://raw.githubusercontent.com/PanderMusubi/afvalophaaldata/master/ics/3522/A
 
 ![QR-code https://raw.githubusercontent.com/PanderMusubi/afvalophaaldata/master/ics/3522/AB/41-B_0700.ics](https://api.qrserver.com/v1/create-qr-code/?data=https%3A%2F%2Fraw.githubusercontent.com%2FPanderMusubi%2Fafvalophaaldata%2Fmaster%2Fics%2F3522%2FAB%2F41-B_0700.ics)
 
-## Huisnummer 41-B met alarm om 0730 ##
-
-https://raw.githubusercontent.com/PanderMusubi/afvalophaaldata/master/ics/3522/AB/41-B_0730.ics
-
-![QR-code https://raw.githubusercontent.com/PanderMusubi/afvalophaaldata/master/ics/3522/AB/41-B_0730.ics](https://api.qrserver.com/v1/create-qr-code/?data=https%3A%2F%2Fraw.githubusercontent.com%2FPanderMusubi%2Fafvalophaaldata%2Fmaster%2Fics%2F3522%2FAB%2F41-B_0730.ics)
-
 ## Huisnummer 41-B met alarm om 2130 ##
 
 https://raw.githubusercontent.com/PanderMusubi/afvalophaaldata/master/ics/3522/AB/41-B_2130.ics
 
 ![QR-code https://raw.githubusercontent.com/PanderMusubi/afvalophaaldata/master/ics/3522/AB/41-B_2130.ics](https://api.qrserver.com/v1/create-qr-code/?data=https%3A%2F%2Fraw.githubusercontent.com%2FPanderMusubi%2Fafvalophaaldata%2Fmaster%2Fics%2F3522%2FAB%2F41-B_2130.ics)
-
-## Huisnummer 41-B met alarm om 2215 ##
-
-https://raw.githubusercontent.com/PanderMusubi/afvalophaaldata/master/ics/3522/AB/41-B_2215.ics
-
-![QR-code https://raw.githubusercontent.com/PanderMusubi/afvalophaaldata/master/ics/3522/AB/41-B_2215.ics](https://api.qrserver.com/v1/create-qr-code/?data=https%3A%2F%2Fraw.githubusercontent.com%2FPanderMusubi%2Fafvalophaaldata%2Fmaster%2Fics%2F3522%2FAB%2F41-B_2215.ics)
 
 ## Huisnummer 41-B zonder alarm ##
 
@@ -396,23 +240,11 @@ https://raw.githubusercontent.com/PanderMusubi/afvalophaaldata/master/ics/3522/A
 
 ![QR-code https://raw.githubusercontent.com/PanderMusubi/afvalophaaldata/master/ics/3522/AB/43_0700.ics](https://api.qrserver.com/v1/create-qr-code/?data=https%3A%2F%2Fraw.githubusercontent.com%2FPanderMusubi%2Fafvalophaaldata%2Fmaster%2Fics%2F3522%2FAB%2F43_0700.ics)
 
-## Huisnummer 43 met alarm om 0730 ##
-
-https://raw.githubusercontent.com/PanderMusubi/afvalophaaldata/master/ics/3522/AB/43_0730.ics
-
-![QR-code https://raw.githubusercontent.com/PanderMusubi/afvalophaaldata/master/ics/3522/AB/43_0730.ics](https://api.qrserver.com/v1/create-qr-code/?data=https%3A%2F%2Fraw.githubusercontent.com%2FPanderMusubi%2Fafvalophaaldata%2Fmaster%2Fics%2F3522%2FAB%2F43_0730.ics)
-
 ## Huisnummer 43 met alarm om 2130 ##
 
 https://raw.githubusercontent.com/PanderMusubi/afvalophaaldata/master/ics/3522/AB/43_2130.ics
 
 ![QR-code https://raw.githubusercontent.com/PanderMusubi/afvalophaaldata/master/ics/3522/AB/43_2130.ics](https://api.qrserver.com/v1/create-qr-code/?data=https%3A%2F%2Fraw.githubusercontent.com%2FPanderMusubi%2Fafvalophaaldata%2Fmaster%2Fics%2F3522%2FAB%2F43_2130.ics)
-
-## Huisnummer 43 met alarm om 2215 ##
-
-https://raw.githubusercontent.com/PanderMusubi/afvalophaaldata/master/ics/3522/AB/43_2215.ics
-
-![QR-code https://raw.githubusercontent.com/PanderMusubi/afvalophaaldata/master/ics/3522/AB/43_2215.ics](https://api.qrserver.com/v1/create-qr-code/?data=https%3A%2F%2Fraw.githubusercontent.com%2FPanderMusubi%2Fafvalophaaldata%2Fmaster%2Fics%2F3522%2FAB%2F43_2215.ics)
 
 ## Huisnummer 43-BS met alarm om 0700 ##
 
@@ -420,23 +252,11 @@ https://raw.githubusercontent.com/PanderMusubi/afvalophaaldata/master/ics/3522/A
 
 ![QR-code https://raw.githubusercontent.com/PanderMusubi/afvalophaaldata/master/ics/3522/AB/43-BS_0700.ics](https://api.qrserver.com/v1/create-qr-code/?data=https%3A%2F%2Fraw.githubusercontent.com%2FPanderMusubi%2Fafvalophaaldata%2Fmaster%2Fics%2F3522%2FAB%2F43-BS_0700.ics)
 
-## Huisnummer 43-BS met alarm om 0730 ##
-
-https://raw.githubusercontent.com/PanderMusubi/afvalophaaldata/master/ics/3522/AB/43-BS_0730.ics
-
-![QR-code https://raw.githubusercontent.com/PanderMusubi/afvalophaaldata/master/ics/3522/AB/43-BS_0730.ics](https://api.qrserver.com/v1/create-qr-code/?data=https%3A%2F%2Fraw.githubusercontent.com%2FPanderMusubi%2Fafvalophaaldata%2Fmaster%2Fics%2F3522%2FAB%2F43-BS_0730.ics)
-
 ## Huisnummer 43-BS met alarm om 2130 ##
 
 https://raw.githubusercontent.com/PanderMusubi/afvalophaaldata/master/ics/3522/AB/43-BS_2130.ics
 
 ![QR-code https://raw.githubusercontent.com/PanderMusubi/afvalophaaldata/master/ics/3522/AB/43-BS_2130.ics](https://api.qrserver.com/v1/create-qr-code/?data=https%3A%2F%2Fraw.githubusercontent.com%2FPanderMusubi%2Fafvalophaaldata%2Fmaster%2Fics%2F3522%2FAB%2F43-BS_2130.ics)
-
-## Huisnummer 43-BS met alarm om 2215 ##
-
-https://raw.githubusercontent.com/PanderMusubi/afvalophaaldata/master/ics/3522/AB/43-BS_2215.ics
-
-![QR-code https://raw.githubusercontent.com/PanderMusubi/afvalophaaldata/master/ics/3522/AB/43-BS_2215.ics](https://api.qrserver.com/v1/create-qr-code/?data=https%3A%2F%2Fraw.githubusercontent.com%2FPanderMusubi%2Fafvalophaaldata%2Fmaster%2Fics%2F3522%2FAB%2F43-BS_2215.ics)
 
 ## Huisnummer 43-BS zonder alarm ##
 
@@ -456,23 +276,11 @@ https://raw.githubusercontent.com/PanderMusubi/afvalophaaldata/master/ics/3522/A
 
 ![QR-code https://raw.githubusercontent.com/PanderMusubi/afvalophaaldata/master/ics/3522/AB/45_0700.ics](https://api.qrserver.com/v1/create-qr-code/?data=https%3A%2F%2Fraw.githubusercontent.com%2FPanderMusubi%2Fafvalophaaldata%2Fmaster%2Fics%2F3522%2FAB%2F45_0700.ics)
 
-## Huisnummer 45 met alarm om 0730 ##
-
-https://raw.githubusercontent.com/PanderMusubi/afvalophaaldata/master/ics/3522/AB/45_0730.ics
-
-![QR-code https://raw.githubusercontent.com/PanderMusubi/afvalophaaldata/master/ics/3522/AB/45_0730.ics](https://api.qrserver.com/v1/create-qr-code/?data=https%3A%2F%2Fraw.githubusercontent.com%2FPanderMusubi%2Fafvalophaaldata%2Fmaster%2Fics%2F3522%2FAB%2F45_0730.ics)
-
 ## Huisnummer 45 met alarm om 2130 ##
 
 https://raw.githubusercontent.com/PanderMusubi/afvalophaaldata/master/ics/3522/AB/45_2130.ics
 
 ![QR-code https://raw.githubusercontent.com/PanderMusubi/afvalophaaldata/master/ics/3522/AB/45_2130.ics](https://api.qrserver.com/v1/create-qr-code/?data=https%3A%2F%2Fraw.githubusercontent.com%2FPanderMusubi%2Fafvalophaaldata%2Fmaster%2Fics%2F3522%2FAB%2F45_2130.ics)
-
-## Huisnummer 45 met alarm om 2215 ##
-
-https://raw.githubusercontent.com/PanderMusubi/afvalophaaldata/master/ics/3522/AB/45_2215.ics
-
-![QR-code https://raw.githubusercontent.com/PanderMusubi/afvalophaaldata/master/ics/3522/AB/45_2215.ics](https://api.qrserver.com/v1/create-qr-code/?data=https%3A%2F%2Fraw.githubusercontent.com%2FPanderMusubi%2Fafvalophaaldata%2Fmaster%2Fics%2F3522%2FAB%2F45_2215.ics)
 
 ## Huisnummer 45-BS met alarm om 0700 ##
 
@@ -480,23 +288,11 @@ https://raw.githubusercontent.com/PanderMusubi/afvalophaaldata/master/ics/3522/A
 
 ![QR-code https://raw.githubusercontent.com/PanderMusubi/afvalophaaldata/master/ics/3522/AB/45-BS_0700.ics](https://api.qrserver.com/v1/create-qr-code/?data=https%3A%2F%2Fraw.githubusercontent.com%2FPanderMusubi%2Fafvalophaaldata%2Fmaster%2Fics%2F3522%2FAB%2F45-BS_0700.ics)
 
-## Huisnummer 45-BS met alarm om 0730 ##
-
-https://raw.githubusercontent.com/PanderMusubi/afvalophaaldata/master/ics/3522/AB/45-BS_0730.ics
-
-![QR-code https://raw.githubusercontent.com/PanderMusubi/afvalophaaldata/master/ics/3522/AB/45-BS_0730.ics](https://api.qrserver.com/v1/create-qr-code/?data=https%3A%2F%2Fraw.githubusercontent.com%2FPanderMusubi%2Fafvalophaaldata%2Fmaster%2Fics%2F3522%2FAB%2F45-BS_0730.ics)
-
 ## Huisnummer 45-BS met alarm om 2130 ##
 
 https://raw.githubusercontent.com/PanderMusubi/afvalophaaldata/master/ics/3522/AB/45-BS_2130.ics
 
 ![QR-code https://raw.githubusercontent.com/PanderMusubi/afvalophaaldata/master/ics/3522/AB/45-BS_2130.ics](https://api.qrserver.com/v1/create-qr-code/?data=https%3A%2F%2Fraw.githubusercontent.com%2FPanderMusubi%2Fafvalophaaldata%2Fmaster%2Fics%2F3522%2FAB%2F45-BS_2130.ics)
-
-## Huisnummer 45-BS met alarm om 2215 ##
-
-https://raw.githubusercontent.com/PanderMusubi/afvalophaaldata/master/ics/3522/AB/45-BS_2215.ics
-
-![QR-code https://raw.githubusercontent.com/PanderMusubi/afvalophaaldata/master/ics/3522/AB/45-BS_2215.ics](https://api.qrserver.com/v1/create-qr-code/?data=https%3A%2F%2Fraw.githubusercontent.com%2FPanderMusubi%2Fafvalophaaldata%2Fmaster%2Fics%2F3522%2FAB%2F45-BS_2215.ics)
 
 ## Huisnummer 45-BS zonder alarm ##
 
@@ -516,23 +312,11 @@ https://raw.githubusercontent.com/PanderMusubi/afvalophaaldata/master/ics/3522/A
 
 ![QR-code https://raw.githubusercontent.com/PanderMusubi/afvalophaaldata/master/ics/3522/AB/47_0700.ics](https://api.qrserver.com/v1/create-qr-code/?data=https%3A%2F%2Fraw.githubusercontent.com%2FPanderMusubi%2Fafvalophaaldata%2Fmaster%2Fics%2F3522%2FAB%2F47_0700.ics)
 
-## Huisnummer 47 met alarm om 0730 ##
-
-https://raw.githubusercontent.com/PanderMusubi/afvalophaaldata/master/ics/3522/AB/47_0730.ics
-
-![QR-code https://raw.githubusercontent.com/PanderMusubi/afvalophaaldata/master/ics/3522/AB/47_0730.ics](https://api.qrserver.com/v1/create-qr-code/?data=https%3A%2F%2Fraw.githubusercontent.com%2FPanderMusubi%2Fafvalophaaldata%2Fmaster%2Fics%2F3522%2FAB%2F47_0730.ics)
-
 ## Huisnummer 47 met alarm om 2130 ##
 
 https://raw.githubusercontent.com/PanderMusubi/afvalophaaldata/master/ics/3522/AB/47_2130.ics
 
 ![QR-code https://raw.githubusercontent.com/PanderMusubi/afvalophaaldata/master/ics/3522/AB/47_2130.ics](https://api.qrserver.com/v1/create-qr-code/?data=https%3A%2F%2Fraw.githubusercontent.com%2FPanderMusubi%2Fafvalophaaldata%2Fmaster%2Fics%2F3522%2FAB%2F47_2130.ics)
-
-## Huisnummer 47 met alarm om 2215 ##
-
-https://raw.githubusercontent.com/PanderMusubi/afvalophaaldata/master/ics/3522/AB/47_2215.ics
-
-![QR-code https://raw.githubusercontent.com/PanderMusubi/afvalophaaldata/master/ics/3522/AB/47_2215.ics](https://api.qrserver.com/v1/create-qr-code/?data=https%3A%2F%2Fraw.githubusercontent.com%2FPanderMusubi%2Fafvalophaaldata%2Fmaster%2Fics%2F3522%2FAB%2F47_2215.ics)
 
 ## Huisnummer 47-A met alarm om 0700 ##
 
@@ -540,23 +324,11 @@ https://raw.githubusercontent.com/PanderMusubi/afvalophaaldata/master/ics/3522/A
 
 ![QR-code https://raw.githubusercontent.com/PanderMusubi/afvalophaaldata/master/ics/3522/AB/47-A_0700.ics](https://api.qrserver.com/v1/create-qr-code/?data=https%3A%2F%2Fraw.githubusercontent.com%2FPanderMusubi%2Fafvalophaaldata%2Fmaster%2Fics%2F3522%2FAB%2F47-A_0700.ics)
 
-## Huisnummer 47-A met alarm om 0730 ##
-
-https://raw.githubusercontent.com/PanderMusubi/afvalophaaldata/master/ics/3522/AB/47-A_0730.ics
-
-![QR-code https://raw.githubusercontent.com/PanderMusubi/afvalophaaldata/master/ics/3522/AB/47-A_0730.ics](https://api.qrserver.com/v1/create-qr-code/?data=https%3A%2F%2Fraw.githubusercontent.com%2FPanderMusubi%2Fafvalophaaldata%2Fmaster%2Fics%2F3522%2FAB%2F47-A_0730.ics)
-
 ## Huisnummer 47-A met alarm om 2130 ##
 
 https://raw.githubusercontent.com/PanderMusubi/afvalophaaldata/master/ics/3522/AB/47-A_2130.ics
 
 ![QR-code https://raw.githubusercontent.com/PanderMusubi/afvalophaaldata/master/ics/3522/AB/47-A_2130.ics](https://api.qrserver.com/v1/create-qr-code/?data=https%3A%2F%2Fraw.githubusercontent.com%2FPanderMusubi%2Fafvalophaaldata%2Fmaster%2Fics%2F3522%2FAB%2F47-A_2130.ics)
-
-## Huisnummer 47-A met alarm om 2215 ##
-
-https://raw.githubusercontent.com/PanderMusubi/afvalophaaldata/master/ics/3522/AB/47-A_2215.ics
-
-![QR-code https://raw.githubusercontent.com/PanderMusubi/afvalophaaldata/master/ics/3522/AB/47-A_2215.ics](https://api.qrserver.com/v1/create-qr-code/?data=https%3A%2F%2Fraw.githubusercontent.com%2FPanderMusubi%2Fafvalophaaldata%2Fmaster%2Fics%2F3522%2FAB%2F47-A_2215.ics)
 
 ## Huisnummer 47-A zonder alarm ##
 
@@ -570,23 +342,11 @@ https://raw.githubusercontent.com/PanderMusubi/afvalophaaldata/master/ics/3522/A
 
 ![QR-code https://raw.githubusercontent.com/PanderMusubi/afvalophaaldata/master/ics/3522/AB/47-B_0700.ics](https://api.qrserver.com/v1/create-qr-code/?data=https%3A%2F%2Fraw.githubusercontent.com%2FPanderMusubi%2Fafvalophaaldata%2Fmaster%2Fics%2F3522%2FAB%2F47-B_0700.ics)
 
-## Huisnummer 47-B met alarm om 0730 ##
-
-https://raw.githubusercontent.com/PanderMusubi/afvalophaaldata/master/ics/3522/AB/47-B_0730.ics
-
-![QR-code https://raw.githubusercontent.com/PanderMusubi/afvalophaaldata/master/ics/3522/AB/47-B_0730.ics](https://api.qrserver.com/v1/create-qr-code/?data=https%3A%2F%2Fraw.githubusercontent.com%2FPanderMusubi%2Fafvalophaaldata%2Fmaster%2Fics%2F3522%2FAB%2F47-B_0730.ics)
-
 ## Huisnummer 47-B met alarm om 2130 ##
 
 https://raw.githubusercontent.com/PanderMusubi/afvalophaaldata/master/ics/3522/AB/47-B_2130.ics
 
 ![QR-code https://raw.githubusercontent.com/PanderMusubi/afvalophaaldata/master/ics/3522/AB/47-B_2130.ics](https://api.qrserver.com/v1/create-qr-code/?data=https%3A%2F%2Fraw.githubusercontent.com%2FPanderMusubi%2Fafvalophaaldata%2Fmaster%2Fics%2F3522%2FAB%2F47-B_2130.ics)
-
-## Huisnummer 47-B met alarm om 2215 ##
-
-https://raw.githubusercontent.com/PanderMusubi/afvalophaaldata/master/ics/3522/AB/47-B_2215.ics
-
-![QR-code https://raw.githubusercontent.com/PanderMusubi/afvalophaaldata/master/ics/3522/AB/47-B_2215.ics](https://api.qrserver.com/v1/create-qr-code/?data=https%3A%2F%2Fraw.githubusercontent.com%2FPanderMusubi%2Fafvalophaaldata%2Fmaster%2Fics%2F3522%2FAB%2F47-B_2215.ics)
 
 ## Huisnummer 47-B zonder alarm ##
 
@@ -600,23 +360,11 @@ https://raw.githubusercontent.com/PanderMusubi/afvalophaaldata/master/ics/3522/A
 
 ![QR-code https://raw.githubusercontent.com/PanderMusubi/afvalophaaldata/master/ics/3522/AB/47-C_0700.ics](https://api.qrserver.com/v1/create-qr-code/?data=https%3A%2F%2Fraw.githubusercontent.com%2FPanderMusubi%2Fafvalophaaldata%2Fmaster%2Fics%2F3522%2FAB%2F47-C_0700.ics)
 
-## Huisnummer 47-C met alarm om 0730 ##
-
-https://raw.githubusercontent.com/PanderMusubi/afvalophaaldata/master/ics/3522/AB/47-C_0730.ics
-
-![QR-code https://raw.githubusercontent.com/PanderMusubi/afvalophaaldata/master/ics/3522/AB/47-C_0730.ics](https://api.qrserver.com/v1/create-qr-code/?data=https%3A%2F%2Fraw.githubusercontent.com%2FPanderMusubi%2Fafvalophaaldata%2Fmaster%2Fics%2F3522%2FAB%2F47-C_0730.ics)
-
 ## Huisnummer 47-C met alarm om 2130 ##
 
 https://raw.githubusercontent.com/PanderMusubi/afvalophaaldata/master/ics/3522/AB/47-C_2130.ics
 
 ![QR-code https://raw.githubusercontent.com/PanderMusubi/afvalophaaldata/master/ics/3522/AB/47-C_2130.ics](https://api.qrserver.com/v1/create-qr-code/?data=https%3A%2F%2Fraw.githubusercontent.com%2FPanderMusubi%2Fafvalophaaldata%2Fmaster%2Fics%2F3522%2FAB%2F47-C_2130.ics)
-
-## Huisnummer 47-C met alarm om 2215 ##
-
-https://raw.githubusercontent.com/PanderMusubi/afvalophaaldata/master/ics/3522/AB/47-C_2215.ics
-
-![QR-code https://raw.githubusercontent.com/PanderMusubi/afvalophaaldata/master/ics/3522/AB/47-C_2215.ics](https://api.qrserver.com/v1/create-qr-code/?data=https%3A%2F%2Fraw.githubusercontent.com%2FPanderMusubi%2Fafvalophaaldata%2Fmaster%2Fics%2F3522%2FAB%2F47-C_2215.ics)
 
 ## Huisnummer 47-C zonder alarm ##
 
@@ -636,23 +384,11 @@ https://raw.githubusercontent.com/PanderMusubi/afvalophaaldata/master/ics/3522/A
 
 ![QR-code https://raw.githubusercontent.com/PanderMusubi/afvalophaaldata/master/ics/3522/AB/49_0700.ics](https://api.qrserver.com/v1/create-qr-code/?data=https%3A%2F%2Fraw.githubusercontent.com%2FPanderMusubi%2Fafvalophaaldata%2Fmaster%2Fics%2F3522%2FAB%2F49_0700.ics)
 
-## Huisnummer 49 met alarm om 0730 ##
-
-https://raw.githubusercontent.com/PanderMusubi/afvalophaaldata/master/ics/3522/AB/49_0730.ics
-
-![QR-code https://raw.githubusercontent.com/PanderMusubi/afvalophaaldata/master/ics/3522/AB/49_0730.ics](https://api.qrserver.com/v1/create-qr-code/?data=https%3A%2F%2Fraw.githubusercontent.com%2FPanderMusubi%2Fafvalophaaldata%2Fmaster%2Fics%2F3522%2FAB%2F49_0730.ics)
-
 ## Huisnummer 49 met alarm om 2130 ##
 
 https://raw.githubusercontent.com/PanderMusubi/afvalophaaldata/master/ics/3522/AB/49_2130.ics
 
 ![QR-code https://raw.githubusercontent.com/PanderMusubi/afvalophaaldata/master/ics/3522/AB/49_2130.ics](https://api.qrserver.com/v1/create-qr-code/?data=https%3A%2F%2Fraw.githubusercontent.com%2FPanderMusubi%2Fafvalophaaldata%2Fmaster%2Fics%2F3522%2FAB%2F49_2130.ics)
-
-## Huisnummer 49 met alarm om 2215 ##
-
-https://raw.githubusercontent.com/PanderMusubi/afvalophaaldata/master/ics/3522/AB/49_2215.ics
-
-![QR-code https://raw.githubusercontent.com/PanderMusubi/afvalophaaldata/master/ics/3522/AB/49_2215.ics](https://api.qrserver.com/v1/create-qr-code/?data=https%3A%2F%2Fraw.githubusercontent.com%2FPanderMusubi%2Fafvalophaaldata%2Fmaster%2Fics%2F3522%2FAB%2F49_2215.ics)
 
 ## Huisnummer 49 zonder alarm ##
 

@@ -82,9 +82,9 @@ for address in open('addresses.tsv', 'r'):
         number = basename[7:]
         if path.isfile('ics/{}/{}/{}.ics'.format(decimals, letters, number)):
             tstamp = path.getmtime('ics/{}/{}/{}.ics'.format(decimals, letters, number))
-            if tstamp > now - 4 * 86400:  # not older than four days
+###            if tstamp > now - 4 * 86400:  # not older than four days
 #                print('INFO: Cache not yet expired')
-                continue
+###                continue
         addresses.append(address)
 
 shuffle(addresses)
@@ -114,12 +114,12 @@ for address in addresses:
         alarm = ''  # no alarm
         if reminder == 'T10H30M':  # maximum, i.e. 21:30 previous day
             alarm = '_2130'
-#        elif reminder == 'T9H15M':  # nine hours and a quarter before
-#            alarm = '_2215'
+        elif reminder == 'T9H15M':  # nine hours and a quarter before
+            alarm = '_2215'
         elif reminder == 'T1H':  # one hour before 08:00
             alarm = '_0700'
-#        elif reminder == 'T30M':  # half hour before 08:00
-#            alarm = '_0730'
+        elif reminder == 'T30M':  # half hour before 08:00
+            alarm = '_0730'
         temp = 'ics/{}/{}/{}{}.tmp.ics'.format(decimals, letters, number, alarm)
         calendar = open(temp, 'w', newline='\r\n')
 

@@ -168,4 +168,4 @@ for address in addresses:
             calendar.write(line)
         rename(temp, '{}'.format(temp.replace('.tmp.ics', '.ics')))
 
-    sleep(uniform(5, 10))
+    sleep(uniform(2, 6))

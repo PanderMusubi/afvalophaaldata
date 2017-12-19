@@ -43,7 +43,7 @@ def month_to_number(month):
 
 # date and time
 utcnow = datetime.utcnow()
-year = utcnow.strftime('%Y')
+yearnow = utcnow.strftime('%Y')
 dtstamp = utcnow.strftime('%Y%m%dT%H%M%SZ')
 now = time()
 
@@ -134,7 +134,15 @@ for address in addresses:
                 name = second[0].replace(',', '\,')
                 second = second[1].replace('<br />', '')
                 second = second.split('">')[1]
-                (day_name, day, month) = second.split(' ')
+                second = second.split(' ')
+                day_name = None
+                day = None
+                month = None
+                year = yearnow
+                if len(second) == 4:
+                    (day_name, day, month, year) = second
+                else:
+                    (day_name, day, month) = second
                 month = month_to_number(month)
    
                 calendar.write('{}{}\n'.format(

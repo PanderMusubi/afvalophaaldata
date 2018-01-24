@@ -90,6 +90,7 @@ for address in open('addresses.tsv', 'r'):
 shuffle(addresses)
 count = 0
 for address in addresses:
+    sleep(uniform(3, 6))
     count += 1
     print('{}/{} {}'.format(count, len(addresses), address))
     basename = address.replace('/', '-')
@@ -176,4 +177,3 @@ for address in addresses:
             calendar.write(line)
         rename(temp, '{}'.format(temp.replace('.tmp.ics', '.ics')))
 
-    sleep(uniform(3, 6))

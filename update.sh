@@ -21,8 +21,8 @@ do
             else
                 echo -e "## Huisnummer `echo $k|sed -e 's/_.*//'|sed -e 's/\.ics//'` met alarm om `echo $k|sed -e 's/.*_//'|sed -e 's/\.ics//'` ##\n" >> README.md
             fi
-            echo -e "https://raw.githubusercontent.com/PanderMusubi/afvalophaaldata/master/ics/$i/$j/$k\n" >> README.md
-            echo -e "![QR-code https://raw.githubusercontent.com/PanderMusubi/afvalophaaldata/master/ics/$i/$j/$k](https://api.qrserver.com/v1/create-qr-code/?data=https%3A%2F%2Fraw.githubusercontent.com%2FPanderMusubi%2Fafvalophaaldata%2Fmaster%2Fics%2F$i%2F$j%2F$k)\n" >> README.md
+            echo -e "https://raw.github.com/PanderMusubi/afvalophaaldata/master/ics/$i/$j/$k\n" >> README.md
+            echo -e "![QR-code https://raw.github.com/PanderMusubi/afvalophaaldata/master/ics/$i/$j/$k](https://api.qrserver.com/v1/create-qr-code/?data=https%3A%2F%2Fraw.github.com%2FPanderMusubi%2Fafvalophaaldata%2Fmaster%2Fics%2F$i%2F$j%2F$k)\n" >> README.md
         done
         cd ..
     done

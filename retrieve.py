@@ -58,13 +58,13 @@ event_seq = 1
 
 # create ICS header
 collection_header = ''
-event_header = open('templates/event-header.txt', 'r')
+event_header = open('templates/event-header.txt')
 for line in event_header:
     collection_header += line.replace('DTSTAMP:', 'DTSTAMP:{}'.format(dtstamp))
 
 # create ICS footer
 collection_footer = ''
-event_footer = open('templates/event-footer.txt', 'r')
+event_footer = open('templates/event-footer.txt')
 for line in event_footer:
     collection_footer += line
 
@@ -73,7 +73,7 @@ if not path.exists('ics'):
     mkdir('ics')
 
 addresses = []
-for address in open('addresses.tsv', 'r'):
+for address in open('addresses.tsv'):
     address = address[:-1].replace('\t', '/')
     if address != '' and address[0] != '#':
         basename = address.replace('/', '-')
@@ -124,7 +124,7 @@ for address in addresses:
         temp = 'ics/{}/{}/{}{}.tmp.ics'.format(decimals, letters, number, alarm)
         calendar = open(temp, 'w', newline='\r\n')
 
-        calendar_header = open('templates/calendar-header.txt', 'r')
+        calendar_header = open('templates/calendar-header.txt')
         for line in calendar_header:
             calendar.write(line)
 
@@ -172,7 +172,7 @@ for address in addresses:
 
                 calendar.write(collection_footer)
 
-        calendar_footer = open('templates/calendar-footer.txt', 'r')
+        calendar_footer = open('templates/calendar-footer.txt')
         for line in calendar_footer:
             calendar.write(line)
         rename(temp, '{}'.format(temp.replace('.tmp.ics', '.ics')))

@@ -128,22 +128,26 @@ for address in addresses:
         for line in calendar_header:
             calendar.write(line)
 
-        for line in data:
+        index = 0
+        while index < len(data):
+            line = data[index]
+            index += 1
             if '<a href="#waste-' in line:
                 name = line.split('title="')[1]
-                second = name.split('"><p class="')
-                name = second[0].replace(',', '\,')
-                second = second[1].replace('<br />', '')
-                second = second.split('">')[1]
-                second = second.split(' ')
+                name = name.split('"')[0].replace(',', '\,')
+                index += 1
+                line = data[index]
+                index += 1
+                datum = line.replace('<br />', '').strip()
+                datum = datum.split(' ')
                 day_name = None
                 day = None
                 month = None
                 year = yearnow
-                if len(second) == 4:
-                    (day_name, day, month, year) = second
+                if len(datum) == 4:
+                    (day_name, day, month, year) = datum
                 else:
-                    (day_name, day, month) = second
+                    (day_name, day, month) = datum
                 month = month_to_number(month)
    
                 calendar.write('{}{}\n'.format(

@@ -243,7 +243,7 @@ if names:
         print('  {}'.format(name.replace('\\', '')))
         names_used.write('{}\n'.format(name.replace('\\', '')))
 
-for decimals in sorted(listdir('ics'), key=int):
+for decimals in sorted(listdir('ics')):
     for letters in sorted(listdir('ics{}{}'.format(sep, decimals))):
         readme = open('ics{}{}{}{}{}README.md'.format(sep, decimals, sep, letters, sep), 'w')
         readme.write('# QR-codes postcode {} {}\n\n'.format(decimals, letters))

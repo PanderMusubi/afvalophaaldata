@@ -6,7 +6,8 @@
 # date: 2016-03-24
 
 from datetime import datetime, timedelta
-from os import chdir, getpid, listdir, makedirs, path, rename, remove, sep, symlink
+from os import getpid, listdir, makedirs, path, rename, remove, sep
+#from os import chdir, symlink
 from random import uniform, shuffle
 from socket import getfqdn
 from time import sleep, time
@@ -121,8 +122,10 @@ for address in open('addresses.tsv'):
                 tstamp = path.getmtime(main_path)
                 if tstamp > now - 4 * 86400:  # not older than four days
                     print('INFO: Cache not yet expired for {}'.format(address))
+                    main = None #FIXME
                     continue
             addresses[main] = []
+            main = None #FIXME
         else:
             if main in addresses:
                 addresses[main].append(address)
@@ -218,19 +221,20 @@ for address in shuffled:
             calendar.write(line)
         rename(temp, '{}'.format(temp.replace('.tmp.ics', '.ics')))
 
-for main, links in sorted(addresses.items()):
-    main_file = address_to_file(main)
-    chdir(address_to_dir(main))
-    for link in links:
-        for reminder in reminders:
-            link_file = address_to_file(link)
-            alarm = reminder_to_alarm(reminder)
-            src = link_file.replace('.ics', '{}.ics'.format(alarm))
-            dst = main_file.replace('.ics', '{}.ics'.format(alarm))
-            if path.exists(src):
-                remove(src)
-            symlink(dst, src)
-    chdir('..{}..{}..'.format(sep, sep))
+# doesn't work on github, see https://stackoverflow.com/questions/954560/how-does-git-handle-symbolic-links
+# for main, links in sorted(addresses.items()):
+#     main_file = address_to_file(main)
+#     chdir(address_to_dir(main))
+#     for link in links:
+#         for reminder in reminders:
+#             link_file = address_to_file(link)
+#             alarm = reminder_to_alarm(reminder)
+#             src = link_file.replace('.ics', '{}.ics'.format(alarm))
+#             dst = main_file.replace('.ics', '{}.ics'.format(alarm))
+#             if path.exists(src):
+#                 remove(src)
+#             symlink(dst, src)
+#     chdir('..{}..{}..'.format(sep, sep))
 
 if names:
     print('Found following summaries:')
@@ -239,7 +243,7 @@ if names:
         print('  {}'.format(name.replace('\\', '')))
         names_used.write('{}\n'.format(name.replace('\\', '')))
 
-for decimals in sorted(listdir('ics')):
+for decimals in sorted(listdir('ics'), key=int):
     for letters in sorted(listdir('ics{}{}'.format(sep, decimals))):
         readme = open('ics{}{}{}{}{}README.md'.format(sep, decimals, sep, letters, sep), 'w')
         readme.write('# QR-codes postcode {} {}\n\n'.format(decimals, letters))

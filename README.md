@@ -172,7 +172,9 @@ The workaround for Thunderbird is to go to Preferences / Calendar / Reminders an
 See also
 --------
 
-See also https://github.com/PanderMusubi/dutch-holidays
+Please, see also:
+* https://github.com/PanderMusubi/lunar-phase-calendar
+* https://github.com/PanderMusubi/dutch-holidays
 
 For Android users, see also the alternative calendar app Etar from [Google Play](https://play.google.com/store/apps/details?id=ws.xsoh.etar) or [F-Droid](https://f-droid.org/repository/browse/?fdid=ws.xsoh.etar).
 

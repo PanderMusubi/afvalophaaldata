@@ -22,11 +22,11 @@ De kalenders hier zijn in iCalendar of ICS-formaat. Kalendersoftware die de afva
 * voor alleen Windows: [Microsoft Outlook](https://products.office.com/outlook)
 * web-based: [Microsoft Outlook.com](https://outlook.com)
 
-[<img alt="example mobile" src="example-mobile.png?raw=true" width="50%" />](https://raw.github.com/PanderMusubi/afvalophaaldata/master/example-mobile.png)
+[<img alt="example mobile" src="images/example-mobile.png?raw=true" width="50%" />](https://raw.github.com/PanderMusubi/afvalophaaldata/master/images/example-mobile.png)
 
 De meeste kalendersoftware kan deze afvaalophaaldata weergeven in een kleur naar uw keuze. In sommige software is het ook mogelijk en een onderscheidende kleur in te stellen voor de kalendercategorie `Afvalophaal`.
 
-[![example](example.png?raw=true)](https://raw.github.com/PanderMusubi/afvalophaaldata/master/example.png)
+[![example](images/example.png?raw=true)](https://raw.github.com/PanderMusubi/afvalophaaldata/master/images/example.png)
 
 Warning: Please, do **not** import these ICS files into your calendar as they will be added only once and never get updated. Add these calendars as a shared (read-only) network calendar. These calendars do not need frequent updates, however, sometimes bugs are fixed, functionality is added or garbage collection change due to holidays or local events. Most software offer a daily update frequency, which is fine for these calendars. Syncing should also configured to take place only from server to client, computer or phone.
 
@@ -106,11 +106,11 @@ The calendars provided here are in iCalendar or ICS format. Calendar software th
 * for Windows only: [Microsoft Outlook](https://products.office.com/outlook)
 * web-based: [Microsoft Outlook.com](https://outlook.com)
 
-[<img alt="example mobile" src="example-mobile.png?raw=true" width="50%" />](https://raw.github.com/PanderMusubi/afvalophaaldata/master/example-mobile.png)
+[<img alt="example mobile" src="images/example-mobile.png?raw=true" width="50%" />](https://raw.github.com/PanderMusubi/afvalophaaldata/master/images/example-mobile.png)
 
 Most calendar software can show these garbage collection days to a color of your choice. Also in some software, a distinction in color can be configured according to the calendar category `Afvalophaal`.
 
-[![example](example.png?raw=true)](https://raw.github.com/PanderMusubi/afvalophaaldata/master/example.png)
+[![example](images/example.png?raw=true)](https://raw.github.com/PanderMusubi/afvalophaaldata/master/images/example.png)
 
 Warning: Please, do **not** import these ICS files into your calendar as they will be added only once and never get updated. Add these calendars as a shared (read-only) network calendar. These calendars do not need frequent updates, however, sometimes bugs are fixed, functionality is added or garbage collection change due to holidays or local events. Most software offer a daily update frequency, which is fine for these calendars. Syncing should also configured to take place only from server to client, computer or phone.
 

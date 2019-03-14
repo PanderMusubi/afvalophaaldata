@@ -122,7 +122,7 @@ for address in open('addresses.tsv'):
                 tstamp = path.getmtime(main_path)
                 if tstamp > now - 4 * 86400:  # not older than four days
                     print('INFO: Cache not yet expired for {}'.format(address))
-                    main = None #FIXME
+                    main = None #FIXME see below regarding GitHub
                     continue
             addresses[main] = []
             main = None #FIXME
@@ -221,7 +221,7 @@ for address in shuffled:
             calendar.write(line)
         rename(temp, '{}'.format(temp.replace('.tmp.ics', '.ics')))
 
-# doesn't work on github, see https://stackoverflow.com/questions/954560/how-does-git-handle-symbolic-links
+# doesn't work on GitHub, see https://stackoverflow.com/questions/954560/how-does-git-handle-symbolic-links
 # for main, links in sorted(addresses.items()):
 #     main_file = address_to_file(main)
 #     chdir(address_to_dir(main))

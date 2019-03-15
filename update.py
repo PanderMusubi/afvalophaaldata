@@ -12,32 +12,33 @@ from random import uniform, shuffle
 from socket import getfqdn
 from time import sleep, time
 from urllib import request
+from pandas.tseries.offsets import _WeekOfMonthMixin
 
 
 def month_to_number(month):
-    if month == 'januari':
+    if month.lower() == 'januari':
         return '01'
-    elif month == 'februari':
+    elif month.lower() == 'februari':
         return '02'
-    elif month == 'maart':
+    elif month.lower() == 'maart':
         return '03'
-    elif month == 'april':
+    elif month.lower() == 'april':
         return '04'
-    elif month == 'mei':
+    elif month.lower() == 'mei':
         return '05'
-    elif month == 'juni':
+    elif month.lower() == 'juni':
         return '06'
-    elif month == 'juli':
+    elif month.lower() == 'juli':
         return '07'
-    elif month == 'augustus':
+    elif month.lower() == 'augustus':
         return '08'
-    elif month == 'september':
+    elif month.lower() == 'september':
         return '09'
-    elif month == 'oktober':
+    elif month.lower() == 'oktober':
         return '10'
-    elif month == 'november':
+    elif month.lower() == 'november':
         return '11'
-    elif month == 'december':
+    elif month.lower() == 'december':
         return '12'
     else:
         return ''
@@ -78,86 +79,7 @@ def reminder_to_alarm(reminder):
         return '_0730'
     return ''  # no alarm
 
-
-# reminders at, before and after
-#reminders = ('', 'T10H30M', 'T9H15M', 'T30M', 'T1H')
-reminders =  ('', 'T10H30M', 'T1H')
-
-# date and time
-utcnow = datetime.utcnow()
-yearnow = utcnow.strftime('%Y')
-dtstamp = utcnow.strftime('%Y%m%dT%H%M%SZ')
-now = time()
-
-# event UID
-uid_format='UID:%(date)s-%(pid)d-%(seq)04d-%(lang)s@%(domain)s\n'
-uid_replace_values = {
-    'date': dtstamp,
-    'pid':  getpid(),
-    'domain': getfqdn()
-}
-event_seq = 1
-
-# create ICS header
-collection_header = ''
-event_header = open('templates{}event-header.txt'.format(sep))
-for line in event_header:
-    collection_header += line.replace('DTSTAMP:', 'DTSTAMP:{}'.format(dtstamp))
-
-# create ICS footer
-collection_footer = ''
-event_footer = open('templates{}event-footer.txt'.format(sep))
-for line in event_footer:
-    collection_footer += line
-
-addresses = {}
-main = None
-for address in open('addresses.tsv'):
-    address = address[:-1].replace('\t', '/')
-    if address != '' and address[0] != '#':
-        main_path = address_to_path(address)
-        if main == None:
-            main = address
-            if path.isfile(main_path):
-                tstamp = path.getmtime(main_path)
-                if tstamp > now - 4 * 86400:  # not older than four days
-                    print('INFO: Cache not yet expired for {}'.format(address))
-                    main = None #FIXME see below regarding GitHub
-                    continue
-            addresses[main] = []
-            main = None #FIXME
-        else:
-            if main in addresses:
-                addresses[main].append(address)
-    elif address == '':
-        main = None
-
-shuffled = list(set(addresses))
-shuffle(shuffled)
-count = 0
-names = set()
-if shuffled:
-    print('Updating following addresses:')
-for address in shuffled:
-    sleep(uniform(3, 6))
-    count += 1
-    print('  {}/{} {}'.format(count, len(shuffled), address))
-    basename = address.replace('/', '-')
-    decimals = basename[:4]
-    letters = basename[4:6]
-    number = basename[7:]
-    dir = address_to_dir(address)
-    if not path.exists(dir):
-        makedirs(dir, exist_ok=True)
-
-    url = 'http://www.mijnafvalwijzer.nl/nl/{}/'.format(address)
-    try:
-        data = request.urlopen(url).read().decode('utf-8')
-    except:
-        print('WARNING: Could not retrieve url {}'.format(url))
-        continue
-
-    data = data.split('\n')
+def write_mad(data, event_seq):
     for reminder in reminders:
         alarm = reminder_to_alarm(reminder)
         temp = 'ics{}{}{}{}{}{}{}.tmp.ics'.format(sep, decimals, sep, letters, sep, number, alarm)
@@ -175,6 +97,7 @@ for address in shuffled:
                 name = line.split('title="')[1]
                 name = name.split('"')[0].replace(',', '\,')
                 names.add(name)
+                line = data[index]
                 index += 1
                 line = data[index]
                 index += 1
@@ -220,6 +143,171 @@ for address in shuffled:
         for line in calendar_footer:
             calendar.write(line)
         rename(temp, '{}'.format(temp.replace('.tmp.ics', '.ics')))
+    return event_seq
+
+def write_rmn(data, event_seq):
+    for reminder in reminders:
+        alarm = reminder_to_alarm(reminder)
+        temp = 'ics{}{}{}{}{}{}{}.tmp.ics'.format(sep, decimals, sep, letters, sep, number, alarm)
+        calendar = open(temp, 'w', newline='\r\n')
+
+        calendar_header = open('templates{}calendar-header.txt'.format(sep))
+        for line in calendar_header:
+            calendar.write(line)
+
+        index = 0
+        day = None
+        month = None
+        year = None
+        start_month = False
+        while index < len(data):
+            line = data[index]
+            index += 1
+            if '<caption class="std-accent"' in line:
+                line = data[index]
+                index += 1
+                month = line.split('<span>')[1].split(' ')[0]
+                month = month_to_number(month)
+                year = line.split('<span>')[1].split(' ')[1].split('<')[0]
+                start_month = False
+            if 'class="datum">' in line:
+                day = line.split('class="datum">')[1].split('<')[0]
+                if 'class="datum">1<' in line:
+                    start_month = True
+                line = data[index]
+                index += 1
+                if start_month:
+                    while 'class="' not in line:
+                        line = data[index]
+                        index += 1
+                    if 'class="iconafvalstroom"' not in line:
+                        continue
+                    while 'alt="' not in line:
+                        line = data[index]
+                        index += 1
+                    name = line.split('alt="')[1].split('"')[0]
+                    calendar.write('{}{}\n'.format(
+                        collection_header.strip(), name))
+     
+                    # write UID and autoincrement
+                    calendar.write(uid_format % (dict(list(uid_replace_values.items()) + list({ 'lang': 'en', 'seq': event_seq }.items()))))
+                    event_seq += 1
+     
+                    date = datetime.strptime(
+                        '{}{}{}'.format(year, month, day), '%Y%m%d')
+                    calendar.write('DTSTART;VALUE=DATE-TIME:{}T080000\n'.format(
+                        date.strftime('%Y%m%d')))
+                    calendar.write('DTEND;VALUE=DATE-TIME:{}T080000\n'.format(
+                        date.strftime('%Y%m%d')))
+# for whole day event, remove the T080000 and add endtime one day later
+#                    date += timedelta(days=1)
+#                    calendar.write('DTEND;VALUE=DATE:{}\n'.format(
+#                        date.strftime('%Y%m%d')))
+                    if reminder != '':
+                        calendar.write('BEGIN:VALARM\n')
+                        calendar.write('ACTION:DISPLAY\n')
+                        calendar.write('TRIGGER;VALUE=DURATION:-P{}\n'.format(reminder))
+                        calendar.write('DESCRIPTION:{} aan de straat zetten\n'.format(name))
+                        calendar.write('END:VALARM\n')
+     
+                    calendar.write(collection_footer)
+
+        calendar_footer = open('templates{}calendar-footer.txt'.format(sep))
+        for line in calendar_footer:
+            calendar.write(line)
+        rename(temp, '{}'.format(temp.replace('.tmp.ics', '.ics')))
+    return event_seq
+
+
+# reminders at, before and after
+#reminders = ('', 'T10H30M', 'T9H15M', 'T30M', 'T1H')
+reminders =  ('', 'T10H30M', 'T1H')
+
+# date and time
+utcnow = datetime.utcnow()
+yearnow = utcnow.strftime('%Y')
+dtstamp = utcnow.strftime('%Y%m%dT%H%M%SZ')
+now = time()
+
+# event UID
+uid_format='UID:%(date)s-%(pid)d-%(seq)04d-%(lang)s@%(domain)s\n'
+uid_replace_values = {
+    'date': dtstamp,
+    'pid':  getpid(),
+    'domain': getfqdn()
+}
+event_seq = 1
+
+# create ICS header
+collection_header = ''
+event_header = open('templates{}event-header.txt'.format(sep))
+for line in event_header:
+    collection_header += line.replace('DTSTAMP:', 'DTSTAMP:{}'.format(dtstamp))
+
+# create ICS footer
+collection_footer = ''
+event_footer = open('templates{}event-footer.txt'.format(sep))
+for line in event_footer:
+    collection_footer += line
+
+addresses = []
+groups = set()
+group = set()
+for address in open('addresses.tsv'):
+    address = address[:-1].replace('\t', '/')
+    if address != '' and address[0] != '#':
+        adress_path = address_to_path(address)
+        if path.isfile(adress_path):
+            tstamp = path.getmtime(adress_path)
+            if tstamp > now - 4 * 86400:  # not older than four days
+                print('INFO: Cache not yet expired for {}'.format(address))
+                continue
+        addresses.append(address)
+        group.add(address)
+    elif address == '':
+        if group:
+            groups.add(tuple(group))
+        group = set()
+
+sources = {}
+count = 0
+names = set()
+if addresses:
+    print('Updating following {} addresses:'.format(len(addresses)))
+    shuffle(addresses)
+for address in addresses:
+    sleep(uniform(3, 6))
+    count += 1
+    print('  {}/{} {}'.format(count, len(addresses), address))
+    basename = address.replace('/', '-')
+    decimals = basename[:4]
+    letters = basename[4:6]
+    number = basename[7:]
+    dir = address_to_dir(address)
+    if not path.exists(dir):
+        makedirs(dir, exist_ok=True)
+
+    source = None
+    url = 'http://www.mijnafvalwijzer.nl/nl/{}/'.format(address)
+    try:
+        data = request.urlopen(url).read().decode('utf-8').split('\n')
+        source = 'maw'
+    except:
+        url = 'https://inzamelschema.rmn.nl/adres/{}:/jaarkalender'.format(address.replace('/', ':'))
+        try:
+            data = request.urlopen(url).read().decode('utf-8').split('\n')
+            source = 'rmn'
+        except Exception as e:
+            print('WARNING: Could not retrieve url {} because {}'.format(url, e))
+            continue
+    if source == 'maw':
+        event_seq = write_mad(data, event_seq)
+    elif source == 'rmn':
+        event_seq = write_rmn(data, event_seq)
+    else:
+        print('ERROR: Unknown source {}'.format(source))
+        continue
+
 
 # doesn't work on GitHub, see https://stackoverflow.com/questions/954560/how-does-git-handle-symbolic-links
 # for main, links in sorted(addresses.items()):

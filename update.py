@@ -5,6 +5,9 @@
 # license: MIT
 # date: 2016-03-24
 
+# List all unique values of SUMMARY with following command
+# grep -rh SUMMARY ics|sort|uniq
+
 from datetime import datetime, timedelta
 from os import getpid, listdir, makedirs, path, rename, remove, sep
 #from os import chdir, symlink
@@ -98,6 +101,7 @@ def write_mad(data, event_seq, names):
         for line in calendar_header:
             calendar.write(line)
 
+        # scraping like it's 1999
         index = 0
         while index < len(data):
             line = data[index]
@@ -165,6 +169,7 @@ def write_rmn(data, event_seq, names):
         for line in calendar_header:
             calendar.write(line)
 
+        # scraping like it's 1999
         index = 0
         day = None
         month = None
@@ -227,6 +232,36 @@ def write_rmn(data, event_seq, names):
         for line in calendar_footer:
             calendar.write(line)
         rename(temp, '{}'.format(temp.replace('.tmp.ics', '.ics')))
+    return event_seq
+
+def write_rova(data, event_seq, names):
+    # scraping like it's 1999
+    index = 0
+    dates = None
+    while index < len(data):
+        line = data[index]
+        index += 1
+        print(line)
+        if '"kalenderContainer"' in line:
+            dates = line.split('afvalkalenderData:\'')[1].split('\'')[0]
+            break
+    if dates == None:
+        return event_seq #FIXME login via post with postcode required, also do logout! also set 'do not remember'
+    
+    for reminder in reminders:
+        
+        alarm = reminder_to_alarm(reminder)
+        temp = 'ics{}{}{}{}{}{}{}.tmp.ics'.format(sep, decimals, sep, letters, sep, number, alarm)
+        calendar = open(temp, 'w', newline='\r\n')
+
+        calendar_header = open('templates{}calendar-header.txt'.format(sep))
+        for line in calendar_header:
+            calendar.write(line)
+
+        for d in dates.split(','):
+            print(d)
+            exit(0)#TODO, see FIXME above
+                
     return event_seq
 
 
@@ -298,23 +333,37 @@ for address in addresses:
     if not path.exists(dir):
         makedirs(dir, exist_ok=True)
 
+    postcode = decimals + letters
+    huisnummer = number.split('-')[0]
+    toevoeging = ''
+    if '-' in number:
+        toevoeging = number.split('-')[1]
+
     source = None
     url = 'http://www.mijnafvalwijzer.nl/nl/{}/'.format(address)
     try:
         data = request.urlopen(url).read().decode('utf-8').split('\n')
         source = 'maw'
     except:
-        url = 'https://inzamelschema.rmn.nl/adres/{}:/jaarkalender'.format(address.replace('/', ':'))
+        url = 'https://inzamelschema.rmn.nl/adres/{}/jaarkalender'.format(address.replace('/', ':'))
         try:
             data = request.urlopen(url).read().decode('utf-8').split('\n')
             source = 'rmn'
         except Exception as e:
-            print('WARNING: Could not retrieve url {} because {}'.format(url, e))
-            continue
+            url = 'http://afvalkalender.rova.nl/rest/login?postcode={}&huisnummer={}&toevoeging={}'.format(postcode, huisnummer, toevoeging)
+            exit(0)
+            try:
+                data = request.urlopen(url).read().decode('utf-8').split('\n')
+                source = 'rova'
+            except Exception as e:
+                print('WARNING: Could not retrieve url {} because {}'.format(url, e))
+                continue
     if source == 'maw':
         event_seq = write_mad(data, event_seq, names)
     elif source == 'rmn':
         event_seq = write_rmn(data, event_seq, names)
+    elif source == 'rova':
+        event_seq = write_rova(data, event_seq, names)
     else:
         print('ERROR: Unknown source {}'.format(source))
         continue
@@ -345,7 +394,7 @@ if names:
 for decimals in sorted(listdir('ics')):
     for letters in sorted(listdir('ics{}{}'.format(sep, decimals))):
         readme = open('ics{}{}{}{}{}README.md'.format(sep, decimals, sep, letters, sep), 'w')
-        readme.write('# QR-codes postcode {} {}\n\n'.format(decimals, letters))
+        readme.write('# URL\'s postcode {} {}\n\n'.format(decimals, letters))
         for number in sorted(listdir('ics{}{}{}{}'.format(sep, decimals, sep, letters))):
             if number == 'README.md':
                 continue
@@ -356,4 +405,4 @@ for decimals in sorted(listdir('ics')):
             else:
                 readme.write('## Huisnummer {} zonder alarm\n\n'.format(number))
             readme.write('https://raw.github.com/PanderMusubi/afvalophaaldata/master/ics/{}/{}/{}.ics\n\n'.format(decimals, letters, number))
-            readme.write('![QR-code https://raw.github.com/PanderMusubi/afvalophaaldata/master/ics/{}/{}/{}.ics](https://api.qrserver.com/v1/create-qr-code/?data=https%3A%2F%2Fraw.github.com%2FPanderMusubi%2Fafvalophaaldata%2Fmaster%2Fics%2F{}%2F{}%2F{}.ics)\n\n'.format(decimals, letters, number, decimals, letters, number))
+#            readme.write('![QR-code https://raw.github.com/PanderMusubi/afvalophaaldata/master/ics/{}/{}/{}.ics](https://api.qrserver.com/v1/create-qr-code/?data=https%3A%2F%2Fraw.github.com%2FPanderMusubi%2Fafvalophaaldata%2Fmaster%2Fics%2F{}%2F{}%2F{}.ics)\n\n'.format(decimals, letters, number, decimals, letters, number))

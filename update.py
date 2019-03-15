@@ -79,6 +79,15 @@ def reminder_to_alarm(reminder):
         return '_0730'
     return ''  # no alarm
 
+def improve_name(name):
+    if name == 'Groente, fruit- en tuinafval':
+        name = 'Groente, Fruit- en Tuinafval (GFT)'
+    elif name == 'Papier en karton':
+        name = 'Papier en Karton'
+    elif name == 'PMD':
+        name = 'Plastic, Metalen en Drankkartons (PMD)'
+    return name.replace(',', '\,').replace(' & ', ' en ')
+
 def write_mad(data, event_seq, names):
     for reminder in reminders:
         alarm = reminder_to_alarm(reminder)
@@ -95,7 +104,8 @@ def write_mad(data, event_seq, names):
             index += 1
             if '<a href="#waste-' in line:
                 name = line.split('title="')[1]
-                name = name.split('"')[0].replace(',', '\,')
+                name = name.split('"')[0]
+                name = improve_name(name)
                 names.add(name)
                 line = data[index]
                 index += 1
@@ -186,6 +196,7 @@ def write_rmn(data, event_seq, names):
                         line = data[index]
                         index += 1
                     name = line.split('alt="')[1].split('"')[0]
+                    name = improve_name(name)
                     calendar.write('{}{}\n'.format(
                         collection_header.strip(), name))
      
@@ -301,9 +312,9 @@ for address in addresses:
             print('WARNING: Could not retrieve url {} because {}'.format(url, e))
             continue
     if source == 'maw':
-        event_seq = write_mad(data, event_seq)
+        event_seq = write_mad(data, event_seq, names)
     elif source == 'rmn':
-        event_seq = write_rmn(data, event_seq)
+        event_seq = write_rmn(data, event_seq, names)
     else:
         print('ERROR: Unknown source {}'.format(source))
         continue

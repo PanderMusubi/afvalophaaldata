@@ -79,7 +79,7 @@ def reminder_to_alarm(reminder):
         return '_0730'
     return ''  # no alarm
 
-def write_mad(data, event_seq):
+def write_mad(data, event_seq, names):
     for reminder in reminders:
         alarm = reminder_to_alarm(reminder)
         temp = 'ics{}{}{}{}{}{}{}.tmp.ics'.format(sep, decimals, sep, letters, sep, number, alarm)
@@ -145,7 +145,7 @@ def write_mad(data, event_seq):
         rename(temp, '{}'.format(temp.replace('.tmp.ics', '.ics')))
     return event_seq
 
-def write_rmn(data, event_seq):
+def write_rmn(data, event_seq, names):
     for reminder in reminders:
         alarm = reminder_to_alarm(reminder)
         temp = 'ics{}{}{}{}{}{}{}.tmp.ics'.format(sep, decimals, sep, letters, sep, number, alarm)
@@ -341,7 +341,7 @@ for decimals in sorted(listdir('ics')):
             number = number.replace('.ics', '')
             if '_' in number:
                 alarm = number.split('_')[1]
-                readme.write('## Huisnummer {} met alarm om {}.{} uur\n\n'.format(number, alarm[:2], alarm[2:]))
+                readme.write('## Huisnummer {} met alarm om {}.{} uur\n\n'.format(number.split('_')[0], alarm[:2], alarm[2:]))
             else:
                 readme.write('## Huisnummer {} zonder alarm\n\n'.format(number))
             readme.write('https://raw.github.com/PanderMusubi/afvalophaaldata/master/ics/{}/{}/{}.ics\n\n'.format(decimals, letters, number))

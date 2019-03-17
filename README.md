@@ -5,7 +5,7 @@
 
 ## 1 Inleiding
 
-In Nederland kun je met een website of app zien wanneer je huisvuil wordt
+In Nederland kun je met een website of app zien wanneer jouw huisvuil wordt
 opgehaald. Het gebruik van een dergelijke website kan omslachtig zijn en een app
 vereist rechten op je mobiele apparaat die je privacy niet kunnen waarborgen.
 Mede hierdoor is ook een beweging om zo min mogelijk propriëtaire (en mogelijk
@@ -15,6 +15,10 @@ Dit project biedt de afvalophaaldata voor jouw adres aan die je kan toevoegen
 als een online kalender op je computer of mobiel apparaat. Deze integratie – die
 ook notificaties kan geven – maakt afstemming met andere afspraken makkelijker
 en je hoeft geen vuilnisapp meer op je smartphone of tablet te installeren.
+
+Op deze manier ben je altijd op de hoogte van wijzigingen in de reguliere
+ophaaldagen vanjouw afval. Voorbeelden van hiervan zijn feestdagen of bepaalde
+evenementen bij je in de buurt of wanneer er kerstbomen worden opgehaald.
 
 
 ## 2 Indruk
@@ -32,12 +36,44 @@ van op een computer.
 
 De kalenders hier zijn in iCalendar-formaat (.ics) en zijn te gebruiken door
 de volgende drie stappen te volgen:
-1. Vind de link van de afvalophaalkalender voor jouw adres.
-2. Indien nodig, installeer een kalendersoftware.
+1. Indien nodig, installeer een kalendersoftware.
+2. Vind de link van de afvalophaalkalender voor jouw adres.
 3. Voeg deze link toe aan je kalendersoftware.
 
+**Waarschuwing:** Klik **niet** op links van afvalophaalkalenders! Je moet ze
+alleen kopiëren naar kalendersoftware omdat er anders de volgende problemen
+kunnen optreden:
+* Je webbrowser probeert de link te openen maar weet niet wat er mee moet
+gebeuren en geeft een foutmelding.
+* De huidige kalender wordt gedownload, maar verder gebeurd er niets.
+* De huidige kalender wordt eenmalig geïmporteerd, maar updates blijven uit.
 
-### 3.1 Vind de link voor jouw adres
+
+### 3.1 Installeer kalendersoftware
+
+Waarschijnlijk heb je al software geïnstalleerd om online kalenders te
+gebruiken. Mocht dat niet het geval zijn, afvalophaalkalenders zijn weer te
+geven met:
+
+| Naam              | Android | iOS | macOS | Windows | Linux | Webinterface |
+|-------------------|:-------:|:---:|:-----:|:-------:|:-----:|:------------:|
+| Google Calendar   | [✔](https://play.google.com/store/apps/details?id=com.google.android.calendar) | - | - | - | - | [✔](https://google.com/calendar) |
+| ICSx⁵             | [✔](https://play.google.com/store/apps/details?id=at.bitfire.icsdroid) | - | - | - | - | - |
+| CalDAV-Sync       | [✔](https://play.google.com/store/apps/details?id=org.dmfs.caldav.lib) | - | - | - | - | - |
+| iCloud Calendar   | - | [✔](https://www.apple.com/icloud/#ccm) | - | - | - | - |
+| Thunderbird       | - | - | [✔](https://www.thunderbird.net) | [✔](https://www.thunderbird.net) | [✔](https://www.thunderbird.net) | - |
+| Apple Calendar    | - | - | [✔](https://www.apple.com/macos/what-is) | - | - | - |
+| Microsoft Outlook | - | - | - | [✔](https://products.office.com/outlook) | - | [✔](https://outlook.com) |
+
+De vinkjes in de tabel hebben een link naar de software. ICSx⁵ is ook te vinden
+in de [F-Droid](https://f-droid.org/repository/browse/?fdfilter=calendar&fdid=at.bitfire.icsdroid)
+appstore. Gebruik **geen** software die alleen maar ICS-bestanden kan importeren.
+
+Nogmaals, niet op de kalenderlink klikken, alleen maar de link als tekst
+kopiëren!
+
+
+### 3.2 Vind de link voor jouw adres
 
 In de map genaamd [ics](ics) zijn de kalenders te vinden. Voor elke postcode is
 er een bestand README.md met een overzicht van alle kalenders. Dit is de meest
@@ -65,70 +101,67 @@ Als je postcode er niet bijstaat, dien een verzoek in via een
 [issue](https://github.com/PanderMusubi/afvalophaaldata/issues) maar om
 privacyredenen, noem alleen je postcode en **niet** je huisnummer. Indien
 mogelijk, voeg ook de website toe van de organisatie waar jouw afvalophaaldata
-zijn te vinden. Daarn worden er kalender gemaakt voor alle huisnummers met die
-postcode.
-
-
-### 3.2 Installeer kalendersoftware
-
-Afvalophaalkalenders zijn weer te geven met:
-
-| Naam              | Android | iOS | macOS | Windows | Linux | Webinterface |
-|-------------------|:-------:|:---:|:-----:|:-------:|:-----:|:------------:|
-| Google Calendar   | [✔](https://play.google.com/store/apps/details?id=com.google.android.calendar) | - | - | - | - | [✔](https://google.com/calendar) |
-| ICSx⁵             | [✔](https://play.google.com/store/apps/details?id=at.bitfire.icsdroid) | - | - | - | - | - |
-| CalDAV-Sync       | [✔](https://play.google.com/store/apps/details?id=org.dmfs.caldav.lib) | - | - | - | - | - |
-| iCloud Calendar   | - | [✔](https://www.apple.com/icloud/#ccm) | - | - | - | - |
-| Thunderbird       | - | - | [✔](https://www.thunderbird.net) | [✔](https://www.thunderbird.net) | [✔](https://www.thunderbird.net) | - |
-| Apple Calendar    | - | - | [✔](https://www.apple.com/macos/what-is) | - | - | - |
-| Microsoft Outlook | - | - | - | [✔](https://products.office.com/outlook) | - | [✔](https://outlook.com) |
-
-De vinkjes in de tabel hebben een link naar de software. ICSx⁵ is ook te vinden
-in de [F-Droid](https://f-droid.org/repository/browse/?fdfilter=calendar&fdid=at.bitfire.icsdroid)
-appstore. Gebruik **geen** software die alleen maar ICS-bestanden kan importeren of
-exporteren.
+zijn te vinden. Daarna worden er kalenders voor je gemaakt voor alle huisnummers
+met die postcode.
 
 
 ### 3.3 Voeg jouw link toe aan kalendersoftware
 
-
-
-De meeste kalendersoftware kan deze afvaalophaaldata weergeven in een kleur naar uw keuze. In sommige software is het ook mogelijk en een onderscheidende kleur in te stellen voor de kalendercategorie `Afvalophaal`.
-
-Warning: Please, do **not** import these ICS files into your calendar as they will be added only once and never get updated. Add these calendars as a shared (read-only) network calendar. These calendars do not need frequent updates, however, sometimes bugs are fixed, functionality is added or garbage collection change due to holidays or local events. Most software offer a daily update frequency, which is fine for these calendars. Syncing should also configured to take place only from server to client, computer or phone.
+Nadat je jouw link hebt gekopieerd, plak deze bij in jouw kalendersoftware bij
+het aanmaken van een (alleen-lezen) online netwerk- of ICS-kalender. Meestal kun
+je dan ook instellen wanneer synchronisatie moet plaatsvinden zodat je
+afvalophaalkalender up to date blijft. Zet deze op 24 uur want er zij niet
+zoveel updates. Nogmaals, kies **niet** voor het (eenmalig) importeren van een
+ICS-kalender want die zal zichzelf niet updaten.
 
 
 ## 4 Onderhoud
 
-### 4.1
+### 4.1 Postcodes en huisnummers
 
-<!--Kalender die zijn aangemaakt kunnen gevalideerd worden met:
-* [postcode en huisnummer](http://severinghaus.org/projects/icv/?url=https%3A%2F%2Fraw.github.com%2FPanderMusubi%2Fafvalophaaldata%2Fmaster%2Fics%2F3524%2FDZ%2F172.ics)
-* [postcode, huisnummer en toevoeging](http://severinghaus.org/projects/icv/?url=https%3A%2F%2Fraw.github.com%2FPanderMusubi%2Fafvalophaaldata%2Fmaster%2Fics%2F3521%2FVX%2F90-BS.ics)
-* [postcode, huisnummer en notificatie](http://severinghaus.org/projects/icv/?url=https%3A%2F%2Fraw.github.com%2FPanderMusubi%2Fafvalophaaldata%2Fmaster%2Fics%2F3521%2FEC%2F17_0700.ics)
-* [postcode, huisnummer en notificatie de avond ervoor](http://severinghaus.org/projects/icv/?url=https%3A%2F%2Fraw.github.com%2FPanderMusubi%2Fafvalophaaldata%2Fmaster%2Fics%2F3521%2FEC%2F17_2130.ics)-->
-
-Om huisnummers voor een postcode toe voegen, ga naar https://www.postcode.nl/POSTCODE waar POSTCODE een Nederlandse postcode is zonder een spatie.
+Nederlandse postcodes zijn te vinden op https://www.postcode.nl . Gebruik geen
+huisnummers zonder een woonfuctie. Huisnummers met alleen een bestemming
+bijeenkomstfunctie, industriefunctie en/of winkelfunctie worden hier niet
+ondersteunt omdat die een commerciële afvalophaaldienst moeten gebruiken.
 
 
 ### 4.2 Notificaties in Thunderbird
 
-Voor de kalender in Thunderbird, Lightning, is er een bug met notificaties voor alleen-lezen kalenders. Stem, voeg zinvol commentaar toe, fiks of maak een donatie via [Bounty Source](https://www.bountysource.com/teams/thunderbird/issues) voor de volgende gerelateerde bugs:
+In Thunderbird is een bug met notificaties voor alleen-lezen kalenders. Stem of
+voeg zinvol commentaar toe voor de volgende gerelateerde bugs:
 * https://bugzilla.mozilla.org/show_bug.cgi?id=375209
 * https://bugzilla.mozilla.org/show_bug.cgi?id=496889
 * https://bugzilla.mozilla.org/show_bug.cgi?id=702206
 * https://bugzilla.mozilla.org/show_bug.cgi?id=861594
 
-De workaround voor Thunderbird is om te gaan naar Preferences / Calendar / Reminders en "Show missed reminders" uit te zetten.
+Als dit gebeurd, de workaround voor Thunderbird is om te gaan naar
+`Preferences / Calendar / Reminders` en `Show missed reminders` uit te zetten.
+
+
+<!--###4.3 Validatie
+
+Kalender die zijn aangemaakt kunnen gevalideerd worden met:
+* [postcode en huisnummer](http://severinghaus.org/projects/icv/?url=https%3A%2F%2Fraw.github.com%2FPanderMusubi%2Fafvalophaaldata%2Fmaster%2Fics%2F3524%2FDZ%2F172.ics)
+* [postcode, huisnummer en toevoeging](http://severinghaus.org/projects/icv/?url=https%3A%2F%2Fraw.github.com%2FPanderMusubi%2Fafvalophaaldata%2Fmaster%2Fics%2F3521%2FVX%2F90-BS.ics)
+* [postcode, huisnummer en notificatie](http://severinghaus.org/projects/icv/?url=https%3A%2F%2Fraw.github.com%2FPanderMusubi%2Fafvalophaaldata%2Fmaster%2Fics%2F3521%2FEC%2F17_0700.ics)
+* [postcode, huisnummer en notificatie de avond ervoor](http://severinghaus.org/projects/icv/?url=https%3A%2F%2Fraw.github.com%2FPanderMusubi%2Fafvalophaaldata%2Fmaster%2Fics%2F3521%2FEC%2F17_2130.ics)-->
 
 
 ## 5 Zie ook
 
-Zie ook:
+Zie ook de volgende online kalenders:
 * https://github.com/PanderMusubi/lunar-phase-calendar
 * https://github.com/PanderMusubi/dutch-holidays
 
 Voor Androidgebruikers, zie ook de alternatieve kalenderapp Etar in de appstores [Google Play](https://play.google.com/store/apps/details?id=ws.xsoh.etar) en [F-Droid](https://f-droid.org/repository/browse/?fdid=ws.xsoh.etar).
+
+
+## 6 Licentie
+
+Deze software voor het maken van deze online kalenders met afvalophaaldata en
+bijbehorende handleiding hebben een [MIT](LICENSE)-licentie en zijn mede
+mogelijk gemaakt door de analytische vaardigheden van
+[Hellebaard](http://hellebaard.nl).
 
 
 # Garbage Collection Dates
@@ -144,11 +177,15 @@ app demands rights on your mobile device which cannot guarantee your privacy.
 Partly because of this, there is also a movement to install as less of these
 propietary (and potentially harmful) apps as possible.
 
-This project offers garbage collection data for jour address which you can add
+This project offers garbage collection data for your address which you can add
 as an online calendar on your computer or mobile device. This integration –
 which also supports notifications – improves the coordination with other
 appointments and you do not have to install a garbage app on your smartphone or
 tablet.
+
+In this way, you are always up to date of changes to the schedule of regular
+collection days days of your garbage. Examples of this are public holidays or
+events in your neighbourhood or when Christmas trees are being collected.
 
 
 ## 2 Impression
@@ -165,12 +202,41 @@ The first of on a mobile device and the second on a computer.
 
 the calendars here are in iCalendar format (.ics) and can be used by following
 next three steps:
-1. Find the link for the garbage collection calendar for your address.
-2. If needed, install calendar software.
+1. If needed, install calendar software.
+2. Find the link for the garbage collection calendar for your address.
 3. Add this link to your calendar software.
 
+**Warning:** Do **not** click on links of your garbage collection calendar! Only
+copy these to calendar software, because otherwise the following problems can
+arise:
+* Your web browser does not know what to with it and give an error message.
+* Your calendar will be downloaded, but nothing will happen next.
+* Your calendar will be imported once, but updates will not take place.
 
-### 3.1 Find the link for your address
+Again, do not click on a calender link, only copy the link as text!
+
+
+### 3.1 Install calendar software
+
+Probably, your have already software installed for using online calendars. If
+that is not the case, garbage collection calendars can be show with:
+
+| Name              | Android | iOS | macOS | Windows | Linux | Web interface |
+|-------------------|:-------:|:---:|:-----:|:-------:|:-----:|:------------:|
+| Google Calendar   | [✔](https://play.google.com/store/apps/details?id=com.google.android.calendar) | - | - | - | - | [✔](https://google.com/calendar) |
+| ICSx⁵             | [✔](https://play.google.com/store/apps/details?id=at.bitfire.icsdroid) | - | - | - | - | - |
+| CalDAV-Sync       | [✔](https://play.google.com/store/apps/details?id=org.dmfs.caldav.lib) | - | - | - | - | - |
+| iCloud Calendar   | - | [✔](https://www.apple.com/icloud/#ccm) | - | - | - | - |
+| Thunderbird       | - | - | [✔](https://www.thunderbird.net) | [✔](https://www.thunderbird.net) | [✔](https://www.thunderbird.net) | - |
+| Apple Calendar    | - | - | [✔](https://www.apple.com/macos/what-is) | - | - | - |
+| Microsoft Outlook | - | - | - | [✔](https://products.office.com/outlook) | - | [✔](https://outlook.com) |
+
+Check marks in the table have links to the software. ICSx⁵ can also be found in
+the [F-Droid](https://f-droid.org/repository/browse/?fdfilter=calendar&fdid=at.bitfire.icsdroid)
+app store. Do **not** use software that can only import ICS files.
+
+
+### 3.2 Find the link for your address
 
 See the directory [ics](ics) for available calendars. For every postcode, there
 is a file called README.md with an overview of the calendars for that postcode.
@@ -197,91 +263,64 @@ If your postcode is missing, please request it via an
 [issue](https://github.com/PanderMusubi/afvalophaaldata/issues) but for privacy
 reasons list **only** your postcode and not any house numbers. If possible, also
 add the website where your garbage collection data can be found. Then calendars
-for all house numbers of that postcode will be added.
-
-
-### 3.2 Install calendar software
+will be added for you for all house numbers of that postcode.
 
 
 ### 3.3 Add your link to calendar software
 
-Probably, your system already has calendar software installed. If that is not
-the case, please use a calander from the list below.
-
-
-#### Desktop or laptop
-
-Garbage collection calendars can be show in:
-
-| Name              | Android | iOS | macOS | Windows | Linux | Web interface |
-|-------------------|:-------:|:---:|:-----:|:-------:|:-----:|:------------:|
-| Google Calendar   | [✔](https://play.google.com/store/apps/details?id=com.google.android.calendar) | - | - | - | - | [✔](https://google.com/calendar) |
-| ICSx⁵             | [✔](https://play.google.com/store/apps/details?id=at.bitfire.icsdroid) | - | - | - | - | - |
-| CalDAV-Sync       | [✔](https://play.google.com/store/apps/details?id=org.dmfs.caldav.lib) | - | - | - | - | - |
-| iCloud Calendar   | - | [✔](https://www.apple.com/icloud/#ccm) | - | - | - | - |
-| Thunderbird       | - | - | [✔](https://www.thunderbird.net) | [✔](https://www.thunderbird.net) | [✔](https://www.thunderbird.net) | - |
-| Apple Calendar    | - | - | [✔](https://www.apple.com/macos/what-is) | - | - | - |
-| Microsoft Outlook | - | - | - | [✔](https://products.office.com/outlook) | - | [✔](https://outlook.com) |
-
-Check marks in the table have links to the software. ICSx⁵ can also be found in
-the [F-Droid](https://f-droid.org/repository/browse/?fdfilter=calendar&fdid=at.bitfire.icsdroid)
-app store. Do **not** use software that can only import or export ICS files.
-
-
-## Calendars
-
-Most calendar
-software can show the garbage collection dates in a color of your choice.
-Also in some software, a distinction in color can be configured according to the
-calendar category `Afvalophaal` to which all the dates belong.
-
-Warning: Please, do **not** click on the links of these ICS files. This might
-download the calendar or show it in the browser. Both will not work. Also,
-importing a calendar will lead to adding dates only once and will not update
-these.
-
-Add calendars by copying the link and add them as a shared (read-only) network
-calendar. These calendars do not need frequent updates, however, sometimes bugs
-are fixed, functionality is added or garbage collection change due to holidays
-or local events. Most software offer a daily update frequency, which is fine for
-these calendars. Syncing should also configured to take place only from server
-to client, computer or phone.
+After you have copied your link, please paste this in your calendar software
+when adding a (read-only) online network or ICS calendar. Usually you can choose
+how often synchronization has to be done to keep your garbage collection
+calendar up to date. Set this to 24 hours, because there are not that many
+updates. Again, do **not** choose the (one time) import of the ICS calender as
+it will not update itself. 
 
 
 ## 4 Maintenance
 
-### 4.1
+### 4.1 Postcodes and house numbers
 
-<!--Calendars that have been generated can be validated by:
-* [postcode and number](http://severinghaus.org/projects/icv/?url=https%3A%2F%2Fraw.github.com%2FPanderMusubi%2Fafvalophaaldata%2Fmaster%2Fics%2F3524%2FDZ%2F172.ics)
-* [postcode, number and extension](http://severinghaus.org/projects/icv/?url=https%3A%2F%2Fraw.github.com%2FPanderMusubi%2Fafvalophaaldata%2Fmaster%2Fics%2F3521%2FVX%2F90-BS.ics)
-* [postcode, number and notification in the morning](http://severinghaus.org/projects/icv/?url=https%3A%2F%2Fraw.github.com%2FPanderMusubi%2Fafvalophaaldata%2Fmaster%2Fics%2F3521%2FEC%2F17_0700.ics)
-* [postcode, number and notification in the evening before](http://severinghaus.org/projects/icv/?url=https%3A%2F%2Fraw.github.com%2FPanderMusubi%2Fafvalophaaldata%2Fmaster%2Fics%2F3521%2FEC%2F17_2130.ics)-->
-
-Add all house numbers for a postcode via https://www.postcode.nl/POSTCODE where POSTCODE is a Dutch postcode without a space.
-
-See https://postcode.nl note that often bijeenkomstfunctie, industriefunctie
-and/or winkelfunctie are not supported for garbage collection as the need
-to use a commercial garbage service.
-
+Dutch postcodes can be found with https://www.postcode.nl . Do not use house
+numbers without a residence (*woonfunctie*) designation. House numbers with only
+a designation of *bijeenkomstfunctie*, *industriefunctie* and/or *winkelfunctie*
+will not be supported for garbage collection as these need to use a commercial
+garbage collection service.
 
 
 ### 4.2 Notifications in Thunderbird
 
-For Thunderbird calender, Lightning, there is a bug with notifications for read-only calendars. Please vote, add a useful comment, fix or pledge a bounty via [Bounty Source](https://www.bountysource.com/teams/thunderbird/issues) for the following related bugs:
+In Thunderbird is a bug with notifications for read-only calendars. Please vote
+or add a useful comment for the following related bugs:
 * https://bugzilla.mozilla.org/show_bug.cgi?id=375209
 * https://bugzilla.mozilla.org/show_bug.cgi?id=496889
 * https://bugzilla.mozilla.org/show_bug.cgi?id=702206
 * https://bugzilla.mozilla.org/show_bug.cgi?id=861594
 
-The workaround for Thunderbird is to go to Preferences / Calendar / Reminders and disable "Show missed reminders".
+If this bug occurs, the workaround for Thunderbird is to go to
+`Preferences / Calendar / Reminders` and disable `Show missed reminders`.
+
+
+<!--### 4.3 Validation
+
+Calendars that have been generated can be validated by:
+* [postcode and number](http://severinghaus.org/projects/icv/?url=https%3A%2F%2Fraw.github.com%2FPanderMusubi%2Fafvalophaaldata%2Fmaster%2Fics%2F3524%2FDZ%2F172.ics)
+* [postcode, number and extension](http://severinghaus.org/projects/icv/?url=https%3A%2F%2Fraw.github.com%2FPanderMusubi%2Fafvalophaaldata%2Fmaster%2Fics%2F3521%2FVX%2F90-BS.ics)
+* [postcode, number and notification in the morning](http://severinghaus.org/projects/icv/?url=https%3A%2F%2Fraw.github.com%2FPanderMusubi%2Fafvalophaaldata%2Fmaster%2Fics%2F3521%2FEC%2F17_0700.ics)
+* [postcode, number and notification in the evening before](http://severinghaus.org/projects/icv/?url=https%3A%2F%2Fraw.github.com%2FPanderMusubi%2Fafvalophaaldata%2Fmaster%2Fics%2F3521%2FEC%2F17_2130.ics)-->
 
 
 ## 5 See also
 
-Please, see also:
+Please, see also these other online calendars:
 * https://github.com/PanderMusubi/lunar-phase-calendar
 * https://github.com/PanderMusubi/dutch-holidays
 
 For Android users, see also the alternative calendar app Etar from [Google Play](https://play.google.com/store/apps/details?id=ws.xsoh.etar) or [F-Droid](https://f-droid.org/repository/browse/?fdid=ws.xsoh.etar).
+
+
+## 6 License
+
+The software for making these online calendars with garbage collection dates and
+accompanying manual have an [MIT](LICENSE) license and have been made possible
+with the analytic skills of [Hellebaard](http://hellebaard.nl).
 

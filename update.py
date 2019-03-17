@@ -351,7 +351,6 @@ for address in addresses:
             source = 'rmn'
         except Exception as e:
             url = 'http://afvalkalender.rova.nl/rest/login?postcode={}&huisnummer={}&toevoeging={}'.format(postcode, huisnummer, toevoeging)
-            exit(0)
             try:
                 data = request.urlopen(url).read().decode('utf-8').split('\n')
                 source = 'rova'

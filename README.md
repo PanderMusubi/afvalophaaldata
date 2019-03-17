@@ -108,11 +108,12 @@ met die postcode.
 ### 3.3 Voeg jouw link toe aan kalendersoftware
 
 Nadat je jouw link hebt gekopieerd, plak deze bij in jouw kalendersoftware bij
-het aanmaken van een (alleen-lezen) online netwerk- of ICS-kalender. Meestal kun
-je dan ook instellen wanneer synchronisatie moet plaatsvinden zodat je
-afvalophaalkalender up to date blijft. Zet deze op 24 uur want er zij niet
-zoveel updates. Nogmaals, kies **niet** voor het (eenmalig) importeren van een
-ICS-kalender want die zal zichzelf niet updaten.
+het aanmaken van een (alleen-lezen) online netwerk- of ICS-kalender. Soms heet
+dit abonneren (*suscribe)* op een kalender. Meestal kun je dan ook instellen
+wanneer synchronisatie moet plaatsvinden zodat je afvalophaalkalender up to date
+blijft. Zet deze op 24 uur want er zij niet zoveel updates. Nogmaals, kies
+**niet** voor het (eenmalig) importeren van een ICS-kalender want die zal
+zichzelf niet updaten.
 
 
 ## 4 Onderhoud
@@ -213,7 +214,7 @@ arise:
 * Your calendar will be downloaded, but nothing will happen next.
 * Your calendar will be imported once, but updates will not take place.
 
-Again, do not click on a calender link, only copy the link as text!
+Again, do not click on a calendar link, only copy the link as text!
 
 
 ### 3.1 Install calendar software
@@ -269,11 +270,12 @@ will be added for you for all house numbers of that postcode.
 ### 3.3 Add your link to calendar software
 
 After you have copied your link, please paste this in your calendar software
-when adding a (read-only) online network or ICS calendar. Usually you can choose
-how often synchronization has to be done to keep your garbage collection
-calendar up to date. Set this to 24 hours, because there are not that many
-updates. Again, do **not** choose the (one time) import of the ICS calender as
-it will not update itself. 
+when adding a (read-only) online network or ICS calendar. Sometimes this is
+called to subscribe to a calendar. Usually you can choose how often
+synchronization has to be done to keep your garbage collection calendar up to
+date. Set this to 24 hours, because there are not that many updates. Again, do
+**not** choose the (one time) import of the ICS calender as it will not update
+itself. 
 
 
 ## 4 Maintenance

@@ -241,7 +241,9 @@ def write_rova(data, event_seq, names):
     while index < len(data):
         line = data[index]
         index += 1
-        print(line)
+        if line == 'Geen adres gevonden':
+            print('WARNING: Unsupported address, skipping')
+            return event_seq
         if '"kalenderContainer"' in line:
             dates = line.split('afvalkalenderData:\'')[1].split('\'')[0]
             break
@@ -249,7 +251,6 @@ def write_rova(data, event_seq, names):
         return event_seq #FIXME login via post with postcode required, also do logout! also set 'do not remember'
     
     for reminder in reminders:
-        
         alarm = reminder_to_alarm(reminder)
         temp = 'ics{}{}{}{}{}{}{}.tmp.ics'.format(sep, decimals, sep, letters, sep, number, alarm)
         calendar = open(temp, 'w', newline='\r\n')
@@ -258,6 +259,7 @@ def write_rova(data, event_seq, names):
         for line in calendar_header:
             calendar.write(line)
 
+        print('TODO')
         for d in dates.split(','):
             print(d)
             exit(0)#TODO, see FIXME above
@@ -324,7 +326,7 @@ if addresses:
 for address in addresses:
     sleep(uniform(3, 6))
     count += 1
-    print('  {}/{} {}'.format(count, len(addresses), address))
+    print('{}/{} {}'.format(count, len(addresses), address))
     basename = address.replace('/', '-')
     decimals = basename[:4]
     letters = basename[4:6]
@@ -355,8 +357,13 @@ for address in addresses:
                 data = request.urlopen(url).read().decode('utf-8').split('\n')
                 source = 'rova'
             except Exception as e:
-                print('WARNING: Could not retrieve url {} because {}'.format(url, e))
-                continue
+                url = 'https://www.afvalstoffendienst.nl/login') #TODO
+                try:
+                    data = request.urlopen(url).read().decode('utf-8').split('\n')
+                    source = 'asd'
+                except Exception as e:
+                    print('WARNING: Could not retrieve url {} because {}'.format(url, e))
+                    continue
     if source == 'maw':
         event_seq = write_mad(data, event_seq, names)
     elif source == 'rmn':
@@ -364,7 +371,7 @@ for address in addresses:
     elif source == 'rova':
         event_seq = write_rova(data, event_seq, names)
     else:
-        print('ERROR: Unknown source {}'.format(source))
+        print('ERROR: Unknown source {}, skipping'.format(source))
         continue
 
 
@@ -384,10 +391,10 @@ for address in addresses:
 #     chdir('..{}..{}..'.format(sep, sep))
 
 if names:
-    print('Found following summaries:')
+    print('\nFound following types:')
     names_used = open('names-used-dutch.txt', 'w')
     for name in sorted(names):
-        print('  {}'.format(name.replace('\\', '')))
+        print('{}'.format(name.replace('\\', '')))
         names_used.write('{}\n'.format(name.replace('\\', '')))
 
 for decimals in sorted(listdir('ics')):

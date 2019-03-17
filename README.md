@@ -23,7 +23,7 @@ Om een idee te krijgen hoe afvalophaaldata in je kalender eruit ziet, staan
 hieronder twee voorbeelden. De eerste is van op een mobiel apparaat en de tweede
 van op een computer.
 
-[<img alt="example mobile" src="images/example-etar.png?raw=true" width="50%" />](https://raw.github.com/PanderMusubi/afvalophaaldata/master/images/example-etar.png)
+[<img alt="example mobile" src="images/example-etar-cropped.png?raw=true" width="50%" />](https://raw.github.com/PanderMusubi/afvalophaaldata/master/images/example-etar-cropped.png)
 
 [![example](images/example-thunderbird-cropped.png?raw=true)](https://raw.github.com/PanderMusubi/afvalophaaldata/master/images/example-thunderbird-cropped.png)
 
@@ -32,39 +32,41 @@ van op een computer.
 
 De kalenders hier zijn in iCalendar-formaat (.ics) en zijn te gebruiken door
 de volgende drie stappen te volgen:
-1. Vind de URL van de afvalophaalkalender voor jouw adres.
+1. Vind de link van de afvalophaalkalender voor jouw adres.
 2. Indien nodig, installeer een kalendersoftware.
-3. Voeg deze URL toe aan je kalendersoftware.
+3. Voeg deze link toe aan je kalendersoftware.
 
 
-### 3.1 Vind de URL voor jouw adres
+### 3.1 Vind de link voor jouw adres
 
 In de map genaamd [ics](ics) zijn de kalenders te vinden. Voor elke postcode is
 er een bestand README.md met een overzicht van alle kalenders. Dit is de meest
 makkelijke manier om een specifieke kalender te vinden en toe te voegen aan
 kalendersoftware.
 
-De URL's van de kalenders hebben de volgende opbouw:
+De links van de kalenders hebben de volgende opbouw:
 1. `https://raw.github.com/PanderMusubi/afvalophaaldata/master/ics/`
 2. `DDDD/` (decimalen van de postcode, bijvoorbeeld `3531`)
 3. `LL/` (letters van de postcode, bijvoorbeeld `EB`)
 4. `N` (decimalen van het huisnummer, bijvoorbeeld `2`)
-5. `-EEE` (optionele toevoeging van het huisnummer, bijvoorbeeld `BSA` of `BS`)
+5. `-EEE` (optionele huisnummertoevoeging, bijvoorbeeld `BSA` of `BS`)
 6. `_HHMM` (optionele notificatie, `_2130` avond ervoor, `_0700` in de ochtend)
 7. `.ics`
 
-Aleen bovenstaande twee soorten notificaties zijn beschikbaar. Voorbeelden van
-URL's zijn:
-* https://raw.github.com/PanderMusubi/afvalophaaldata/master/ics/3531/EB/2.ics voor postcode `3531 EB` op huisnummer `2` zonder notificatie
-* https://raw.github.com/PanderMusubi/afvalophaaldata/master/ics/3531/EB/2_0700.ics voor postcode `3531 EB` op huisnummer `2` met een notificatie in de ochtend om 07.00 uur
-* https://raw.github.com/PanderMusubi/afvalophaaldata/master/ics/3531/EB/2_2130.ics voor postcode `3531 EB` op huisnummer `2` met een notificatie de avond ervoor om 21.30 uur
-* https://raw.github.com/PanderMusubi/afvalophaaldata/master/ics/3531/EB/2-BS_2130.ics voor postcode `3531 EB` op huisnummer `2` toevoeging `BS` met een notificatie de avond ervoor om 21.30 uur
-* https://raw.github.com/PanderMusubi/afvalophaaldata/master/ics/3531/EB/2-BSA_2130.ics voor postcode `3531 EB` op huisnummer `2` toevoeging `BSA` met een notificatie de avond ervoor om 21.30 uur
+Alleen bovenstaande twee specifieke notificaties zijn beschikbaar. Voorbeelden
+van links zijn:
+* voor postcode `3531 EB` op huisnummer `2` zonder notificatie<br />`https://raw.github.com/PanderMusubi/afvalophaaldata/master/ics/3531/EB/2.ics`
+* voor postcode `3531 EB` op huisnummer `2` met een notificatie in de ochtend om 07.00<br />`https://raw.github.com/PanderMusubi/afvalophaaldata/master/ics/3531/EB/2_0700.ics`
+* voor postcode `3531 EB` op huisnummer `2` met een notificatie de avond ervoor om 21.30<br />`https://raw.github.com/PanderMusubi/afvalophaaldata/master/ics/3531/EB/2_2130.ics`
+* voor postcode `3531 EB` op huisnummer `2` toevoeging `BS` met een notificatie de avond ervoor om 21.30<br />`https://raw.github.com/PanderMusubi/afvalophaaldata/master/ics/3531/EB/2-BS_2130.ics`
+* voor postcode `3531 EB` op huisnummer `2` toevoeging `BSA` met een notificatie de avond ervoor om 21.30<br />`https://raw.github.com/PanderMusubi/afvalophaaldata/master/ics/3531/EB/2-BSA_2130.ics`
 
 Als je postcode er niet bijstaat, dien een verzoek in via een
 [issue](https://github.com/PanderMusubi/afvalophaaldata/issues) maar om
-privacyredenen, noem alleen je postcode en **niet** je huisnummer. Kalender
-worden dan gegenereerd voor alle huisnummers van die postcode.
+privacyredenen, noem alleen je postcode en **niet** je huisnummer. Indien
+mogelijk, voeg ook de website toe van de organisatie waar jouw afvalophaaldata
+zijn te vinden. Daarn worden er kalender gemaakt voor alle huisnummers met die
+postcode.
 
 
 ### 3.2 Installeer kalendersoftware
@@ -87,7 +89,7 @@ appstore. Gebruik **geen** software die alleen maar ICS-bestanden kan importeren
 exporteren.
 
 
-### 3.3 Voeg je URL toe aan kalendersoftware
+### 3.3 Voeg jouw link toe aan kalendersoftware
 
 
 
@@ -115,8 +117,6 @@ Voor de kalender in Thunderbird, Lightning, is er een bug met notificaties voor 
 * https://bugzilla.mozilla.org/show_bug.cgi?id=375209
 * https://bugzilla.mozilla.org/show_bug.cgi?id=496889
 * https://bugzilla.mozilla.org/show_bug.cgi?id=702206
-* https://bugzilla.mozilla.org/show_bug.cgi?id=769118
-* https://bugzilla.mozilla.org/show_bug.cgi?id=804009
 * https://bugzilla.mozilla.org/show_bug.cgi?id=861594
 
 De workaround voor Thunderbird is om te gaan naar Preferences / Calendar / Reminders en "Show missed reminders" uit te zetten.
@@ -156,7 +156,7 @@ tablet.
 To get an idea how gabarge collection dates look like, below are two examples.
 The first of on a mobile device and the second on a computer.
 
-[<img alt="example mobile" src="images/example-etar.png?raw=true" width="50%" />](https://raw.github.com/PanderMusubi/afvalophaaldata/master/images/example-etar.png)
+[<img alt="example mobile" src="images/example-etar-cropped.png?raw=true" width="50%" />](https://raw.github.com/PanderMusubi/afvalophaaldata/master/images/example-etar-cropped.png)
 
 [![example](images/example-thunderbird-cropped.png?raw=true)](https://raw.github.com/PanderMusubi/afvalophaaldata/master/images/example-thunderbird-cropped.png)
 
@@ -165,44 +165,45 @@ The first of on a mobile device and the second on a computer.
 
 the calendars here are in iCalendar format (.ics) and can be used by following
 next three steps:
-1. Find the URL for the garbage collection calendar for your address.
+1. Find the link for the garbage collection calendar for your address.
 2. If needed, install calendar software.
-3. Add this URL to your calendar software.
+3. Add this link to your calendar software.
 
 
-### 3.1 Find the URL for your address
+### 3.1 Find the link for your address
 
 See the directory [ics](ics) for available calendars. For every postcode, there
 is a file called README.md with an overview of the calendars for that postcode.
 This is the moest easy way to find your calendar.
 
-The URLs to the calendars have the following structure:
+The links to the calendars have the following structure:
 1. `https://raw.github.com/PanderMusubi/afvalophaaldata/master/ics/`
 2. `DDDD/` (decimals from postcode, e.g. `3531`)
 3. `LL/` (letters from postcode, e.g. `EB`)
 4. `N` (decimals from house number, e.g. `2`)
-5. `-EEE` (optional extension to house number, e.g. `BSA` or `BS`)
+5. `-EEE` (optional house number extension, e.g. `BSA` or `BS`)
 6. `_HHMM` (optional notification, `2130` evening before, `0700` for morning)
 7. `.ics`
 
-Note that only two types of notifications are available. The above results in 
+Note that only two exact notifications are available. The above results in 
 he following examples:
-* https://raw.github.com/PanderMusubi/afvalophaaldata/master/ics/3531/EB/2.ics for postcode 3531 EB at house number 2 without a notification
-* https://raw.github.com/PanderMusubi/afvalophaaldata/master/ics/3531/EB/2_0700.ics for postcode 3531 EB at house number 2 with a notification in the morning at 07:00
-* https://raw.github.com/PanderMusubi/afvalophaaldata/master/ics/3531/EB/2_2130.ics for postcode 3531 EB at house number 2 with a notification evening before at 21:30
-* https://raw.github.com/PanderMusubi/afvalophaaldata/master/ics/3531/EB/2-BS_2130.ics for postcode 3531 EB at house number 2 extension BS with a notification evening before at 21:30
-* https://raw.github.com/PanderMusubi/afvalophaaldata/master/ics/3531/EB/2-BSA_2130.ics for postcode 3531 EB at house number 2 extension BSA with a notification evening before at 21:30
+* for postcode `3531 EB` at house number `2` without a notification<br />`https://raw.github.com/PanderMusubi/afvalophaaldata/master/ics/3531/EB/2.ics`
+* for postcode `3531 EB` at house number `2` with a notification in the morning at 07:00<br />`https://raw.github.com/PanderMusubi/afvalophaaldata/master/ics/3531/EB/2_0700.ics`
+* for postcode `3531 EB` at house number `2` with a notification evening before at 21:30<br />`https://raw.github.com/PanderMusubi/afvalophaaldata/master/ics/3531/EB/2_2130.ics`
+* for postcode `3531 EB` at house number `2` extension `BS` with a notification evening before at 21:30<br />`https://raw.github.com/PanderMusubi/afvalophaaldata/master/ics/3531/EB/2-BS_2130.ics`
+* for postcode `3531 EB` at house number `2` extension `BSA` with a notification evening before at 21:30<br />`https://raw.github.com/PanderMusubi/afvalophaaldata/master/ics/3531/EB/2-BSA_2130.ics`
 
 If your postcode is missing, please request it via an
 [issue](https://github.com/PanderMusubi/afvalophaaldata/issues) but for privacy
-reasons list **only** your postcode and not any house numbers. Calendars will be
-generated for all house numbers of that postcode.
+reasons list **only** your postcode and not any house numbers. If possible, also
+add the website where your garbage collection data can be found. Then calendars
+for all house numbers of that postcode will be added.
 
 
 ### 3.2 Install calendar software
 
 
-### 3.3 Add your URL to calendar software
+### 3.3 Add your link to calendar software
 
 Probably, your system already has calendar software installed. If that is not
 the case, please use a calander from the list below.
@@ -271,8 +272,6 @@ For Thunderbird calender, Lightning, there is a bug with notifications for read-
 * https://bugzilla.mozilla.org/show_bug.cgi?id=375209
 * https://bugzilla.mozilla.org/show_bug.cgi?id=496889
 * https://bugzilla.mozilla.org/show_bug.cgi?id=702206
-* https://bugzilla.mozilla.org/show_bug.cgi?id=769118
-* https://bugzilla.mozilla.org/show_bug.cgi?id=804009
 * https://bugzilla.mozilla.org/show_bug.cgi?id=861594
 
 The workaround for Thunderbird is to go to Preferences / Calendar / Reminders and disable "Show missed reminders".

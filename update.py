@@ -357,7 +357,7 @@ for address in addresses:
                 data = request.urlopen(url).read().decode('utf-8').split('\n')
                 source = 'rova'
             except Exception as e:
-                url = 'https://www.afvalstoffendienst.nl/login') #TODO
+                url = 'https://www.afvalstoffendienst.nl/login' #TODO
                 try:
                     data = request.urlopen(url).read().decode('utf-8').split('\n')
                     source = 'asd'

@@ -302,6 +302,7 @@ If this bug occurs, the workaround for Thunderbird is to go to
 `Preferences / Calendar / Reminders` and disable `Show missed reminders`.
 
 
+<!-- sudo apt-get install python3-pandas(-lib?) -->
 <!--### 4.3 Validation
 
 Calendars that have been generated can be validated by:

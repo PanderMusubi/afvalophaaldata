@@ -201,7 +201,7 @@ The first of on a mobile device and the second on a computer.
 
 ## 3 Usage
 
-the calendars here are in iCalendar format (.ics) and can be used by following
+The calendars here are in iCalendar format (.ics) and can be used by following
 next three steps:
 1. If needed, install calendar software.
 2. Find the link for the garbage collection calendar for your address.
@@ -280,6 +280,11 @@ itself.
 
 ## 4 Maintenance
 
+Install Python 3 and the pandas package with:
+
+    sudo apt-get install python3-pandas
+
+
 ### 4.1 Postcodes and house numbers
 
 Dutch postcodes can be found with https://www.postcode.nl . Do not use house
@@ -302,7 +307,6 @@ If this bug occurs, the workaround for Thunderbird is to go to
 `Preferences / Calendar / Reminders` and disable `Show missed reminders`.
 
 
-<!-- sudo apt-get install python3-pandas(-lib?) -->
 <!--### 4.3 Validation
 
 Calendars that have been generated can be validated by:

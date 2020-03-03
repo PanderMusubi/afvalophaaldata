@@ -107,6 +107,8 @@ def write_mad(data, event_seq, names):
             line = data[index]
             index += 1
             if '<a href="#waste-' in line:
+                line = data[index]
+                index += 1
                 name = line.split('title="')[1]
                 name = name.split('"')[0]
                 name = improve_name(name)
@@ -115,8 +117,10 @@ def write_mad(data, event_seq, names):
                 index += 1
                 line = data[index]
                 index += 1
-                datum = line.replace('<br />', '').strip()
-                datum = datum.split(' ')
+                line = data[index]
+                index += 1
+                datum = line.split('<span class="span-line-break">')[1]
+                datum = datum.split('</span>')[0].split(' ')
                 day_name = None
                 day = None
                 month = None

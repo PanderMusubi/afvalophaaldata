@@ -219,8 +219,8 @@ Again, do not click on a calendar link, only copy the link as text!
 
 ### 3.1 Install calendar software
 
-Probably, your have already software installed for using online calendars. If
-that is not the case, garbage collection calendars can be show with:
+Probably, you already have software installed for using online calendars. If
+that is not the case, garbage collection calendars can be shown with:
 
 | Name              | Android | iOS | macOS | Windows | Linux | Web interface |
 |-------------------|:-------:|:---:|:-----:|:-------:|:-----:|:------------:|

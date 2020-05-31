@@ -3,7 +3,6 @@
 # name: retrive.py
 # description: Generate calendars with garbage collection times in iCal format.
 # license: MIT
-# date: 2016-03-24
 
 # List all unique values of SUMMARY with following command
 # grep -rh SUMMARY ics|sort|uniq
@@ -15,7 +14,6 @@ from random import uniform, shuffle
 from socket import getfqdn
 from time import sleep, time
 from urllib import request
-from pandas.tseries.offsets import _WeekOfMonthMixin
 
 
 def month_to_number(month):

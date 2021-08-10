@@ -1,7 +1,7 @@
-dhm
-gft
-kerstbomen
-papier
-pmd
-restafval
-restgft
+Droge herbruikbare materialen (DHM)
+Groente, Fruit- en Tuinafval (GFT)
+Kerstbomen
+Papier
+Plastic, Metalen en Drankkartons (PMD)
+Restafval
+Restgft

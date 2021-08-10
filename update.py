@@ -83,12 +83,22 @@ def reminder_to_alarm(reminder):
 
 def improve_name(name):
     '''Improves name.'''
-    if name == 'Groente, fruit- en tuinafval':
+    if name.lower() == 'groente, fruit- en tuinafval' or name.lower() == 'gft':
         name = 'Groente, Fruit- en Tuinafval (GFT)'
-    elif name == 'Papier en karton':
+    elif name.lower() == 'papier en karton':
         name = 'Papier en Karton'
-    elif name == 'PMD':
+    elif name.lower() == 'papier':
+        name = 'Papier'
+    elif name.lower() == 'restafval':
+        name = 'Restafval'
+    elif name.lower() == 'restgft':
+        name = 'Restgft'
+    elif name.lower() == 'dhm':
+        name = 'Droge Herbruikbare Materialen (DHM)'
+    elif name.lower() == 'pmd':
         name = 'Plastic, Metalen en Drankkartons (PMD)'
+    elif name.lower() == 'kerstbomen':
+        name = 'Kerstbomen'
     return name.replace(',', '\\,').replace(' & ', ' en ')
 
 
@@ -369,7 +379,7 @@ for address in addresses:
                 data = request.urlopen(url).read().decode('utf-8').split('\n')  # pylint:disable=consider-using-with
                 source = 'rova'
             except Exception as e:  # noqa:F841
-                url = 'https://www.afvalstoffendienst.nl/login' #TODO
+                url = 'https://www.afvalstoffendienst.nl/login' #TODO analyse
                 try:
                     data = request.urlopen(url).read().decode('utf-8').split(
                         '\n')

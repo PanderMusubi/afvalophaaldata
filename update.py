@@ -1,13 +1,8 @@
 #!/usr/bin/env python3
-"""
-Generate calendars with garbage collection times in iCal format.
-
-# name: retrive.py
-# license: MIT
+'''Generates calendars with garbage collection times in iCal format.'''
 
 # List all unique values of SUMMARY with following command
 # grep -rh SUMMARY ics|sort|uniq
-"""
 
 from datetime import datetime
 from os import getpid, listdir, makedirs, path, rename, sep
@@ -19,20 +14,7 @@ import sys
 
 
 def month_to_number(month):
-    """
-    Blah blah.
-
-    Parameters
-    ----------
-    month : TYPE
-        DESCRIPTION.
-
-    Returns
-    -------
-    number : TYPE
-        DESCRIPTION.
-
-    """
+    '''Converts month to number.'''
     number = ''
     if month.lower() == 'januari':
         number = '01'
@@ -62,20 +44,7 @@ def month_to_number(month):
 
 
 def address_to_path(address):
-    """
-    Blah blah.
-
-    Parameters
-    ----------
-    month : TYPE
-        DESCRIPTION.
-
-    Returns
-    -------
-    number : TYPE
-        DESCRIPTION.
-
-    """
+    '''Converts address to path.'''
     basename = address.replace('/', '-')
     decimals = basename[:4]
     letters = basename[4:6]
@@ -84,20 +53,7 @@ def address_to_path(address):
 
 
 def address_to_dir(address):
-    """
-    Blah blah.
-
-    Parameters
-    ----------
-    month : TYPE
-        DESCRIPTION.
-
-    Returns
-    -------
-    number : TYPE
-        DESCRIPTION.
-
-    """
+    '''Converts address to directory.'''
     basename = address.replace('/', '-')
     decimals = basename[:4]
     letters = basename[4:6]
@@ -105,40 +61,14 @@ def address_to_dir(address):
 
 
 def address_to_file(address):
-    """
-    Blah blah.
-
-    Parameters
-    ----------
-    month : TYPE
-        DESCRIPTION.
-
-    Returns
-    -------
-    number : TYPE
-        DESCRIPTION.
-
-    """
+    '''Converts address to file name.'''
     basename = address.replace('/', '-')
     number = basename[7:]
     return f'{number}.ics'
 
 
 def reminder_to_alarm(reminder):
-    """
-    Blah blah.
-
-    Parameters
-    ----------
-    month : TYPE
-        DESCRIPTION.
-
-    Returns
-    -------
-    number : TYPE
-        DESCRIPTION.
-
-    """
+    '''Converts reminder to alarm.'''
     alarm = ''  # no alarm
     if reminder == 'T10H30M':  # maximum, i.e. 21:30 previous day
         alarm = '_2130'
@@ -152,20 +82,7 @@ def reminder_to_alarm(reminder):
 
 
 def improve_name(name):
-    """
-    Blah blah.
-
-    Parameters
-    ----------
-    month : TYPE
-        DESCRIPTION.
-
-    Returns
-    -------
-    number : TYPE
-        DESCRIPTION.
-
-    """
+    '''Improves name.'''
     if name == 'Groente, fruit- en tuinafval':
         name = 'Groente, Fruit- en Tuinafval (GFT)'
     elif name == 'Papier en karton':
@@ -175,27 +92,14 @@ def improve_name(name):
     return name.replace(',', '\\,').replace(' & ', ' en ')
 
 
-def write_mad(data, event_seq, names):
-    """
-    Blah blah.
-
-    Parameters
-    ----------
-    month : TYPE
-        DESCRIPTION.
-
-    Returns
-    -------
-    number : TYPE
-        DESCRIPTION.
-
-    """
+def write_mad(data, event_seq, names):  # pylint:disable=too-many-locals
+    '''Writes blah.'''
     for reminder in reminders:
         alarm = reminder_to_alarm(reminder)
         temp = f'ics{sep}{decimals}{sep}{letters}{sep}{number}{alarm}.tmp.ics'
-        calendar = open(temp, 'w', newline='\r\n')
+        calendar = open(temp, 'w', newline='\r\n')  # pylint:disable=consider-using-with
 
-        calendar_header = open(f'templates{sep}calendar-header.txt')
+        calendar_header = open(f'templates{sep}calendar-header.txt')  # pylint:disable=consider-using-with
         for line in calendar_header:
             calendar.write(line)
 
@@ -207,14 +111,10 @@ def write_mad(data, event_seq, names):
             if '<a href="#waste-' in line:
                 line = data[index]
                 index += 1
-                name = line.split('title="')[1]
+                name = line.split('class="')[1]
                 name = name.split('"')[0]
                 name = improve_name(name)
                 names.add(name)
-                line = data[index]
-                index += 1
-                line = data[index]
-                index += 1
                 line = data[index]
                 index += 1
                 datum = line.split('<span class="span-line-break">')[1]
@@ -256,34 +156,21 @@ def write_mad(data, event_seq, names):
 
                 calendar.write(collection_footer)
 
-        calendar_footer = open(f'templates{sep}calendar-footer.txt')
+        calendar_footer = open(f'templates{sep}calendar-footer.txt')  # pylint:disable=consider-using-with
         for line in calendar_footer:
             calendar.write(line)
         rename(temp, temp.replace('.tmp.ics', '.ics'))
     return event_seq
 
 
-def write_rmn(data, event_seq, names):
-    """
-    Blah blah.
-
-    Parameters
-    ----------
-    month : TYPE
-        DESCRIPTION.
-
-    Returns
-    -------
-    number : TYPE
-        DESCRIPTION.
-
-    """
+def write_rmn(data, event_seq):  # pylint:disable=too-many-locals
+    '''Writes blah.'''
     for reminder in reminders:
         alarm = reminder_to_alarm(reminder)
         temp = f'ics{sep}{decimals}{sep}{letters}{sep}{number}{alarm}.tmp.ics'
-        calendar = open(temp, 'w', newline='\r\n')
+        calendar = open(temp, 'w', newline='\r\n')  # pylint:disable=consider-using-with
 
-        calendar_header = open(f'templates{sep}calendar-header.txt')
+        calendar_header = open(f'templates{sep}calendar-header.txt')  # pylint:disable=consider-using-with
         for line in calendar_header:
             calendar.write(line)
 
@@ -326,8 +213,7 @@ def write_rmn(data, event_seq, names):
                     calendar.write(uid_format % (dict(list(uid_replace_values.items()) + list({'lang': 'en', 'seq': event_seq}.items()))))
                     event_seq += 1
 
-                    date = datetime.strptime(
-                        '{}{}{}'.format(year, month, day), '%Y%m%d')
+                    date = datetime.strptime(f'{year}{month}{day}', '%Y%m%d')
                     calendar.write('DTSTART;VALUE=DATE-TIME:{}T080000\n'.format(
                         date.strftime('%Y%m%d')))
                     calendar.write('DTEND;VALUE=DATE-TIME:{}T080000\n'.format(
@@ -347,28 +233,15 @@ def write_rmn(data, event_seq, names):
 
                     calendar.write(collection_footer)
 
-        calendar_footer = open('templates{}calendar-footer.txt'.format(sep))
+        calendar_footer = open(f'templates{sep}calendar-footer.txt')  # pylint:disable=consider-using-with
         for line in calendar_footer:
             calendar.write(line)
-        rename(temp, '{}'.format(temp.replace('.tmp.ics', '.ics')))
+        rename(temp, temp.replace('.tmp.ics', '.ics'))
     return event_seq
 
 
-def write_rova(data, event_seq, names):
-    """
-    Blah blah.
-
-    Parameters
-    ----------
-    month : TYPE
-        DESCRIPTION.
-
-    Returns
-    -------
-    number : TYPE
-        DESCRIPTION.
-
-    """
+def write_rova(data, event_seq):
+    '''Writes blah.'''
     # scraping like it's 1999
     index = 0
     dates = None
@@ -382,20 +255,22 @@ def write_rova(data, event_seq, names):
             dates = line.split('afvalkalenderData:\'')[1].split('\'')[0]
             break
     if dates is None:
-        return event_seq  #FIXME login via post with postcode required, also do logout! also set 'do not remember'
+        #FIXME login via post with postcode required
+        #FIXME also do logout! also set 'do not remember'
+        return event_seq
 
     for reminder in reminders:
         alarm = reminder_to_alarm(reminder)
         temp = f'ics{sep}{decimals}{sep}{letters}{sep}{number}{alarm}.tmp.ics'
-        calendar = open(temp, 'w', newline='\r\n')
+        calendar = open(temp, 'w', newline='\r\n')  # pylint:disable=consider-using-with
 
-        calendar_header = open('templates{}calendar-header.txt'.format(sep))
+        calendar_header = open(f'templates{sep}calendar-header.txt')  # pylint:disable=consider-using-with
         for line in calendar_header:
             calendar.write(line)
 
         print('TODO')
-        for d in dates.split(','):
-            print(d)
+        for date in dates.split(','):
+            print(date)
             sys.exit(0)  # TODO, see FIXME above
 
     return event_seq
@@ -422,27 +297,27 @@ event_seq = 1
 
 # create ICS header
 collection_header = ''
-event_header = open(f'templates{sep}event-header.txt')
+event_header = open(f'templates{sep}event-header.txt')  # pylint:disable=consider-using-with
 for line in event_header:
-    collection_header += line.replace('DTSTAMP:', 'DTSTAMP:{}'.format(dtstamp))
+    collection_header += line.replace('DTSTAMP:', f'DTSTAMP:{dtstamp}')
 
 # create ICS footer
 collection_footer = ''
-event_footer = open(f'templates{sep}event-footer.txt')
+event_footer = open(f'templates{sep}event-footer.txt')  # pylint:disable=consider-using-with
 for line in event_footer:
     collection_footer += line
 
 addresses = []
 groups = set()
 group = set()
-for address in open('addresses.tsv'):
+for address in open('addresses.tsv'):  # pylint:disable=consider-using-with
     address = address[:-1].replace('\t', '/')
     if address != '' and address[0] != '#':
         adress_path = address_to_path(address)
         if path.isfile(adress_path):
             tstamp = path.getmtime(adress_path)
             if tstamp > now - 4 * 86400:  # not older than four days
-                print('INFO: Cache not yet expired for {}'.format(address))
+                print(f'INFO: Cache not yet expired for {address}')
                 continue
         addresses.append(address)
         group.add(address)
@@ -455,12 +330,12 @@ sources = {}
 count = 0
 names = set()
 if addresses:
-    print('Updating following {} addresses:'.format(len(addresses)))
+    print(f'Updating following {len(addresses)} addresses:')
     shuffle(addresses)
 for address in addresses:
     sleep(uniform(3, 6))
     count += 1
-    print('{}/{} {}'.format(count, len(addresses), address))
+    print(f'{count}/{len(addresses)} {address}')
     basename = address.replace('/', '-')
     decimals = basename[:4]
     letters = basename[4:6]
@@ -478,22 +353,22 @@ for address in addresses:
     source = None
     url = f'http://www.mijnafvalwijzer.nl/nl/{address}/'
     try:
-        data = request.urlopen(url).read().decode('utf-8').split('\n')
+        data = request.urlopen(url).read().decode('utf-8').split('\n')  # pylint:disable=consider-using-with
         source = 'maw'
     except:
         url = 'https://inzamelschema.rmn.nl/adres/{}/jaarkalender'.format(
             address.replace('/', ':'))
         try:
-            data = request.urlopen(url).read().decode('utf-8').split('\n')
+            data = request.urlopen(url).read().decode('utf-8').split('\n')  # pylint:disable=consider-using-with
             source = 'rmn'
-        except Exception as e:
+        except Exception as e:  # noqa:F841
             url = 'http://afvalkalender.rova.nl/rest/login?' \
                 f'postcode={postcode}&huisnummer={huisnummer}&' \
                 f'toevoeging={toevoeging}'
             try:
-                data = request.urlopen(url).read().decode('utf-8').split('\n')
+                data = request.urlopen(url).read().decode('utf-8').split('\n')  # pylint:disable=consider-using-with
                 source = 'rova'
-            except Exception as e:
+            except Exception as e:  # noqa:F841
                 url = 'https://www.afvalstoffendienst.nl/login' #TODO
                 try:
                     data = request.urlopen(url).read().decode('utf-8').split(
@@ -505,23 +380,23 @@ for address in addresses:
     if source == 'maw':
         event_seq = write_mad(data, event_seq, names)
     elif source == 'rmn':
-        event_seq = write_rmn(data, event_seq, names)
+        event_seq = write_rmn(data, event_seq)
     elif source == 'rova':
-        event_seq = write_rova(data, event_seq, names)
+        event_seq = write_rova(data, event_seq)
     else:
         print(f'ERROR: Unknown source {source}, skipping')
         continue
 
 if names:
     print('\nFound following types:')
-    names_used = open('names-used-dutch.txt', 'w')
+    names_used = open('names-used-dutch.txt', 'w')  # pylint:disable=consider-using-with
     for name in sorted(names):
         print('{}'.format(name.replace('\\', '')))
         names_used.write('{}\n'.format(name.replace('\\', '')))
 
 for decimals in sorted(listdir('ics')):
     for letters in sorted(listdir(f'ics{sep}{decimals}')):
-        readme = open(f'ics{sep}{decimals}{sep}{letters}{sep}README.md', 'w')
+        readme = open(f'ics{sep}{decimals}{sep}{letters}{sep}README.md', 'w')  # pylint:disable=consider-using-with
         readme.write(f'# URL\'s postcode {decimals} {letters}\n\n')
         for number in sorted(listdir(f'ics{sep}{decimals}{sep}{letters}')):
             if number == 'README.md':
@@ -529,9 +404,10 @@ for decimals in sorted(listdir('ics')):
             number = number.replace('.ics', '')
             if '_' in number:
                 alarm = number.split('_')[1]
-                readme.write('## Huisnummer {} met alarm om {}.{} uur\n\n'.format(number.split('_')[0], alarm[:2], alarm[2:]))
+                readme.write(f"## Huisnummer {number.split('_')[0]} met alarm"
+                             f" om {alarm[:2]}.{alarm[2:]} uur\n\n")
             else:
                 readme.write(f'## Huisnummer {number} zonder alarm\n\n')
             readme.write('https://raw.github.com/PanderMusubi/afvalophaaldata/'
                          f'master/ics/{decimals}/{letters}/{number}.ics\n\n')
-#            readme.write('![QR-code https://raw.github.com/PanderMusubi/afvalophaaldata/master/ics/{}/{}/{}.ics](https://api.qrserver.com/v1/create-qr-code/?data=https%3A%2F%2Fraw.github.com%2FPanderMusubi%2Fafvalophaaldata%2Fmaster%2Fics%2F{}%2F{}%2F{}.ics)\n\n'.format(decimals, letters, number, decimals, letters, number))
+#            readme.write('![QR-code https://raw.github.com/PanderMusubi/afvalophaaldata/master/ics/{}/{}/{}.ics](https://api.qrserver.com/v1/create-qr-code/?data=https%3A%2F%2Fraw.github.com%2FPanderMusubi%2Fafvalophaaldata%2Fmaster%2Fics%2F{}%2F{}%2F{}.ics)\n\n'.format(decimals, letters, number, decimals, letters, number))  # pylint:disable=line-too-long

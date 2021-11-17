@@ -129,7 +129,7 @@ def write_mad(data, event_seq, names):  # pylint:disable=too-many-locals
                 index += 1
                 datum = line.split('<span class="span-line-break">')[1]
                 datum = datum.split('</span>')[0].split(' ')
-                day_name = None
+                day_name = None  # pylint:disable=unused-variable
                 day = None
                 month = None
                 year = yearnow
@@ -220,7 +220,10 @@ def write_rmn(data, event_seq):  # pylint:disable=too-many-locals
                     calendar.write(f'{collection_header.strip()}{name}\n')
 
                     # write UID and autoincrement
-                    calendar.write(uid_format % (dict(list(uid_replace_values.items()) + list({'lang': 'en', 'seq': event_seq}.items()))))
+                    calendar.write(uid_format % (dict(
+                        list(uid_replace_values.items()) +
+                        list({'lang': 'en', 'seq': event_seq}.items())))
+                    )
                     event_seq += 1
 
                     date = datetime.strptime(f'{year}{month}{day}', '%Y%m%d')
@@ -365,26 +368,26 @@ for address in addresses:
     try:
         data = request.urlopen(url).read().decode('utf-8').split('\n')  # pylint:disable=consider-using-with
         source = 'maw'
-    except:
+    except Exception:  # noqa:F841  # pylint:disable=broad-except
         url = 'https://inzamelschema.rmn.nl/adres/{}/jaarkalender'.format(
             address.replace('/', ':'))
         try:
             data = request.urlopen(url).read().decode('utf-8').split('\n')  # pylint:disable=consider-using-with
             source = 'rmn'
-        except Exception as e:  # noqa:F841
+        except Exception as e:  # noqa:F841  # pylint:disable=broad-except
             url = 'http://afvalkalender.rova.nl/rest/login?' \
                 f'postcode={postcode}&huisnummer={huisnummer}&' \
                 f'toevoeging={toevoeging}'
             try:
                 data = request.urlopen(url).read().decode('utf-8').split('\n')  # pylint:disable=consider-using-with
                 source = 'rova'
-            except Exception as e:  # noqa:F841
+            except Exception as e:  # noqa:F841  # pylint:disable=broad-except
                 url = 'https://www.afvalstoffendienst.nl/login' #TODO analyse
                 try:
                     data = request.urlopen(url).read().decode('utf-8').split(
                         '\n')
                     source = 'asd'
-                except Exception as e:
+                except Exception as e:  # noqa:F841  # pylint:disable=broad-except
                     print(f'WARNING: Could not retrieve url {url} because {e}')
                     continue
     if source == 'maw':

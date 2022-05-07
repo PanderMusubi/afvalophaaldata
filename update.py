@@ -9,7 +9,7 @@ from os import getpid, listdir, makedirs, path, rename, sep
 from random import uniform, shuffle
 from socket import getfqdn
 from time import sleep, time
-from urllib import request
+from urllib.request import Request, urlopen
 import sys
 
 
@@ -148,10 +148,8 @@ def write_mad(data, event_seq, names):  # pylint:disable=too-many-locals
                 event_seq += 1
 
                 date = datetime.strptime(f'{year}{month}{day}', '%Y%m%d')
-                calendar.write('DTSTART;VALUE=DATE-TIME:{}T080000\n'.format(
-                    date.strftime('%Y%m%d')))
-                calendar.write('DTEND;VALUE=DATE-TIME:{}T080000\n'.format(
-                    date.strftime('%Y%m%d')))
+                calendar.write(f'DTSTART;VALUE=DATE-TIME:{date.strftime("%Y%m%d")}T080000\n')
+                calendar.write(f'DTEND;VALUE=DATE-TIME:{date.strftime("%Y%m%d")}T080000\n')
 # for whole day event, remove the T080000 and add endtime one day later
 #                date += timedelta(days=1)
 #                calendar.write('DTEND;VALUE=DATE:{}\n'.format(
@@ -227,10 +225,8 @@ def write_rmn(data, event_seq):  # pylint:disable=too-many-locals
                     event_seq += 1
 
                     date = datetime.strptime(f'{year}{month}{day}', '%Y%m%d')
-                    calendar.write('DTSTART;VALUE=DATE-TIME:{}T080000\n'.format(
-                        date.strftime('%Y%m%d')))
-                    calendar.write('DTEND;VALUE=DATE-TIME:{}T080000\n'.format(
-                        date.strftime('%Y%m%d')))
+                    calendar.write('DTSTART;VALUE=DATE-TIME:{date.strftime("%Y%m%d")}T080000\n')
+                    calendar.write('DTEND;VALUE=DATE-TIME:{date.strftime("%Y%m%d")}T080000\n')
 # for whole day event, remove the T080000 and add endtime one day later
 #                    date += timedelta(days=1)
 #                    calendar.write('DTEND;VALUE=DATE:{}\n'.format(
@@ -364,28 +360,34 @@ for address in addresses:
         toevoeging = number.split('-')[1]
 
     source = None
-    url = f'http://www.mijnafvalwijzer.nl/nl/{address}/'
+    url = f'https://www.mijnafvalwijzer.nl/nl/{address}/'
     try:
-        data = request.urlopen(url).read().decode('utf-8').split('\n')  # pylint:disable=consider-using-with
+#        print(f'Trying to {url}')
+        req = Request(url, headers={'User-Agent': 'Mozilla/5.0'})
+        data = urlopen(req).read().decode('utf-8').split('\n')  # pylint:disable=consider-using-with
         source = 'maw'
-    except Exception:  # noqa:F841  # pylint:disable=broad-except
-        url = 'https://inzamelschema.rmn.nl/adres/{}/jaarkalender'.format(
-            address.replace('/', ':'))
+    except Exception as e:  # noqa:F841  # pylint:disable=broad-except
+        url = f'https://inzamelschema.rmn.nl/adres/{address.replace("/", ":")}/jaarkalender'
         try:
-            data = request.urlopen(url).read().decode('utf-8').split('\n')  # pylint:disable=consider-using-with
+#            print(f'{e}\nTrying to {url}')
+            req = Request(url, headers={'User-Agent': 'Mozilla/5.0'})
+            data = urlopen(req).read().decode('utf-8').split('\n')  # pylint:disable=consider-using-with
             source = 'rmn'
         except Exception as e:  # noqa:F841  # pylint:disable=broad-except
             url = 'http://afvalkalender.rova.nl/rest/login?' \
                 f'postcode={postcode}&huisnummer={huisnummer}&' \
                 f'toevoeging={toevoeging}'
             try:
-                data = request.urlopen(url).read().decode('utf-8').split('\n')  # pylint:disable=consider-using-with
+#                print(f'{e}\nTrying to {url}')
+                req = Request(url, headers={'User-Agent': 'Mozilla/5.0'})
+                data = urlopen(req).read().decode('utf-8').split('\n')  # pylint:disable=consider-using-with
                 source = 'rova'
             except Exception as e:  # noqa:F841  # pylint:disable=broad-except
                 url = 'https://www.afvalstoffendienst.nl/login' #TODO analyse
                 try:
-                    data = request.urlopen(url).read().decode('utf-8').split(
-                        '\n')
+#                    print(f'{e}\nTrying to {url}')
+                    req = Request(url, headers={'User-Agent': 'Mozilla/5.0'})
+                    data = urlopen(req).read().decode('utf-8').split('\n')  # pylint:disable=consider-using-with
                     source = 'asd'
                 except Exception as e:  # noqa:F841  # pylint:disable=broad-except
                     print(f'WARNING: Could not retrieve url {url} because {e}')
@@ -397,7 +399,7 @@ for address in addresses:
     elif source == 'rova':
         event_seq = write_rova(data, event_seq)
     else:
-        print(f'ERROR: Unknown source {source}, skipping')
+        print(f'ERROR: Unknown source {source}, skipping {url}')
         continue
 
 if names:

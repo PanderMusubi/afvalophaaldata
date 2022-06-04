@@ -325,9 +325,9 @@ for address in open('addresses.tsv'):  # pylint:disable=consider-using-with
         adress_path = address_to_path(address)
         if path.isfile(adress_path):
             tstamp = path.getmtime(adress_path)
-            if tstamp > now - 4 * 86400:  # not older than four days
-                print(f'INFO: Cache not yet expired for {address}')
-                continue
+#            if tstamp > now - 4 * 86400:  # not older than four days
+#                print(f'INFO: Cache not yet expired for {address}')
+#                continue
         addresses.append(address)
         group.add(address)
     elif address == '':

@@ -86,21 +86,22 @@ def reminder_to_alarm(reminder):
 def improve_name(name):
     '''Improves name.'''
     if name.lower() == 'groente, fruit- en tuinafval' or name.lower() == 'gft':
-        name = 'Groente, Fruit- en Tuinafval (GFT)'
-    elif name.lower() == 'papier en karton':
-        name = 'Papier en Karton'
+        name = '🥬 Groente, Fruit- en Tuinafval (GFT)'
+#    elif name.lower() == 'papier en karton':
+#        name = '📦 Papier en Karton'
     elif name.lower() == 'papier':
-        name = 'Papier'
+#        name = '📰 Papier'
+        name = '📦 Papier'
     elif name.lower() == 'restafval':
-        name = 'Restafval'
-    elif name.lower() == 'restgft':
-        name = 'Restgft'
+        name = '🗑️ Restafval'
+#    elif name.lower() == 'restgft':
+#        name = '🗑️ Restgft'
     elif name.lower() == 'dhm':
-        name = 'Droge Herbruikbare Materialen (DHM)'
+        name = '🔌 Droge Herbruikbare Materialen (DHM)'
     elif name.lower() == 'pmd':
-        name = 'Plastic, Metalen en Drankkartons (PMD)'
+        name = '🧃 Plastic, Metalen en Drankkartons (PMD)'
     elif name.lower() == 'kerstbomen':
-        name = 'Kerstbomen'
+        name = '🎄 Kerstbomen'
     return name.replace(',', '\\,').replace(' & ', ' en ')
 
 

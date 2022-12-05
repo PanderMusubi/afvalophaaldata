@@ -1,6 +1,6 @@
-Droge Herbruikbare Materialen (DHM)
-Groente, Fruit- en Tuinafval (GFT)
-Kerstbomen
-Papier
-Restafval
-Restgft
+restgft
+🎄 Kerstbomen
+📦 Papier
+🔌 Droge Herbruikbare Materialen (DHM)
+🗑️ Restafval
+🥬 Groente, Fruit- en Tuinafval (GFT)

@@ -91,7 +91,7 @@ def improve_name(name):
 #        name = '📦 Papier en Karton'
     elif name.lower() == 'papier':
 #        name = '📰 Papier'
-        name = '📦 Papier'
+        name = '📦 Papier en Karton (PK)'
     elif name.lower() == 'restafval':
         name = '🗑️ Restafval'
 #    elif name.lower() == 'restgft':
@@ -101,7 +101,7 @@ def improve_name(name):
     elif name.lower() == 'pmd':
         name = '🧃 Plastic, Metalen en Drankkartons (PMD)'
     elif name.lower() == 'kerstbomen':
-        name = '🎄 Kerstbomen'
+        name = '🎄 Kerstbomen (K)'
     return name.replace(',', '\\,').replace(' & ', ' en ')
 
 
@@ -345,7 +345,7 @@ if addresses:
     print(f'Updating following {len(addresses)} addresses:')
     shuffle(addresses)
 for address in addresses:
-    sleep(uniform(3, 6))
+    sleep(uniform(4, 7))
     count += 1
     print(f'{count}/{len(addresses)} {address}')
     basename = address.replace('/', '-')

@@ -329,6 +329,8 @@ for address in open('addresses.tsv'):  # pylint:disable=consider-using-with
         if path.isfile(adress_path):
             tstamp = path.getmtime(adress_path)
             if tstamp > now - 4 * 86400:  # not older than four days
+#TODO from dateutil.relativedelta import relativedelta
+# difference_in_years = relativedelta(end_date, start_date).years
                 print(f'INFO: Cache not yet expired for {address}')
                 continue
         addresses.append(address)

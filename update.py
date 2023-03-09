@@ -332,7 +332,7 @@ for address in open('addresses.tsv'):  # pylint:disable=consider-using-with
 #TODO from dateutil.relativedelta import relativedelta
 # difference_in_years = relativedelta(end_date, start_date).years
                 print(f'INFO: Cache not yet expired for {address}')
-                continue
+#FIXMETODO                continue
         addresses.append(address)
         group.add(address)
     elif address == '':
@@ -404,7 +404,7 @@ for address in addresses:
     elif source == 'rova':
         event_seq = write_rova(data, event_seq)
     else:
-        print(f'ERROR: Unknown source {source}, skipping {url}')
+        print(f'ERROR: Unknown source {source}, skipping {url} for postcode {postcode} and huisnummer {huisnummer} {toevoeging}')
         continue
 
 if names:

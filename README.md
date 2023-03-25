@@ -2,6 +2,8 @@
 
 (English documentation is found below.)
 
+> <em>Alles is veranderlijk, niets is zonder verandering.</em> — Gautama
+Siddhartha (563 – 483 v.Chr.) Hindoeïstische prins en grondlegger van boeddhisme
 
 ## 1 Inleiding
 
@@ -169,6 +171,8 @@ mogelijk gemaakt door de analytische vaardigheden van
 
 (Nederlandse documentatie is hierboven te vinden.)
 
+> <em>Everything changes, nothing remains without change.</em> — Gautama
+Siddhartha (563 – 483 BC) Hindu prince and founder of Buddhism
 
 ## 1 Introduction
 

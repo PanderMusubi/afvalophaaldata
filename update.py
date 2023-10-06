@@ -423,7 +423,7 @@ for decimals in sorted(listdir('ics')):
             if '_' in number:
                 alarm = number.split('_')[1]
                 readme.write(f"## Huisnummer {number.split('_')[0]} met alarm"
-                             f" om {alarm[:2]}.{alarm[2:]} uur\n\n")
+                             f"/notificatie om {alarm[:2]}.{alarm[2:]} uur\n\n")
             else:
                 readme.write(f'## Huisnummer {number} zonder alarm\n\n')
             readme.write('https://raw.github.com/PanderMusubi/afvalophaaldata/'

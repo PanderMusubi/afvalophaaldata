@@ -184,7 +184,7 @@ propietary (and potentially harmful) apps as possible.
 
 This project offers garbage collection data for your address which you can add
 as an online calendar on your computer or mobile device. This integration –
-which also supports notifications – improves the coordination with other
+which also supports alarms/notifications – improves the coordination with other
 appointments and you do not have to install a garbage app on your smartphone or
 tablet.
 

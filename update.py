@@ -12,8 +12,6 @@ from time import sleep, time
 from urllib.request import Request, urlopen
 import sys
 
-from termcolor import cprint
-
 
 def month_to_number(month):
     '''Converts month to number.'''
@@ -261,7 +259,7 @@ def write_rova(data, event_seq):
         line = data[index]
         index += 1
         if line == 'Geen adres gevonden':
-            cprint('WARNING: Unsupported address, skipping', 'yellow')
+            print('WARNING: Unsupported address, skipping')
             return event_seq
         if '"kalenderContainer"' in line:
             dates = line.split('afvalkalenderData:\'')[1].split('\'')[0]
@@ -395,7 +393,7 @@ for address in addresses:
                     data = urlopen(req).read().decode('utf-8').split('\n')  # pylint:disable=consider-using-with
                     source = 'asd'
                 except Exception as e:  # noqa:F841  # pylint:disable=broad-except
-                    cprint(f'WARNING: Could not retrieve url {url} because {e}', 'yellow')
+                    print(f'WARNING: Could not retrieve url {url} because {e}')
                     continue
     if source == 'maw':
         event_seq = write_mad(data, event_seq, names)

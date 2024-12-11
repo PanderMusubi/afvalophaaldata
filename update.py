@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-'''Generates calendars with garbage collection times in iCal format.'''
+"""Generates calendars with garbage collection times in iCal format."""
 
 # List all unique values of SUMMARY with following command
 # grep -rh SUMMARY ics|sort|uniq
@@ -13,8 +13,8 @@ from urllib.request import Request, urlopen
 import sys
 
 
-def month_to_number(month):
-    '''Converts month to number.'''
+def month_to_number(month: str) -> str:
+    """Convert month to number."""
     number = ''
     if month.lower() == 'januari':
         number = '01'
@@ -43,8 +43,8 @@ def month_to_number(month):
     return number
 
 
-def address_to_path(address):
-    '''Converts address to path.'''
+def address_to_path(address: str) -> str:
+    """Convert address to path."""
     basename = address.replace('/', '-')
     decimals = basename[:4]
     letters = basename[4:6]
@@ -52,23 +52,23 @@ def address_to_path(address):
     return f'ics{sep}{decimals}{sep}{letters}{sep}{number}.ics'
 
 
-def address_to_dir(address):
-    '''Converts address to directory.'''
+def address_to_dir(address: str) -> str:
+    """Convert address to directory."""
     basename = address.replace('/', '-')
     decimals = basename[:4]
     letters = basename[4:6]
     return f'ics{sep}{decimals}{sep}{letters}'
 
 
-def address_to_file(address):
-    '''Converts address to file name.'''
+def address_to_file(address: str) -> str:
+    """Convert address to file name."""
     basename = address.replace('/', '-')
     number = basename[7:]
     return f'{number}.ics'
 
 
 def reminder_to_alarm(reminder):
-    '''Converts reminder to alarm.'''
+    """Convert reminder to alarm."""
     alarm = ''  # no alarm
     if reminder == 'T10H30M':  # maximum, i.e. 21:30 previous day
         alarm = '_2130'
@@ -82,7 +82,7 @@ def reminder_to_alarm(reminder):
 
 
 def improve_name(name):
-    '''Improves name.'''
+    """Improves name."""
     if name.lower() == 'groente, fruit- en tuinafval' or name.lower() == 'gft':
         name = '🥬 Groente, Fruit- en Tuinafval (GFT)'
 #    elif name.lower() == 'papier en karton':
@@ -104,7 +104,7 @@ def improve_name(name):
 
 
 def write_mad(data, event_seq, names):  # pylint:disable=too-many-locals
-    '''Writes blah.'''
+    """Write blah."""
     for reminder in reminders:
         alarm = reminder_to_alarm(reminder)
         temp = f'ics{sep}{decimals}{sep}{letters}{sep}{number}{alarm}.tmp.ics'
@@ -173,7 +173,7 @@ def write_mad(data, event_seq, names):  # pylint:disable=too-many-locals
 
 
 def write_rmn(data, event_seq):  # pylint:disable=too-many-locals
-    '''Writes blah.'''
+    """Write blah."""
     for reminder in reminders:
         alarm = reminder_to_alarm(reminder)
         temp = f'ics{sep}{decimals}{sep}{letters}{sep}{number}{alarm}.tmp.ics'
@@ -251,7 +251,7 @@ def write_rmn(data, event_seq):  # pylint:disable=too-many-locals
 
 
 def write_rova(data, event_seq):
-    '''Writes blah.'''
+    """Write blah."""
     # scraping like it's 1999
     index = 0
     dates = None
@@ -338,9 +338,9 @@ for address in open('addresses.tsv'):  # pylint:disable=consider-using-with
             groups.add(tuple(group))
         group = set()
 
-sources = {}
+# sources = {}
 count = 0
-names = set()
+names: set[str] = set()
 if addresses:
     print(f'Updating following {len(addresses)} addresses:')
     shuffle(addresses)

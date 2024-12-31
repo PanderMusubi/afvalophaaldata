@@ -22,7 +22,6 @@ Op deze manier ben je altijd op de hoogte van wijzigingen in de reguliere
 ophaaldagen vanjouw afval. Voorbeelden van hiervan zijn feestdagen of bepaalde
 evenementen bij je in de buurt of wanneer er kerstbomen worden opgehaald.
 
-
 ## 2 Indruk
 
 Om een idee te krijgen hoe afvalophaaldata in je kalender eruit ziet, staan
@@ -32,7 +31,6 @@ van op een computer.
 [<img alt="example mobile" src="images/example-etar-cropped.png?raw=true" width="50%" />](https://raw.github.com/PanderMusubi/afvalophaaldata/master/images/example-etar-cropped.png)
 
 [![example](images/example-thunderbird-cropped.png?raw=true)](https://raw.github.com/PanderMusubi/afvalophaaldata/master/images/example-thunderbird-cropped.png)
-
 
 ## 3 Gebruik
 
@@ -50,30 +48,20 @@ gebeuren en geeft een foutmelding.
 * De huidige kalender wordt gedownload, maar verder gebeurd er niets.
 * De huidige kalender wordt eenmalig geïmporteerd, maar updates blijven uit.
 
-
 ### 3.1 Installeer kalendersoftware
 
-Waarschijnlijk heb je al software geïnstalleerd om online kalenders te
-gebruiken. Mocht dat niet het geval zijn, afvalophaalkalenders zijn weer te
-geven met:
+Waarschijnlijk heb je al software geïnstalleerd om online kalenders te gebruiken. Mocht dat niet het geval zijn, afvalophaalkalenders zijn weer te geven met:
 
-| Naam              | Android | iOS | macOS | Windows | Linux | Webinterface |
-|-------------------|:-------:|:---:|:-----:|:-------:|:-----:|:------------:|
-| Google Calendar   | [✔](https://play.google.com/store/apps/details?id=com.google.android.calendar) | - | - | - | - | [✔](https://google.com/calendar) |
+| Naam              | Android | iOS | macOS | Windows | Linux | Web |
+|-------------------|:-------:|:---:|:-----:|:-------:|:-----:|:---:|
+| Google Calendar   | [✔](https://play.google.com/store/apps/details?id=com.google.android.calendar) | [✔](https://apps.apple.com/app/google-calendar-get-organized/id909319292) | - | - | - | [✔](https://google.com/calendar) |
 | ICSx⁵             | [✔](https://play.google.com/store/apps/details?id=at.bitfire.icsdroid) | - | - | - | - | - |
-| CalDAV-Sync       | [✔](https://play.google.com/store/apps/details?id=org.dmfs.caldav.lib) | - | - | - | - | - |
-| iCloud Calendar   | - | [✔](https://www.apple.com/icloud/#ccm) | - | - | - | - |
-| Thunderbird       | - | - | [✔](https://www.thunderbird.net) | [✔](https://www.thunderbird.net) | [✔](https://www.thunderbird.net) | - |
-| Apple Calendar    | - | - | [✔](https://www.apple.com/macos/what-is) | - | - | - |
-| Microsoft Outlook | - | - | - | [✔](https://products.office.com/outlook) | - | [✔](https://outlook.com) |
+| Thunderbird       | [✔](https://play.google.com/store/apps/details?id=net.thunderbird.android) | - | [✔](https://www.thunderbird.net) | [✔](https://www.thunderbird.net) | [✔](https://www.thunderbird.net) | - |
+| NextCloud         | [✔](https://play.google.com/store/apps/details?id=com.nextcloud.client) | [✔](https://apps.apple.com/us/app/nextcloud/id1125420102) | ✔ | ✔ | ✔ | ✔ |
+| Apple Calendar    | - | ✔ | ✔ | - | - | [✔](https://www.apple.com/icloud/#ccm) |
+| Microsoft Outlook | [✔](https://play.google.com/store/apps/details?id=com.microsoft.office.outlook) | [✔](https://www.apple.com/search/outlook) | [✔](https://www.apple.com/search/outlook) | [✔](https://products.office.com/outlook) | - | [✔](https://outlook.com) |
 
-De vinkjes in de tabel hebben een link naar de software. ICSx⁵ is ook te vinden
-in de [F-Droid](https://f-droid.org/repository/browse/?fdfilter=calendar&fdid=at.bitfire.icsdroid)
-appstore. Gebruik **geen** software die alleen maar ICS-bestanden kan importeren.
-
-Nogmaals, niet op de kalenderlink klikken, alleen maar de link als tekst
-kopiëren!
-
+ICSx⁵ is ook te vinden in de [F-Droid](https://f-droid.org/repository/browse/?fdfilter=calendar&fdid=at.bitfire.icsdroid) appstore. Gebruik **geen** software die alleen maar ICS-bestanden kan importeren.
 
 ### 3.2 Vind de link voor jouw adres
 
@@ -106,7 +94,6 @@ mogelijk, voeg ook de website toe van de organisatie waar jouw afvalophaaldata
 zijn te vinden. Daarna worden er kalenders voor je gemaakt voor alle huisnummers
 met die postcode.
 
-
 ### 3.3 Voeg jouw link toe aan kalendersoftware
 
 Nadat je jouw link hebt gekopieerd, plak deze bij in jouw kalendersoftware bij
@@ -117,7 +104,6 @@ blijft. Zet deze op 24 uur want er zij niet zoveel updates. Nogmaals, kies
 **niet** voor het (eenmalig) importeren van een ICS-kalender want die zal
 zichzelf niet updaten.
 
-
 ## 4 Onderhoud
 
 ### 4.1 Postcodes en huisnummers
@@ -126,7 +112,6 @@ Nederlandse postcodes zijn te vinden op https://www.postcode.nl . Gebruik geen
 huisnummers zonder een woonfuctie. Huisnummers met alleen een bestemming
 bijeenkomstfunctie, industriefunctie en/of winkelfunctie worden hier niet
 ondersteunt omdat die een commerciële afvalophaaldienst moeten gebruiken.
-
 
 ### 4.2 Notificaties in Thunderbird
 
@@ -140,7 +125,6 @@ voeg zinvol commentaar toe voor de volgende gerelateerde bugs:
 Als dit gebeurd, de workaround voor Thunderbird is om te gaan naar
 `Preferences / Calendar / Reminders` en `Show missed reminders` uit te zetten.
 
-
 <!--###4.3 Validatie
 
 Kalender die zijn aangemaakt kunnen gevalideerd worden met:
@@ -148,7 +132,6 @@ Kalender die zijn aangemaakt kunnen gevalideerd worden met:
 * [postcode, huisnummer en toevoeging](http://severinghaus.org/projects/icv/?url=https%3A%2F%2Fraw.github.com%2FPanderMusubi%2Fafvalophaaldata%2Fmaster%2Fics%2F3521%2FVX%2F90-BS.ics)
 * [postcode, huisnummer en notificatie](http://severinghaus.org/projects/icv/?url=https%3A%2F%2Fraw.github.com%2FPanderMusubi%2Fafvalophaaldata%2Fmaster%2Fics%2F3521%2FEC%2F17_0700.ics)
 * [postcode, huisnummer en notificatie de avond ervoor](http://severinghaus.org/projects/icv/?url=https%3A%2F%2Fraw.github.com%2FPanderMusubi%2Fafvalophaaldata%2Fmaster%2Fics%2F3521%2FEC%2F17_2130.ics)-->
-
 
 ## 5 Zie ook
 
@@ -158,14 +141,12 @@ Zie ook de volgende online kalenders:
 
 Voor Androidgebruikers, zie ook de alternatieve kalenderapp Etar in de appstores [Google Play](https://play.google.com/store/apps/details?id=ws.xsoh.etar) en [F-Droid](https://f-droid.org/repository/browse/?fdid=ws.xsoh.etar).
 
-
 ## 6 Licentie
 
 Deze software voor het maken van deze online kalenders met afvalophaaldata en
 bijbehorende handleiding hebben een [MIT](LICENSE)-licentie en zijn mede
 mogelijk gemaakt door de analytische vaardigheden van
 [Hellebaard](http://hellebaard.nl).
-
 
 # Garbage Collection Dates
 
@@ -192,7 +173,6 @@ In this way, you are always up to date of changes to the schedule of regular
 collection days days of your garbage. Examples of this are public holidays or
 events in your neighbourhood or when Christmas trees are being collected.
 
-
 ## 2 Impression
 
 To get an idea how gabarge collection dates look like, below are two examples.
@@ -201,7 +181,6 @@ The first of on a mobile device and the second on a computer.
 [<img alt="example mobile" src="images/example-etar-cropped.png?raw=true" width="50%" />](https://raw.github.com/PanderMusubi/afvalophaaldata/master/images/example-etar-cropped.png)
 
 [![example](images/example-thunderbird-cropped.png?raw=true)](https://raw.github.com/PanderMusubi/afvalophaaldata/master/images/example-thunderbird-cropped.png)
-
 
 ## 3 Usage
 
@@ -220,26 +199,20 @@ arise:
 
 Again, do not click on a calendar link, only copy the link as text!
 
-
 ### 3.1 Install calendar software
 
-Probably, you already have software installed for using online calendars. If
-that is not the case, garbage collection calendars can be shown with:
+Probably, you already have software installed for using online calendars. If that is not the case, lunar phase calendars can be shown with:
 
-| Name              | Android | iOS | macOS | Windows | Linux | Web interface |
-|-------------------|:-------:|:---:|:-----:|:-------:|:-----:|:------------:|
-| Google Calendar   | [✔](https://play.google.com/store/apps/details?id=com.google.android.calendar) | - | - | - | - | [✔](https://google.com/calendar) |
+| Name              | Android | iOS | macOS | Windows | Linux | Web |
+|-------------------|:-------:|:---:|:-----:|:-------:|:-----:|:---:|
+| Google Calendar   | [✔](https://play.google.com/store/apps/details?id=com.google.android.calendar) | [✔](https://apps.apple.com/app/google-calendar-get-organized/id909319292) | - | - | - | [✔](https://google.com/calendar) |
 | ICSx⁵             | [✔](https://play.google.com/store/apps/details?id=at.bitfire.icsdroid) | - | - | - | - | - |
-| CalDAV-Sync       | [✔](https://play.google.com/store/apps/details?id=org.dmfs.caldav.lib) | - | - | - | - | - |
-| iCloud Calendar   | - | [✔](https://www.apple.com/icloud/#ccm) | - | - | - | - |
-| Thunderbird       | - | - | [✔](https://www.thunderbird.net) | [✔](https://www.thunderbird.net) | [✔](https://www.thunderbird.net) | - |
-| Apple Calendar    | - | - | [✔](https://www.apple.com/macos/what-is) | - | - | - |
-| Microsoft Outlook | - | - | - | [✔](https://products.office.com/outlook) | - | [✔](https://outlook.com) |
+| Thunderbird       | [✔](https://play.google.com/store/apps/details?id=net.thunderbird.android) | - | [✔](https://www.thunderbird.net) | [✔](https://www.thunderbird.net) | [✔](https://www.thunderbird.net) | - |
+| NextCloud         | [✔](https://play.google.com/store/apps/details?id=com.nextcloud.client) | [✔](https://apps.apple.com/us/app/nextcloud/id1125420102) | ✔ | ✔ | ✔ | ✔ |
+| Apple Calendar    | - | ✔ | ✔ | - | - | [✔](https://www.apple.com/icloud/#ccm) |
+| Microsoft Outlook | [✔](https://play.google.com/store/apps/details?id=com.microsoft.office.outlook) | [✔](https://www.apple.com/search/outlook) | [✔](https://www.apple.com/search/outlook) | [✔](https://products.office.com/outlook) | - | [✔](https://outlook.com) |
 
-Check marks in the table have links to the software. ICSx⁵ can also be found in
-the [F-Droid](https://f-droid.org/repository/browse/?fdfilter=calendar&fdid=at.bitfire.icsdroid)
-app store. Do **not** use software that can only import ICS files.
-
+ICSx⁵ can also be found in the [F-Droid](https://f-droid.org/repository/browse/?fdfilter=calendar&fdid=at.bitfire.icsdroid) app store. Do **not** use software that can only import ICS files.
 
 ### 3.2 Find the link for your address
 
@@ -270,7 +243,6 @@ reasons list **only** your postcode and not any house numbers. If possible, also
 add the website where your garbage collection data can be found. Then calendars
 will be added for you for all house numbers of that postcode.
 
-
 ### 3.3 Add your link to calendar software
 
 After you have copied your link, please paste this in your calendar software
@@ -281,13 +253,11 @@ date. Set this to 24 hours, because there are not that many updates. Again, do
 **not** choose the (one time) import of the ICS calender as it will not update
 itself. 
 
-
 ## 4 Maintenance
 
 Install Python 3 and the pandas package with:
 
     sudo apt-get install python3-pandas
-
 
 ### 4.1 Postcodes and house numbers
 
@@ -296,7 +266,6 @@ numbers without a residence (*woonfunctie*) designation. House numbers with only
 a designation of *bijeenkomstfunctie*, *industriefunctie* and/or *winkelfunctie*
 will not be supported for garbage collection as these need to use a commercial
 garbage collection service.
-
 
 ### 4.2 Notifications in Thunderbird
 
@@ -310,7 +279,6 @@ or add a useful comment for the following related bugs:
 If this bug occurs, the workaround for Thunderbird is to go to
 `Preferences / Calendar / Reminders` and disable `Show missed reminders`.
 
-
 <!--### 4.3 Validation
 
 Calendars that have been generated can be validated by:
@@ -319,7 +287,6 @@ Calendars that have been generated can be validated by:
 * [postcode, number and notification in the morning](http://severinghaus.org/projects/icv/?url=https%3A%2F%2Fraw.github.com%2FPanderMusubi%2Fafvalophaaldata%2Fmaster%2Fics%2F3521%2FEC%2F17_0700.ics)
 * [postcode, number and notification in the evening before](http://severinghaus.org/projects/icv/?url=https%3A%2F%2Fraw.github.com%2FPanderMusubi%2Fafvalophaaldata%2Fmaster%2Fics%2F3521%2FEC%2F17_2130.ics)-->
 
-
 ## 5 See also
 
 Please, see also these other online calendars:
@@ -327,7 +294,6 @@ Please, see also these other online calendars:
 * https://github.com/PanderMusubi/dutch-holidays
 
 For Android users, see also the alternative calendar app Etar from [Google Play](https://play.google.com/store/apps/details?id=ws.xsoh.etar) or [F-Droid](https://f-droid.org/repository/browse/?fdid=ws.xsoh.etar).
-
 
 ## 6 License
 

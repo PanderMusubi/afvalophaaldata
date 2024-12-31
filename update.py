@@ -12,6 +12,8 @@ from time import sleep, time
 from urllib.request import Request, urlopen
 import sys
 
+# pylint:disable=consider-using-with
+
 
 def month_to_number(month: str) -> str:
     """Convert month to number."""
@@ -108,9 +110,9 @@ def write_mad(data, event_seq, names):  # pylint:disable=too-many-locals
     for reminder in reminders:
         alarm = reminder_to_alarm(reminder)
         temp = f'ics{sep}{decimals}{sep}{letters}{sep}{number}{alarm}.tmp.ics'
-        calendar = open(temp, 'w', newline='\r\n')  # pylint:disable=consider-using-with
+        calendar = open(temp, 'w', newline='\r\n')
 
-        calendar_header = open(f'templates{sep}calendar-header.txt')  # pylint:disable=consider-using-with
+        calendar_header = open(f'templates{sep}calendar-header.txt')
         for line in calendar_header:
             calendar.write(line)
 
@@ -165,7 +167,7 @@ def write_mad(data, event_seq, names):  # pylint:disable=too-many-locals
 
                 calendar.write(collection_footer)
 
-        calendar_footer = open(f'templates{sep}calendar-footer.txt')  # pylint:disable=consider-using-with
+        calendar_footer = open(f'templates{sep}calendar-footer.txt')
         for line in calendar_footer:
             calendar.write(line)
         rename(temp, temp.replace('.tmp.ics', '.ics'))
@@ -177,9 +179,9 @@ def write_rmn(data, event_seq):  # pylint:disable=too-many-locals
     for reminder in reminders:
         alarm = reminder_to_alarm(reminder)
         temp = f'ics{sep}{decimals}{sep}{letters}{sep}{number}{alarm}.tmp.ics'
-        calendar = open(temp, 'w', newline='\r\n')  # pylint:disable=consider-using-with
+        calendar = open(temp, 'w', newline='\r\n')
 
-        calendar_header = open(f'templates{sep}calendar-header.txt')  # pylint:disable=consider-using-with
+        calendar_header = open(f'templates{sep}calendar-header.txt')
         for line in calendar_header:
             calendar.write(line)
 
@@ -243,7 +245,7 @@ def write_rmn(data, event_seq):  # pylint:disable=too-many-locals
 
                     calendar.write(collection_footer)
 
-        calendar_footer = open(f'templates{sep}calendar-footer.txt')  # pylint:disable=consider-using-with
+        calendar_footer = open(f'templates{sep}calendar-footer.txt')
         for line in calendar_footer:
             calendar.write(line)
         rename(temp, temp.replace('.tmp.ics', '.ics'))
@@ -272,9 +274,9 @@ def write_rova(data, event_seq):
     for reminder in reminders:
         alarm = reminder_to_alarm(reminder)
         temp = f'ics{sep}{decimals}{sep}{letters}{sep}{number}{alarm}.tmp.ics'
-        calendar = open(temp, 'w', newline='\r\n')  # pylint:disable=consider-using-with
+        calendar = open(temp, 'w', newline='\r\n')
 
-        calendar_header = open(f'templates{sep}calendar-header.txt')  # pylint:disable=consider-using-with
+        calendar_header = open(f'templates{sep}calendar-header.txt')
         for line in calendar_header:
             calendar.write(line)
 
@@ -307,20 +309,20 @@ event_seq = 1
 
 # create ICS header
 collection_header = ''
-event_header = open(f'templates{sep}event-header.txt')  # pylint:disable=consider-using-with
+event_header = open(f'templates{sep}event-header.txt')
 for line in event_header:
     collection_header += line.replace('DTSTAMP:', f'DTSTAMP:{dtstamp}')
 
 # create ICS footer
 collection_footer = ''
-event_footer = open(f'templates{sep}event-footer.txt')  # pylint:disable=consider-using-with
+event_footer = open(f'templates{sep}event-footer.txt')
 for line in event_footer:
     collection_footer += line
 
 addresses = []
 groups = set()
 group = set()
-for address in open('addresses.tsv'):  # pylint:disable=consider-using-with
+for address in open('addresses.tsv'):
     address = address[:-1].replace('\t', '/')
     if address != '' and address[0] != '#':
         adress_path = address_to_path(address)
@@ -367,14 +369,14 @@ for address in addresses:
     try:
 #        print(f'Trying to {url}')
         req = Request(url, headers={'User-Agent': 'Mozilla/5.0'})
-        data = urlopen(req).read().decode('utf-8').split('\n')  # pylint:disable=consider-using-with
+        data = urlopen(req).read().decode('utf-8').split('\n')
         source = 'maw'
     except Exception as e:  # noqa:F841  # pylint:disable=broad-except
         url = f'https://inzamelschema.rmn.nl/adres/{address.replace("/", ":")}/jaarkalender'
         try:
 #            print(f'{e}\nTrying to {url}')
             req = Request(url, headers={'User-Agent': 'Mozilla/5.0'})
-            data = urlopen(req).read().decode('utf-8').split('\n')  # pylint:disable=consider-using-with
+            data = urlopen(req).read().decode('utf-8').split('\n')
             source = 'rmn'
         except Exception as e:  # noqa:F841  # pylint:disable=broad-except
             url = 'http://afvalkalender.rova.nl/rest/login?' \
@@ -383,14 +385,14 @@ for address in addresses:
             try:
 #                print(f'{e}\nTrying to {url}')
                 req = Request(url, headers={'User-Agent': 'Mozilla/5.0'})
-                data = urlopen(req).read().decode('utf-8').split('\n')  # pylint:disable=consider-using-with
+                data = urlopen(req).read().decode('utf-8').split('\n')
                 source = 'rova'
             except Exception as e:  # noqa:F841  # pylint:disable=broad-except
                 url = 'https://www.afvalstoffendienst.nl/login' #TODO analyse
                 try:
 #                    print(f'{e}\nTrying to {url}')
                     req = Request(url, headers={'User-Agent': 'Mozilla/5.0'})
-                    data = urlopen(req).read().decode('utf-8').split('\n')  # pylint:disable=consider-using-with
+                    data = urlopen(req).read().decode('utf-8').split('\n')
                     source = 'asd'
                 except Exception as e:  # noqa:F841  # pylint:disable=broad-except
                     print(f'WARNING: Could not retrieve url {url} because {e}')
@@ -407,14 +409,14 @@ for address in addresses:
 
 if names:
     print('\nFound following types:')
-    names_used = open('names-used-dutch.txt', 'w')  # pylint:disable=consider-using-with
+    names_used = open('names-used-dutch.txt', 'w')
     for name in sorted(names):
         print('{}'.format(name.replace('\\', '')))
         names_used.write('{}\n'.format(name.replace('\\', '')))
 
 for decimals in sorted(listdir('ics')):
     for letters in sorted(listdir(f'ics{sep}{decimals}')):
-        readme = open(f'ics{sep}{decimals}{sep}{letters}{sep}README.md', 'w')  # pylint:disable=consider-using-with
+        readme = open(f'ics{sep}{decimals}{sep}{letters}{sep}README.md', 'w')
         readme.write(f'# URL\'s postcode {decimals} {letters}\n\n')
         for number in sorted(listdir(f'ics{sep}{decimals}{sep}{letters}')):
             if number == 'README.md':

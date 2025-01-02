@@ -255,10 +255,6 @@ itself.
 
 ## 4 Maintenance
 
-Install Python 3 and the pandas package with:
-
-    sudo apt-get install python3-pandas
-
 ### 4.1 Postcodes and house numbers
 
 Dutch postcodes can be found with https://www.postcode.nl . Do not use house

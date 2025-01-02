@@ -1,0 +1,9 @@
+-r requirements.txt
+
+# Lint
+flake8
+mypy
+numpydoc
+pydocstyle
+pyflakes
+pylint

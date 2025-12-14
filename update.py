@@ -7,7 +7,6 @@
 from datetime import datetime
 from os import getpid, listdir, makedirs, path, rename, sep
 from random import uniform, shuffle
-from socket import getfqdn
 from time import sleep, time
 from urllib.request import Request, urlopen
 import sys
@@ -85,11 +84,12 @@ def reminder_to_alarm(reminder):
 
 def improve_name(name):
     """Improves name."""
-    if name.lower() == 'groente, fruit- en tuinafval' or name.lower() == 'gft':
+    # print(f'  XXX{name}')
+    if name.lower() == 'groente-, fruit- en tuinafval' or name.lower() == 'groente, fruit- en tuinafval' or name.lower() == 'gft':
         name = '🥬 Groente, Fruit- en Tuinafval (GFT)'
 #    elif name.lower() == 'papier en karton':
 #        name = '📦 Papier en Karton'
-    elif name.lower() == 'papier':
+    elif name.lower() == 'papier' or name.lower() == 'papier en karton':
 #        name = '📰 Papier'
         name = '📦 Papier en Karton (PK)'
     elif name.lower() == 'restafval':
@@ -123,8 +123,8 @@ def write_mad(data, event_seq, names):  # pylint:disable=too-many-locals
             index += 1
             if '<a href="#waste-' in line:
                 line = data[index]
-                index += 1
-                name = line.split('class="')[1]
+                index += 3
+                name = line.split('title="')[1]
                 name = name.split('"')[0]
                 name = improve_name(name)
                 names.add(name)
@@ -151,8 +151,8 @@ def write_mad(data, event_seq, names):  # pylint:disable=too-many-locals
                 event_seq += 1
 
                 date = datetime.strptime(f'{year}{month}{day}', '%Y%m%d')
-                calendar.write(f'DTSTART;VALUE=DATE-TIME:{date.strftime("%Y%m%d")}T080000\n')
-                calendar.write(f'DTEND;VALUE=DATE-TIME:{date.strftime("%Y%m%d")}T080000\n')
+                calendar.write(f'DTSTART;TZID=Europe/Amsterdam:{date.strftime("%Y%m%d")}T080000\n')
+                calendar.write(f'DTEND;TZID=Europe/Amsterdam:{date.strftime("%Y%m%d")}T080000\n')
 # for whole day event, remove the T080000 and add endtime one day later
 #                date += timedelta(days=1)
 #                calendar.write('DTEND;VALUE=DATE:{}\n'.format(

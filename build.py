@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 """Generates calendars with garbage collection times in iCal format."""
 
 # List all unique values of SUMMARY with following command
@@ -355,7 +354,7 @@ for address in addresses:
     letters = basename[4:6]
     number = basename[7:]
     directory = address_to_dir(address)
-    if not path.exists(directory):
+    if not path.exists(directory):  # FIXME
         makedirs(directory, exist_ok=True)
 
     postcode = decimals + letters

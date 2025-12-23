@@ -1,8 +1,6 @@
 #!/usr/bin/env sh
 
-echo '* CHECKBASHISMS'
-checkbashisms *.sh
-
+. .venv/bin/activate
 FILES=*.py
 echo '* PYDOCSTYLE'
 pydocstyle --convention=numpy $FILES
@@ -15,4 +13,4 @@ pyflakes $FILES
 echo '* PYRIGHT-ALRIGHT'
 pyright-alright $FILES
 echo '* MYPY'
-mypy --ignore-missing-imports $FILES
+mypy $FILES

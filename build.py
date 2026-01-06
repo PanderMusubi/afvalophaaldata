@@ -4,7 +4,8 @@
 # grep -rh SUMMARY ics|sort|uniq
 
 from datetime import datetime
-from os import getpid, listdir, makedirs, path, rename, sep
+from hashlib import sha256
+from os import listdir, makedirs, path, rename, sep
 from random import uniform, shuffle
 from time import sleep, time
 from urllib.request import Request, urlopen
@@ -104,7 +105,7 @@ def improve_name(name):
     return name.replace(',', '\\,').replace(' & ', ' en ')
 
 
-def write_mad(data, event_seq, names):  # pylint:disable=too-many-locals
+def write_mad(data, names):  # pylint:disable=too-many-locals
     """Write blah."""
     for reminder in reminders:
         alarm = reminder_to_alarm(reminder)
@@ -143,11 +144,9 @@ def write_mad(data, event_seq, names):  # pylint:disable=too-many-locals
 
                 calendar.write(f'{collection_header.strip()}{name}\n')
 
-                # write UID and autoincrement
-                calendar.write(uid_format % (dict(
-                    list(uid_replace_values.items()) +
-                    list({'lang': 'en', 'seq': event_seq}.items()))))
-                event_seq += 1
+                # write UID
+                uid = sha256((year + month + day + reminder + name).encode()).hexdigest()[:16]
+                calendar.write(f'UID:{uid}@github.com/pandermusubi\n')
 
                 date = datetime.strptime(f'{year}{month}{day}', '%Y%m%d')
                 calendar.write(f'DTSTART;TZID=Europe/Amsterdam:{date.strftime("%Y%m%d")}T080000\n')
@@ -170,10 +169,9 @@ def write_mad(data, event_seq, names):  # pylint:disable=too-many-locals
         for line in calendar_footer:
             calendar.write(line)
         rename(temp, temp.replace('.tmp.ics', '.ics'))
-    return event_seq
 
 
-def write_rmn(data, event_seq):  # pylint:disable=too-many-locals
+def write_rmn(data):  # pylint:disable=too-many-locals
     """Write blah."""
     for reminder in reminders:
         alarm = reminder_to_alarm(reminder)
@@ -219,12 +217,9 @@ def write_rmn(data, event_seq):  # pylint:disable=too-many-locals
                     name = improve_name(name)
                     calendar.write(f'{collection_header.strip()}{name}\n')
 
-                    # write UID and autoincrement
-                    calendar.write(uid_format % (dict(
-                        list(uid_replace_values.items()) +
-                        list({'lang': 'en', 'seq': event_seq}.items())))
-                    )
-                    event_seq += 1
+                    # write UID
+                    uid = sha256((year + month + day + reminder + name).encode()).hexdigest()[:16]
+                    calendar.write(f'UID:{uid}@github.com/pandermusubi\n')
 
                     date = datetime.strptime(f'{year}{month}{day}', '%Y%m%d')
                     calendar.write('DTSTART;VALUE=DATE-TIME:{date.strftime("%Y%m%d")}T080000\n')
@@ -248,10 +243,9 @@ def write_rmn(data, event_seq):  # pylint:disable=too-many-locals
         for line in calendar_footer:
             calendar.write(line)
         rename(temp, temp.replace('.tmp.ics', '.ics'))
-    return event_seq
 
 
-def write_rova(data, event_seq):
+def write_rova(data):
     """Write blah."""
     # scraping like it's 1999
     index = 0
@@ -261,14 +255,14 @@ def write_rova(data, event_seq):
         index += 1
         if line == 'Geen adres gevonden':
             print('WARNING: Unsupported address, skipping')
-            return event_seq
+            return
         if '"kalenderContainer"' in line:
             dates = line.split('afvalkalenderData:\'')[1].split('\'')[0]
             break
     if dates is None:
         #FIXME login via post with postcode required
         #FIXME also do logout! also set 'do not remember'
-        return event_seq
+        return
 
     for reminder in reminders:
         alarm = reminder_to_alarm(reminder)
@@ -284,8 +278,6 @@ def write_rova(data, event_seq):
             print(date)
             sys.exit(0)  # TODO, see FIXME above
 
-    return event_seq
-
 
 # reminders at, before and after
 # reminders = ('', 'T10H30M', 'T9H15M', 'T30M', 'T1H')
@@ -296,15 +288,6 @@ utcnow = datetime.utcnow()
 yearnow = utcnow.strftime('%Y')
 dtstamp = utcnow.strftime('%Y%m%dT%H%M%SZ')
 now = time()
-
-# event UID
-uid_format = 'UID:%(date)s-%(pid)d-%(seq)04d-%(lang)s@%(domain)s\n'
-uid_replace_values = {
-    'date': dtstamp,
-    'pid': getpid(),
-    'domain': getfqdn()
-}
-event_seq = 1
 
 # create ICS header
 collection_header = ''
@@ -397,11 +380,11 @@ for address in addresses:
                     print(f'WARNING: Could not retrieve url {url} because {e}')
                     continue
     if source == 'maw':
-        event_seq = write_mad(data, event_seq, names)
+        write_mad(data, names)
     elif source == 'rmn':
-        event_seq = write_rmn(data, event_seq)
+        write_rmn(data)
     elif source == 'rova':
-        event_seq = write_rova(data, event_seq)
+        write_rova(data)
     else:
         print(f'ERROR: Unknown source {source}, skipping {url} for postcode {postcode} and huisnummer {huisnummer} {toevoeging}')
         continue

@@ -36,18 +36,6 @@ https://raw.github.com/PanderMusubi/afvalophaaldata/master/ics/3524/DZ/106_0700.
 
 https://raw.github.com/PanderMusubi/afvalophaaldata/master/ics/3524/DZ/106_2130.ics
 
-## Huisnummer 108 zonder alarm
-
-https://raw.github.com/PanderMusubi/afvalophaaldata/master/ics/3524/DZ/108.ics
-
-## Huisnummer 108 met alarm/notificatie om 07.00 uur
-
-https://raw.github.com/PanderMusubi/afvalophaaldata/master/ics/3524/DZ/108_0700.ics
-
-## Huisnummer 108 met alarm/notificatie om 21.30 uur
-
-https://raw.github.com/PanderMusubi/afvalophaaldata/master/ics/3524/DZ/108_2130.ics
-
 ## Huisnummer 110 zonder alarm
 
 https://raw.github.com/PanderMusubi/afvalophaaldata/master/ics/3524/DZ/110.ics
@@ -479,16 +467,4 @@ https://raw.github.com/PanderMusubi/afvalophaaldata/master/ics/3524/DZ/180_0700.
 ## Huisnummer 180 met alarm/notificatie om 21.30 uur
 
 https://raw.github.com/PanderMusubi/afvalophaaldata/master/ics/3524/DZ/180_2130.ics
-
-## Huisnummer 182 zonder alarm
-
-https://raw.github.com/PanderMusubi/afvalophaaldata/master/ics/3524/DZ/182.ics
-
-## Huisnummer 182 met alarm/notificatie om 07.00 uur
-
-https://raw.github.com/PanderMusubi/afvalophaaldata/master/ics/3524/DZ/182_0700.ics
-
-## Huisnummer 182 met alarm/notificatie om 21.30 uur
-
-https://raw.github.com/PanderMusubi/afvalophaaldata/master/ics/3524/DZ/182_2130.ics
 

@@ -156,6 +156,18 @@ https://raw.github.com/PanderMusubi/afvalophaaldata/master/ics/3521/EC/41_0700.i
 
 https://raw.github.com/PanderMusubi/afvalophaaldata/master/ics/3521/EC/41_2130.ics
 
+## Huisnummer 43 zonder alarm
+
+https://raw.github.com/PanderMusubi/afvalophaaldata/master/ics/3521/EC/43.ics
+
+## Huisnummer 43 met alarm/notificatie om 07.00 uur
+
+https://raw.github.com/PanderMusubi/afvalophaaldata/master/ics/3521/EC/43_0700.ics
+
+## Huisnummer 43 met alarm/notificatie om 21.30 uur
+
+https://raw.github.com/PanderMusubi/afvalophaaldata/master/ics/3521/EC/43_2130.ics
+
 ## Huisnummer 45 zonder alarm
 
 https://raw.github.com/PanderMusubi/afvalophaaldata/master/ics/3521/EC/45.ics

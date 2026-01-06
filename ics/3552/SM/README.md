@@ -1,17 +1,5 @@
 # URL's postcode 3552 SM
 
-## Huisnummer 100 zonder alarm
-
-https://raw.github.com/PanderMusubi/afvalophaaldata/master/ics/3552/SM/100.ics
-
-## Huisnummer 100 met alarm/notificatie om 07.00 uur
-
-https://raw.github.com/PanderMusubi/afvalophaaldata/master/ics/3552/SM/100_0700.ics
-
-## Huisnummer 100 met alarm/notificatie om 21.30 uur
-
-https://raw.github.com/PanderMusubi/afvalophaaldata/master/ics/3552/SM/100_2130.ics
-
 ## Huisnummer 102 zonder alarm
 
 https://raw.github.com/PanderMusubi/afvalophaaldata/master/ics/3552/SM/102.ics
@@ -47,6 +35,18 @@ https://raw.github.com/PanderMusubi/afvalophaaldata/master/ics/3552/SM/54_0700.i
 ## Huisnummer 54 met alarm/notificatie om 21.30 uur
 
 https://raw.github.com/PanderMusubi/afvalophaaldata/master/ics/3552/SM/54_2130.ics
+
+## Huisnummer 56 zonder alarm
+
+https://raw.github.com/PanderMusubi/afvalophaaldata/master/ics/3552/SM/56.ics
+
+## Huisnummer 56 met alarm/notificatie om 07.00 uur
+
+https://raw.github.com/PanderMusubi/afvalophaaldata/master/ics/3552/SM/56_0700.ics
+
+## Huisnummer 56 met alarm/notificatie om 21.30 uur
+
+https://raw.github.com/PanderMusubi/afvalophaaldata/master/ics/3552/SM/56_2130.ics
 
 ## Huisnummer 58 zonder alarm
 

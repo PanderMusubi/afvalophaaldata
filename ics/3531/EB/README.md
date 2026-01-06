@@ -124,6 +124,18 @@ https://raw.github.com/PanderMusubi/afvalophaaldata/master/ics/3531/EB/16_2130.i
 
 https://raw.github.com/PanderMusubi/afvalophaaldata/master/ics/3531/EB/18-BS.ics
 
+## Huisnummer 18-BSA zonder alarm
+
+https://raw.github.com/PanderMusubi/afvalophaaldata/master/ics/3531/EB/18-BSA.ics
+
+## Huisnummer 18-BSA met alarm/notificatie om 07.00 uur
+
+https://raw.github.com/PanderMusubi/afvalophaaldata/master/ics/3531/EB/18-BSA_0700.ics
+
+## Huisnummer 18-BSA met alarm/notificatie om 21.30 uur
+
+https://raw.github.com/PanderMusubi/afvalophaaldata/master/ics/3531/EB/18-BSA_2130.ics
+
 ## Huisnummer 18-BS met alarm/notificatie om 07.00 uur
 
 https://raw.github.com/PanderMusubi/afvalophaaldata/master/ics/3531/EB/18-BS_0700.ics

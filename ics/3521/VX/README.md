@@ -24,6 +24,18 @@ https://raw.github.com/PanderMusubi/afvalophaaldata/master/ics/3521/VX/100_0700.
 
 https://raw.github.com/PanderMusubi/afvalophaaldata/master/ics/3521/VX/100_2130.ics
 
+## Huisnummer 102-BS zonder alarm
+
+https://raw.github.com/PanderMusubi/afvalophaaldata/master/ics/3521/VX/102-BS.ics
+
+## Huisnummer 102-BS met alarm/notificatie om 07.00 uur
+
+https://raw.github.com/PanderMusubi/afvalophaaldata/master/ics/3521/VX/102-BS_0700.ics
+
+## Huisnummer 102-BS met alarm/notificatie om 21.30 uur
+
+https://raw.github.com/PanderMusubi/afvalophaaldata/master/ics/3521/VX/102-BS_2130.ics
+
 ## Huisnummer 102 zonder alarm
 
 https://raw.github.com/PanderMusubi/afvalophaaldata/master/ics/3521/VX/102.ics

@@ -118,6 +118,7 @@ def write_mad(data, names):  # pylint:disable=too-many-locals
 
         # scraping like it's 1999
         index = 0
+        processed = set()
         while index < len(data):
             line = data[index]
             index += 1
@@ -142,28 +143,31 @@ def write_mad(data, names):  # pylint:disable=too-many-locals
                     (day_name, day, month) = datum
                 month = month_to_number(month)
 
-                calendar.write(f'{collection_header.strip()}{name}\n')
-
-                # write UID
-                uid = sha256((year + month + day + reminder + name).encode()).hexdigest()[:16]
-                calendar.write(f'UID:{uid}@github.com/pandermusubi\n')
-
                 date = datetime.strptime(f'{year}{month}{day}', '%Y%m%d')
-                calendar.write(f'DTSTART;TZID=Europe/Amsterdam:{date.strftime("%Y%m%d")}T080000\n')
-                calendar.write(f'DTEND;TZID=Europe/Amsterdam:{date.strftime("%Y%m%d")}T080000\n')
-# for whole day event, remove the T080000 and add endtime one day later
-#                date += timedelta(days=1)
-#                calendar.write('DTEND;VALUE=DATE:{}\n'.format(
-#                    date.strftime('%Y%m%d')))
-                if reminder != '':
-                    calendar.write('BEGIN:VALARM\n')
-                    calendar.write('ACTION:DISPLAY\n')
-                    calendar.write(f'TRIGGER;VALUE=DURATION:-P{reminder}\n')
-                    calendar.write(f'DESCRIPTION:{name} aan de straat'
-                                   ' zetten\n')
-                    calendar.write('END:VALARM\n')
-
-                calendar.write(collection_footer)
+                llave = decimals + letters + number + name + date.strftime("%Y%m%d") + reminder
+                if llave not in processed:
+                    calendar.write(f'{collection_header.strip()}{name}\n')
+    
+                    # write UID
+                    uid = sha256((year + month + day + reminder + name).encode()).hexdigest()[:16]
+                    calendar.write(f'UID:{uid}@github.com/pandermusubi\n')
+    
+                    calendar.write(f'DTSTART;TZID=Europe/Amsterdam:{date.strftime("%Y%m%d")}T080000\n')
+                    calendar.write(f'DTEND;TZID=Europe/Amsterdam:{date.strftime("%Y%m%d")}T080000\n')
+    # for whole day event, remove the T080000 and add endtime one day later
+    #                date += timedelta(days=1)
+    #                calendar.write('DTEND;VALUE=DATE:{}\n'.format(
+    #                    date.strftime('%Y%m%d')))
+                    if reminder != '':
+                        calendar.write('BEGIN:VALARM\n')
+                        calendar.write('ACTION:DISPLAY\n')
+                        calendar.write(f'TRIGGER;VALUE=DURATION:-P{reminder}\n')
+                        calendar.write(f'DESCRIPTION:{name} aan de straat'
+                                       ' zetten\n')
+                        calendar.write('END:VALARM\n')
+    
+                    calendar.write(collection_footer)
+                    processed.add(llave)
 
         calendar_footer = open(f'templates{sep}calendar-footer.txt')
         for line in calendar_footer:

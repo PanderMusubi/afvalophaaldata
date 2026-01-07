@@ -376,6 +376,18 @@ https://raw.github.com/PanderMusubi/afvalophaaldata/master/ics/3573/SP/73_0700.i
 
 https://raw.github.com/PanderMusubi/afvalophaaldata/master/ics/3573/SP/73_2130.ics
 
+## Huisnummer 75 zonder alarm
+
+https://raw.github.com/PanderMusubi/afvalophaaldata/master/ics/3573/SP/75.ics
+
+## Huisnummer 75 met alarm/notificatie om 07.00 uur
+
+https://raw.github.com/PanderMusubi/afvalophaaldata/master/ics/3573/SP/75_0700.ics
+
+## Huisnummer 75 met alarm/notificatie om 21.30 uur
+
+https://raw.github.com/PanderMusubi/afvalophaaldata/master/ics/3573/SP/75_2130.ics
+
 ## Huisnummer 77 zonder alarm
 
 https://raw.github.com/PanderMusubi/afvalophaaldata/master/ics/3573/SP/77.ics

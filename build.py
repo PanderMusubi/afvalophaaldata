@@ -3,7 +3,7 @@
 # List all unique values of SUMMARY with following command
 # grep -rh SUMMARY ics|sort|uniq
 
-from datetime import datetime
+from datetime import datetime, timedelta
 from hashlib import sha256
 from os import listdir, makedirs, path, rename, sep
 from random import uniform, shuffle
@@ -146,12 +146,15 @@ def write_mad(data, names):  # pylint:disable=too-many-locals
                 date = datetime.strptime(f'{year}{month}{day}', '%Y%m%d')
                 llave = decimals + letters + number + name + date.strftime("%Y%m%d") + reminder
                 if llave not in processed:
-                    calendar.write(f'{collection_header.strip()}{name}\n')
-    
+                    calendar.write('BEGIN:VEVENT\n')
+                    tmp = date + timedelta(days=-2)
+                    calendar.write(f'DTSTAMP:{tmp.strftime("%Y%m%d")}T040000Z\n')
+                    calendar.write(f'SUMMARY:{name}\n')
+
                     # write UID
-                    uid = sha256((year + month + day + reminder + name).encode()).hexdigest()[:16]
-                    calendar.write(f'UID:{uid}@github.com/pandermusubi\n')
-    
+                    uid = sha256((year + month + day + name + reminder).encode()).hexdigest()[:16]
+                    calendar.write(f'UID:{uid}@afvalophaaldata.pandermusubi\n')
+
                     calendar.write(f'DTSTART;TZID=Europe/Amsterdam:{date.strftime("%Y%m%d")}T080000\n')
                     calendar.write(f'DTEND;TZID=Europe/Amsterdam:{date.strftime("%Y%m%d")}T080000\n')
     # for whole day event, remove the T080000 and add endtime one day later
@@ -165,8 +168,10 @@ def write_mad(data, names):  # pylint:disable=too-many-locals
                         calendar.write(f'DESCRIPTION:{name} aan de straat'
                                        ' zetten\n')
                         calendar.write('END:VALARM\n')
-    
-                    calendar.write(collection_footer)
+
+                    calendar.write('CATEGORIES:Afvalophaal\n')
+                    calendar.write('TRANSP:TRANSPARENT\n')
+                    calendar.write('END:VEVENT\n')
                     processed.add(llave)
 
         calendar_footer = open(f'templates{sep}calendar-footer.txt')
@@ -204,6 +209,7 @@ def write_rmn(data):  # pylint:disable=too-many-locals
                 start_month = False
             if 'class="datum">' in line:
                 day = line.split('class="datum">')[1].split('<')[0]
+                date = datetime.strptime(f'{year}{month}{day}', '%Y%m%d')
                 if 'class="datum">1<' in line:
                     start_month = True
                 line = data[index]
@@ -219,15 +225,17 @@ def write_rmn(data):  # pylint:disable=too-many-locals
                         index += 1
                     name = line.split('alt="')[1].split('"')[0]
                     name = improve_name(name)
-                    calendar.write(f'{collection_header.strip()}{name}\n')
+                    calendar.write('BEGIN:VEVENT\n')
+                    tmp = date + timedelta(days=-2)
+                    calendar.write(f'DTSTAMP:{tmp.strftime("%Y%m%d")}T040000Z\n')
+                    calendar.write(f'SUMMARY:{name}\n')
 
                     # write UID
-                    uid = sha256((year + month + day + reminder + name).encode()).hexdigest()[:16]
-                    calendar.write(f'UID:{uid}@github.com/pandermusubi\n')
+                    uid = sha256((year + month + day + name + reminder).encode()).hexdigest()[:16]
+                    calendar.write(f'UID:{uid}@afvalophaaldata.pandermusubi\n')
 
-                    date = datetime.strptime(f'{year}{month}{day}', '%Y%m%d')
-                    calendar.write('DTSTART;VALUE=DATE-TIME:{date.strftime("%Y%m%d")}T080000\n')
-                    calendar.write('DTEND;VALUE=DATE-TIME:{date.strftime("%Y%m%d")}T080000\n')
+                    calendar.write(f'DTSTART;VALUE=DATE-TIME:{date.strftime("%Y%m%d")}T080000\n')
+                    calendar.write(f'DTEND;VALUE=DATE-TIME:{date.strftime("%Y%m%d")}T080000\n')
 # for whole day event, remove the T080000 and add endtime one day later
 #                    date += timedelta(days=1)
 #                    calendar.write('DTEND;VALUE=DATE:{}\n'.format(
@@ -241,7 +249,9 @@ def write_rmn(data):  # pylint:disable=too-many-locals
                                        f'{name} aan de straat zetten\n')
                         calendar.write('END:VALARM\n')
 
-                    calendar.write(collection_footer)
+                    calendar.write('CATEGORIES:Afvalophaal\n')
+                    calendar.write('TRANSP:TRANSPARENT\n')
+                    calendar.write('END:VEVENT\n')
 
         calendar_footer = open(f'templates{sep}calendar-footer.txt')
         for line in calendar_footer:
@@ -290,20 +300,7 @@ reminders = ('', 'T10H30M', 'T1H')
 # date and time
 utcnow = datetime.utcnow()
 yearnow = utcnow.strftime('%Y')
-dtstamp = utcnow.strftime('%Y%m%dT%H%M%SZ')
 now = time()
-
-# create ICS header
-collection_header = ''
-event_header = open(f'templates{sep}event-header.txt')
-for line in event_header:
-    collection_header += line.replace('DTSTAMP:', f'DTSTAMP:{dtstamp}')
-
-# create ICS footer
-collection_footer = ''
-event_footer = open(f'templates{sep}event-footer.txt')
-for line in event_footer:
-    collection_footer += line
 
 addresses = []
 groups = set()
@@ -385,10 +382,10 @@ for address in addresses:
                     continue
     if source == 'maw':
         write_mad(data, names)
-    elif source == 'rmn':
-        write_rmn(data)
-    elif source == 'rova':
-        write_rova(data)
+    # elif source == 'rmn':
+    #     write_rmn(data)
+    # elif source == 'rova':
+    #     write_rova(data)
     else:
         print(f'ERROR: Unknown source {source}, skipping {url} for postcode {postcode} and huisnummer {huisnummer} {toevoeging}')
         continue

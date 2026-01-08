@@ -53,7 +53,7 @@ ICSx⁵ is ook te vinden in de [F-Droid](https://f-droid.org/repository/browse/?
 In de map genaamd [ics](ics) zijn de kalenders te vinden. Voor elke postcode is er een bestand README.md met een overzicht van alle kalenders. Dit is de meest makkelijke manier om een specifieke kalender te vinden en toe te voegen aan kalendersoftware.
 
 De links van de kalenders hebben de volgende opbouw:
-1. `webcal://raw.github.com/PanderMusubi/afvalophaaldata/master/ics/`
+1. `webcal://raw.github.com/PanderMusubi/afvalophaaldata/master/ics/` or `https://raw.github.com/PanderMusubi/afvalophaaldata/master/ics/`
 2. `DDDD/` (decimalen van de postcode, bijvoorbeeld `3531`)
 3. `LL/` (letters van de postcode, bijvoorbeeld `EB`)
 4. `N` (decimalen van het huisnummer, bijvoorbeeld `2`)
@@ -62,11 +62,11 @@ De links van de kalenders hebben de volgende opbouw:
 7. `.ics`
 
 Alleen bovenstaande twee specifieke notificaties zijn beschikbaar. Voorbeelden van links zijn:
-* voor postcode `3531 EB` op huisnummer `2` zonder notificatie<br />`webcal://raw.github.com/PanderMusubi/afvalophaaldata/master/ics/3531/EB/2.ics`
-* voor postcode `3531 EB` op huisnummer `2` met een notificatie in de ochtend om 07.00<br />`webcal://raw.github.com/PanderMusubi/afvalophaaldata/master/ics/3531/EB/2_0700.ics`
-* voor postcode `3531 EB` op huisnummer `2` met een notificatie de avond ervoor om 21.30<br />`webcal://raw.github.com/PanderMusubi/afvalophaaldata/master/ics/3531/EB/2_2130.ics`
-* voor postcode `3531 EB` op huisnummer `2` toevoeging `BS` met een notificatie de avond ervoor om 21.30<br />`webcal://raw.github.com/PanderMusubi/afvalophaaldata/master/ics/3531/EB/2-BS_2130.ics`
-* voor postcode `3531 EB` op huisnummer `2` toevoeging `BSA` met een notificatie de avond ervoor om 21.30<br />`webcal://raw.github.com/PanderMusubi/afvalophaaldata/master/ics/3531/EB/2-BSA_2130.ics`
+* voor postcode `3531 EB` op huisnummer `2` zonder notificatie<br>`webcal://raw.github.com/PanderMusubi/afvalophaaldata/master/ics/3531/EB/2.ics`
+* voor postcode `3531 EB` op huisnummer `2` met een notificatie in de ochtend om 07.00<br>`webcal://raw.github.com/PanderMusubi/afvalophaaldata/master/ics/3531/EB/2_0700.ics`
+* voor postcode `3531 EB` op huisnummer `2` met een notificatie de avond ervoor om 21.30<br>`webcal://raw.github.com/PanderMusubi/afvalophaaldata/master/ics/3531/EB/2_2130.ics`
+* voor postcode `3531 EB` op huisnummer `2` toevoeging `BS` met een notificatie de avond ervoor om 21.30<br>`webcal://raw.github.com/PanderMusubi/afvalophaaldata/master/ics/3531/EB/2-BS_2130.ics`
+* voor postcode `3531 EB` op huisnummer `2` toevoeging `BSA` met een notificatie de avond ervoor om 21.30<br>`webcal://raw.github.com/PanderMusubi/afvalophaaldata/master/ics/3531/EB/2-BSA_2130.ics`
 
 Als je postcode er niet bijstaat, dien een verzoek in via een [issue](https://github.com/PanderMusubi/afvalophaaldata/issues) maar om privacyredenen, noem alleen je postcode en **niet** je huisnummer. Indien mogelijk, voeg ook de website toe van de organisatie waar jouw afvalophaaldata zijn te vinden. Daarna worden er kalenders voor je gemaakt voor alle huisnummers met die postcode.
 
@@ -163,10 +163,10 @@ ICSx⁵ can also be found in the [F-Droid](https://f-droid.org/repository/browse
 
 ### 3.2 Find the link for your address
 
-See the directory [ics](ics) for available calendars. For every postcode, there is a file called README.md with an overview of the calendars for that postcode. This is the moest easy way to find your calendar.
+See the directory [ics](ics) for available calendars. For every postcode, there is a file called README.md with an overview of the calendars for that postcode. That is the most easy way to find your calendar.
 
 The links to the calendars have the following structure:
-1. `webcal://raw.github.com/PanderMusubi/afvalophaaldata/master/ics/`
+1. `webcal://raw.github.com/PanderMusubi/afvalophaaldata/master/ics/` or `https://raw.github.com/PanderMusubi/afvalophaaldata/master/ics/`
 2. `DDDD/` (decimals from postcode, e.g. `3531`)
 3. `LL/` (letters from postcode, e.g. `EB`)
 4. `N` (decimals from house number, e.g. `2`)
@@ -175,11 +175,11 @@ The links to the calendars have the following structure:
 7. `.ics`
 
 Note that only two exact notifications are available. The above results in the following examples:
-* for postcode `3531 EB` at house number `2` without a notification<br />`webcal://raw.github.com/PanderMusubi/afvalophaaldata/master/ics/3531/EB/2.ics`
-* for postcode `3531 EB` at house number `2` with a notification in the morning at 07:00<br />`webcal://raw.github.com/PanderMusubi/afvalophaaldata/master/ics/3531/EB/2_0700.ics`
-* for postcode `3531 EB` at house number `2` with a notification evening before at 21:30<br />`webcal://raw.github.com/PanderMusubi/afvalophaaldata/master/ics/3531/EB/2_2130.ics`
-* for postcode `3531 EB` at house number `2` extension `BS` with a notification evening before at 21:30<br />`webcal://raw.github.com/PanderMusubi/afvalophaaldata/master/ics/3531/EB/2-BS_2130.ics`
-* for postcode `3531 EB` at house number `2` extension `BSA` with a notification evening before at 21:30<br />`webcal://raw.github.com/PanderMusubi/afvalophaaldata/master/ics/3531/EB/2-BSA_2130.ics`
+* for postcode `3531 EB` at house number `2` without a notification<br>`webcal://raw.github.com/PanderMusubi/afvalophaaldata/master/ics/3531/EB/2.ics`<br>`https://raw.github.com/PanderMusubi/afvalophaaldata/master/ics/3531/EB/2.ics`
+* for postcode `3531 EB` at house number `2` with a notification in the morning at 07:00<br>`webcal://raw.github.com/PanderMusubi/afvalophaaldata/master/ics/3531/EB/2_0700.ics`<br>`https://raw.github.com/PanderMusubi/afvalophaaldata/master/ics/3531/EB/2_0700.ics`
+* for postcode `3531 EB` at house number `2` with a notification evening before at 21:30<br>`webcal://raw.github.com/PanderMusubi/afvalophaaldata/master/ics/3531/EB/2_2130.ics`<br>`https://raw.github.com/PanderMusubi/afvalophaaldata/master/ics/3531/EB/2_2130.ics`
+* for postcode `3531 EB` at house number `2` extension `BS` with a notification evening before at 21:30<br>`webcal://raw.github.com/PanderMusubi/afvalophaaldata/master/ics/3531/EB/2-BS_2130.ics`<br>`https://raw.github.com/PanderMusubi/afvalophaaldata/master/ics/3531/EB/2-BS_2130.ics`
+* for postcode `3531 EB` at house number `2` extension `BSA` with a notification evening before at 21:30<br>`webcal://raw.github.com/PanderMusubi/afvalophaaldata/master/ics/3531/EB/2-BSA_2130.ics`<br>`https://raw.github.com/PanderMusubi/afvalophaaldata/master/ics/3531/EB/2-BSA_2130.ics`
 
 If your postcode is missing, please request it via an [issue](https://github.com/PanderMusubi/afvalophaaldata/issues) but for privacy reasons list **only** your postcode and not any house numbers. If possible, also add the website where your garbage collection data can be found. Then calendars will be added for you for all house numbers of that postcode.
 

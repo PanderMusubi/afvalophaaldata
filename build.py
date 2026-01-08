@@ -3,7 +3,7 @@
 # List all unique values of SUMMARY with following command
 # grep -rh SUMMARY ics|sort|uniq
 
-from datetime import datetime, timedelta
+from datetime import datetime, timedelta,  UTC
 from hashlib import sha256
 from os import listdir, makedirs, path, rename, sep
 from random import uniform, shuffle
@@ -84,7 +84,6 @@ def reminder_to_alarm(reminder):
 
 def improve_name(name):
     """Improves name."""
-    # print(f'  XXX{name}')
     if name.lower() == 'groente-, fruit- en tuinafval' or name.lower() == 'groente, fruit- en tuinafval' or name.lower() == 'gft':
         name = '🥬 Groente, Fruit- en Tuinafval (GFT)'
 #    elif name.lower() == 'papier en karton':
@@ -112,9 +111,13 @@ def write_mad(data, names):  # pylint:disable=too-many-locals
         temp = f'ics{sep}{decimals}{sep}{letters}{sep}{number}{alarm}.tmp.ics'
         calendar = open(temp, 'w', newline='\r\n')
 
-        calendar_header = open(f'templates{sep}calendar-header.txt')
-        for line in calendar_header:
-            calendar.write(line)
+        with open(f'templates{sep}calendar-header.txt') as f:
+            for line in f:
+                line = line.replace('AFVALOPHAALDATA//NL',
+                                    f'AFVALOPHAALDATA {decimals}{letters.upper()} {number.upper()}{alarm.replace("_", " @")}//NL')
+                line = line.replace('X-WR-CALNAME:Afvalophaaldata',
+                                    f'X-WR-CALNAME:Afvalophaaldata {decimals}{letters.upper()} {number.upper()}{alarm.replace("_", " @")}')
+                calendar.write(line)
 
         # scraping like it's 1999
         index = 0
@@ -133,7 +136,7 @@ def write_mad(data, names):  # pylint:disable=too-many-locals
                 index += 1
                 datum = line.split('<span class="span-line-break">')[1]
                 datum = datum.split('</span>')[0].split(' ')
-                day_name = None  # pylint:disable=unused-variable
+                day_name = None
                 day = None
                 month = None
                 year = yearnow
@@ -174,22 +177,23 @@ def write_mad(data, names):  # pylint:disable=too-many-locals
                     calendar.write('END:VEVENT\n')
                     processed.add(llave)
 
-        calendar_footer = open(f'templates{sep}calendar-footer.txt')
-        for line in calendar_footer:
-            calendar.write(line)
+        with open(f'templates{sep}calendar-footer.txt') as f:
+            for line in f:
+                calendar.write(line)
         rename(temp, temp.replace('.tmp.ics', '.ics'))
 
 
-def write_rmn(data):  # pylint:disable=too-many-locals
+def write_rmn(data):
     """Write blah."""
+    # FIXME not tested / not working
     for reminder in reminders:
         alarm = reminder_to_alarm(reminder)
         temp = f'ics{sep}{decimals}{sep}{letters}{sep}{number}{alarm}.tmp.ics'
         calendar = open(temp, 'w', newline='\r\n')
 
-        calendar_header = open(f'templates{sep}calendar-header.txt')
-        for line in calendar_header:
-            calendar.write(line)
+        with open(f'templates{sep}calendar-header.txt') as f:
+            for line in f:
+                calendar.write(line)
 
         # scraping like it's 1999
         index = 0
@@ -253,9 +257,9 @@ def write_rmn(data):  # pylint:disable=too-many-locals
                     calendar.write('TRANSP:TRANSPARENT\n')
                     calendar.write('END:VEVENT\n')
 
-        calendar_footer = open(f'templates{sep}calendar-footer.txt')
-        for line in calendar_footer:
-            calendar.write(line)
+        with open(f'templates{sep}calendar-footer.txt') as f:
+            for line in f:
+                calendar.write(line)
         rename(temp, temp.replace('.tmp.ics', '.ics'))
 
 
@@ -283,14 +287,13 @@ def write_rova(data):
         temp = f'ics{sep}{decimals}{sep}{letters}{sep}{number}{alarm}.tmp.ics'
         calendar = open(temp, 'w', newline='\r\n')
 
-        calendar_header = open(f'templates{sep}calendar-header.txt')
-        for line in calendar_header:
-            calendar.write(line)
+        with open(f'templates{sep}calendar-header.txt') as f:
+            for line in f:
+                calendar.write(line)
 
-        print('TODO')
         for date in dates.split(','):
-            print(date)
-            sys.exit(0)  # TODO, see FIXME above
+            print(f'ERROR: {date}')
+            sys.exit(1)  # TODO, see FIXME above
 
 
 # reminders at, before and after
@@ -298,30 +301,31 @@ def write_rova(data):
 reminders = ('', 'T10H30M', 'T1H')
 
 # date and time
-utcnow = datetime.utcnow()
+utcnow = datetime.now(UTC)
 yearnow = utcnow.strftime('%Y')
 now = time()
 
 addresses = []
 groups = set()
 group = set()
-for address in open('addresses.tsv'):
-    address = address[:-1].replace('\t', '/')
-    if address != '' and address[0] != '#':
-        adress_path = address_to_path(address)
-        if path.isfile(adress_path):
-            tstamp = path.getmtime(adress_path)
-            if tstamp > now - 4 * 86400:  # not older than four days
-#TODO from dateutil.relativedelta import relativedelta
-# difference_in_years = relativedelta(end_date, start_date).years
-                print(f'INFO: Cache not yet expired for {address}')
-                continue
-        addresses.append(address)
-        group.add(address)
-    elif address == '':
-        if group:
-            groups.add(tuple(group))
-        group = set()
+with open('addresses.tsv') as f:
+    for address in f:
+        address = address[:-1].replace('\t', '/')
+        if address != '' and address[0] != '#':
+            adress_path = address_to_path(address)
+            if path.isfile(adress_path):
+                tstamp = path.getmtime(adress_path)
+                if tstamp > now - 4 * 86400:  # not older than four days
+    #TODO from dateutil.relativedelta import relativedelta
+    # difference_in_years = relativedelta(end_date, start_date).years
+                    print(f'INFO: Cache not yet expired for {address}')
+                    continue
+            addresses.append(address)
+            group.add(address)
+        elif address == '':
+            if group:
+                groups.add(tuple(group))
+            group = set()
 
 # sources = {}
 count = 0
@@ -392,25 +396,25 @@ for address in addresses:
 
 if names:
     print('\nFound following types:')
-    names_used = open('names-used-dutch.txt', 'w')
-    for name in sorted(names):
-        print('{}'.format(name.replace('\\', '')))
-        names_used.write('{}\n'.format(name.replace('\\', '')))
+    with open('names-used-dutch.txt', 'w') as f:
+        for name in sorted(names):
+            print('{}'.format(name.replace('\\', '')))
+            f.write('{}\n'.format(name.replace('\\', '')))
 
 for decimals in sorted(listdir('ics')):
     for letters in sorted(listdir(f'ics{sep}{decimals}')):
-        readme = open(f'ics{sep}{decimals}{sep}{letters}{sep}README.md', 'w')
-        readme.write(f'# URL\'s postcode {decimals} {letters}\n\n')
-        for number in sorted(listdir(f'ics{sep}{decimals}{sep}{letters}')):
-            if number == 'README.md':
-                continue
-            number = number.replace('.ics', '')
-            if '_' in number:
-                alarm = number.split('_')[1]
-                readme.write(f"## Huisnummer {number.split('_')[0]} met alarm"
-                             f"/notificatie om {alarm[:2]}.{alarm[2:]} uur\n\n")
-            else:
-                readme.write(f'## Huisnummer {number} zonder alarm\n\n')
-            readme.write('https://raw.github.com/PanderMusubi/afvalophaaldata/'
-                         f'master/ics/{decimals}/{letters}/{number}.ics\n\n')
-#            readme.write('![QR-code https://raw.github.com/PanderMusubi/afvalophaaldata/master/ics/{}/{}/{}.ics](https://api.qrserver.com/v1/create-qr-code/?data=https%3A%2F%2Fraw.github.com%2FPanderMusubi%2Fafvalophaaldata%2Fmaster%2Fics%2F{}%2F{}%2F{}.ics)\n\n'.format(decimals, letters, number, decimals, letters, number))  # pylint:disable=line-too-long
+        with open(f'ics{sep}{decimals}{sep}{letters}{sep}README.md', 'w') as f:
+            f.write(f'# URL\'s postcode {decimals} {letters}\n\n')
+            for number in sorted(listdir(f'ics{sep}{decimals}{sep}{letters}')):
+                if number == 'README.md':
+                    continue
+                number = number.replace('.ics', '')
+                if '_' in number:
+                    alarm = number.split('_')[1]
+                    f.write(f"## Huisnummer {number.split('_')[0]} met alarm"
+                                 f"/notificatie om {alarm[:2]}.{alarm[2:]} uur\n\n")
+                else:
+                    f.write(f'## Huisnummer {number} zonder alarm\n\n')
+                f.write('https://raw.github.com/PanderMusubi/afvalophaaldata/'
+                             f'master/ics/{decimals}/{letters}/{number}.ics\n\n')
+    #            f.write('![QR-code https://raw.github.com/PanderMusubi/afvalophaaldata/master/ics/{}/{}/{}.ics](https://api.qrserver.com/v1/create-qr-code/?data=https%3A%2F%2Fraw.github.com%2FPanderMusubi%2Fafvalophaaldata%2Fmaster%2Fics%2F{}%2F{}%2F{}.ics)\n\n'.format(decimals, letters, number, decimals, letters, number))

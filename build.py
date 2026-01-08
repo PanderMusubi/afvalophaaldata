@@ -417,4 +417,4 @@ for decimals in sorted(listdir('ics')):
                     f.write(f'## Huisnummer {number} zonder alarm\n\n')
                 f.write('https://raw.github.com/PanderMusubi/afvalophaaldata/'
                              f'master/ics/{decimals}/{letters}/{number}.ics\n\n')
-    #            f.write('![QR-code https://raw.github.com/PanderMusubi/afvalophaaldata/master/ics/{}/{}/{}.ics](https://api.qrserver.com/v1/create-qr-code/?data=https%3A%2F%2Fraw.github.com%2FPanderMusubi%2Fafvalophaaldata%2Fmaster%2Fics%2F{}%2F{}%2F{}.ics)\n\n'.format(decimals, letters, number, decimals, letters, number))
+    #            f.write('![QR-code webcal://raw.github.com/PanderMusubi/afvalophaaldata/master/ics/{}/{}/{}.ics](https://api.qrserver.com/v1/create-qr-code/?data=webcal%3A%2F%2Fraw.github.com%2FPanderMusubi%2Fafvalophaaldata%2Fmaster%2Fics%2F{}%2F{}%2F{}.ics)\n\n'.format(decimals, letters, number, decimals, letters, number))

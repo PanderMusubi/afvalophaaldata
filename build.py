@@ -3,12 +3,12 @@
 # List all unique values of SUMMARY with following command
 # grep -rh SUMMARY ics|sort|uniq
 
-from datetime import datetime, timedelta,  UTC
+from datetime import datetime, timedelta, UTC
 from hashlib import sha256
 from os import listdir, makedirs, path, rename, sep
 from random import uniform, shuffle
 from time import sleep, time
-from urllib.request import Request, urlopen
+from urllib.request import urlopen, Request
 import sys
 
 # pylint:disable=consider-using-with
